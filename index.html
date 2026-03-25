@@ -1,0 +1,1042 @@
+<html lang="es" data-theme="light"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="MiCesta">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#667eea" id="themeColor">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icon.png">
+<title>MiCesta.app</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&amp;family=Nunito:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:       #f0f0ff;
+  --surface:  #ffffff;
+  --surface2: #f5f3ff;
+  --text:     #1a1a2e;
+  --text2:    #7c7c9a;
+  --border:   #e2e0f5;
+  --radius:   16px;
+  --radius-sm:12px;
+  --tr:       all 0.2s cubic-bezier(.4,0,.2,1);
+  --grad-header: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --grad-bg:     linear-gradient(160deg, #e8eaff 0%, #f5e6ff 50%, #ffe8f5 100%);
+}
+[data-theme="dark"] {
+  --bg:       #0f0e1a;
+  --surface:  #1a1830;
+  --surface2: #221f3a;
+  --text:     #f0eeff;
+  --text2:    #8884aa;
+  --border:   #2e2b4a;
+  --grad-bg:  linear-gradient(160deg, #0f0e1a 0%, #1a0e2e 50%, #1a0e1a 100%);
+  --grad-header: linear-gradient(135deg, #4a5dc7 0%, #5c3a82 100%);
+}
+
+/* CATEGORY GRADIENTS */
+.c0  { --cc:#4ade80; --cg:linear-gradient(135deg,#4ade80,#22d3ee); --ct:#064e3b; }
+.c1  { --cc:#fb923c; --cg:linear-gradient(135deg,#fb923c,#f43f5e); --ct:#431407; }
+.c2  { --cc:#f87171; --cg:linear-gradient(135deg,#f87171,#fb923c); --ct:#450a0a; }
+.c3  { --cc:#fbbf24; --cg:linear-gradient(135deg,#fbbf24,#84cc16); --ct:#451a03; }
+.c4  { --cc:#c084fc; --cg:linear-gradient(135deg,#c084fc,#818cf8); --ct:#3b0764; }
+.c5  { --cc:#f97316; --cg:linear-gradient(135deg,#f97316,#eab308); --ct:#431407; }
+.c6  { --cc:#38bdf8; --cg:linear-gradient(135deg,#38bdf8,#6366f1); --ct:#082f49; }
+.c7  { --cc:#a78bfa; --cg:linear-gradient(135deg,#a78bfa,#f472b6); --ct:#2e1065; }
+.c8  { --cc:#fb7185; --cg:linear-gradient(135deg,#fb7185,#c084fc); --ct:#4c0519; }
+.c9  { --cc:#22d3ee; --cg:linear-gradient(135deg,#22d3ee,#4ade80); --ct:#083344; }
+.c10 { --cc:#fde047; --cg:linear-gradient(135deg,#fde047,#fb923c); --ct:#422006; }
+.c11 { --cc:#86efac; --cg:linear-gradient(135deg,#86efac,#67e8f9); --ct:#052e16; }
+.c12 { --cc:#93c5fd; --cg:linear-gradient(135deg,#93c5fd,#a78bfa); --ct:#1e3a5f; }
+.c13 { --cc:#f9a8d4; --cg:linear-gradient(135deg,#f9a8d4,#fda4af); --ct:#500724; }
+.c14 { --cc:#d4a27a; --cg:linear-gradient(135deg,#d4a27a,#fbbf24); --ct:#431407; }
+.c15 { --cc:#6ee7b7; --cg:linear-gradient(135deg,#6ee7b7,#38bdf8); --ct:#064e3b; }
+.c16 { --cc:#fda4af; --cg:linear-gradient(135deg,#fda4af,#c084fc); --ct:#4c0519; }
+.c17 { --cc:#bef264; --cg:linear-gradient(135deg,#bef264,#4ade80); --ct:#1a2e05; }
+.c18 { --cc:#e9d5ff; --cg:linear-gradient(135deg,#e9d5ff,#c084fc); --ct:#3b0764; }
+.c19 { --cc:#fed7aa; --cg:linear-gradient(135deg,#fed7aa,#fbbf24); --ct:#431407; }
+
+* { box-sizing:border-box; margin:0; padding:0; -webkit-tap-highlight-color:transparent; }
+html,body { height:100%; overflow:hidden; }
+body {
+  font-family:'Nunito',sans-serif;
+  background: var(--grad-bg);
+  color: var(--text);
+  display:flex; flex-direction:column; height:100dvh;
+}
+
+/* ── SPLASH ── */
+#splash {
+  position:fixed; inset:0; z-index:1000;
+  background: linear-gradient(135deg,#667eea 0%,#764ba2 50%,#f093fb 100%);
+  display:flex; flex-direction:column; align-items:center; justify-content:center; gap:14px;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+#splash.hide { opacity:0; transform:scale(1.08); pointer-events:none; }
+.splash-icon { font-size:4.5rem; animation:splashBounce 0.7s cubic-bezier(.34,1.8,.64,1) forwards; opacity:0; }
+@keyframes splashBounce { from{opacity:0;transform:scale(0.3) translateY(30px)} to{opacity:1;transform:scale(1) translateY(0)} }
+.splash-title { font-family:'Syne',sans-serif; font-size:2rem; font-weight:800; color:#fff; letter-spacing:-1px; opacity:0; animation:splashFade 0.4s 0.35s ease forwards; }
+.splash-sub { font-size:0.85rem; color:rgba(255,255,255,0.7); opacity:0; animation:splashFade 0.4s 0.55s ease forwards; }
+@keyframes splashFade { from{opacity:0;transform:translateY(10px)} to{opacity:1;transform:translateY(0)} }
+.splash-bar { width:120px; height:3px; background:rgba(255,255,255,0.3); border-radius:99px; overflow:hidden; opacity:0; animation:splashFade 0.4s 0.65s ease forwards; margin-top:6px; }
+.splash-bar-inner { height:100%; background:#fff; border-radius:99px; animation:splashLoad 0.9s 0.75s ease forwards; width:0; }
+@keyframes splashLoad { from{width:0} to{width:100%} }
+
+/* ── HEADER ── */
+.header {
+  background: var(--grad-header);
+  padding: 14px 16px 12px;
+  flex-shrink:0;
+  box-shadow: 0 4px 20px rgba(102,126,234,0.4);
+}
+.header-top { display:flex; align-items:center; justify-content:space-between; margin-bottom:12px; }
+.logo { font-family:'Syne',sans-serif; font-size:1.3rem; font-weight:800; letter-spacing:-0.5px; display:flex; align-items:center; gap:8px; color:#fff; }
+.logo-icon { font-size:1.4rem; }
+.logo-sub { color:rgba(255,255,255,0.65); }
+.hdr-right { display:flex; align-items:center; gap:8px; }
+.icon-round {
+  width:38px; height:38px; border-radius:50%;
+  border:1.5px solid rgba(255,255,255,0.3);
+  background:rgba(255,255,255,0.15);
+  color:#fff; font-size:1rem; cursor:pointer;
+  display:flex; align-items:center; justify-content:center;
+  transition:var(--tr); backdrop-filter:blur(4px);
+}
+.icon-round:active { transform:scale(0.9); background:rgba(255,255,255,0.25); }
+.header-bottom { display:flex; gap:8px; align-items:center; }
+.search-wrap { flex:1; position:relative; }
+.search-wrap input {
+  width:100%; padding:11px 14px 11px 38px;
+  border-radius:99px; border:none;
+  background:rgba(255,255,255,0.2);
+  color:#fff; font-family:'Nunito',sans-serif; font-size:0.95rem;
+  outline:none; transition:var(--tr);
+  backdrop-filter:blur(4px);
+}
+.search-wrap input::placeholder { color:rgba(255,255,255,0.6); }
+.search-wrap input:focus { background:rgba(255,255,255,0.3); }
+.search-icon { position:absolute; left:13px; top:50%; transform:translateY(-50%); font-size:0.9rem; opacity:0.7; pointer-events:none; }
+.add-btn {
+  flex-shrink:0; width:44px; height:44px; border-radius:50%; border:none;
+  background:#fff; color:#764ba2;
+  font-size:1.5rem; cursor:pointer;
+  display:flex; align-items:center; justify-content:center;
+  transition:var(--tr); box-shadow:0 4px 12px rgba(0,0,0,0.2);
+  font-weight:700;
+}
+.add-btn:active { transform:scale(0.9); }
+
+/* ── TABS ── */
+.tab-bar {
+  display:flex;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  flex-shrink:0;
+  box-shadow: 0 2px 8px rgba(102,126,234,0.1);
+}
+.tab {
+  flex:1; height:52px; border:none; background:transparent;
+  color:var(--text2); font-family:'Nunito',sans-serif; font-size:0.92rem; font-weight:700;
+  cursor:pointer; display:flex; align-items:center; justify-content:center; gap:6px;
+  border-bottom:3px solid transparent; transition:var(--tr);
+}
+.tab.active {
+  color:#667eea;
+  border-bottom-color:#667eea;
+  background: linear-gradient(to bottom, transparent, rgba(102,126,234,0.05));
+}
+.tab-badge { background:#ef4444; color:#fff; border-radius:99px; padding:1px 6px; font-size:0.7rem; font-weight:800; min-width:18px; text-align:center; }
+
+/* ── PANELS ── */
+.panels { flex:1; overflow:hidden; position:relative; }
+.panel { position:absolute; inset:0; overflow-y:auto; overflow-x:hidden; -webkit-overflow-scrolling:touch; display:none; flex-direction:column; }
+.panel.active { display:flex; }
+
+/* ── CAT NAV ── */
+.cat-nav {
+  padding:10px 16px;
+  display:grid;
+  grid-template-rows: repeat(2, auto);
+  grid-auto-flow: column;
+  grid-auto-columns: max-content;
+  gap:7px;
+  overflow-x:auto; overflow-y:hidden;
+  scrollbar-width:none;
+  flex-shrink:0; position:sticky; top:0; z-index:10;
+  background:rgba(240,240,255,0.95); backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--border);
+}
+[data-theme="dark"] .cat-nav { background:rgba(15,14,26,0.95); }
+.cat-nav::-webkit-scrollbar { display:none; }
+.cat-nav.reorder-mode .cat-pill:not(.cat-pill-all) { cursor:grab; animation:wiggle 0.3s ease infinite alternate; }
+@keyframes wiggle { from{transform:rotate(-1.5deg)} to{transform:rotate(1.5deg)} }
+.cat-nav.reorder-mode .cat-pill.dragging { opacity:0.4; }
+
+.cat-pill {
+  display:inline-flex; align-items:center; gap:5px;
+  padding:7px 13px; border-radius:99px;
+  border:1.5px solid var(--border);
+  background:var(--surface); color:var(--text2);
+  font-family:'Nunito',sans-serif; font-size:0.8rem; font-weight:700;
+  cursor:pointer; white-space:nowrap; transition:var(--tr); flex-shrink:0;
+  position:relative; user-select:none;
+}
+.cat-pill .dot { width:7px; height:7px; border-radius:50%; background:var(--cc); flex-shrink:0; }
+.cat-pill.active {
+  background: var(--cg);
+  border-color:transparent; color:#fff;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.2);
+}
+.cat-pill-all { background:linear-gradient(135deg,#667eea,#764ba2); border-color:transparent; color:#fff; box-shadow:0 3px 12px rgba(102,126,234,0.3); }
+.cat-pill-all.active { box-shadow:0 4px 16px rgba(102,126,234,0.5); }
+.cat-count { position:absolute; top:-7px; right:-5px; background:var(--cc); color:#fff; border-radius:99px; padding:1px 5px; font-size:0.65rem; font-weight:800; min-width:16px; text-align:center; border:2px solid var(--bg); display:none; line-height:1.4; box-shadow:0 1px 4px rgba(0,0,0,0.2); }
+.cat-pill.has-items .cat-count { display:block; }
+
+.reorder-hint { font-size:0.75rem; color:var(--text2); text-align:center; padding:6px; background:color-mix(in srgb,#fbbf24 12%,var(--bg)); border-bottom:1px solid var(--border); flex-shrink:0; display:none; }
+.reorder-hint.visible { display:block; }
+
+/* ── PRODUCTS ── */
+.products-scroll { padding:14px 16px 24px; }
+.cat-block { margin-bottom:24px; }
+.cat-block-title {
+  font-family:'Syne',sans-serif; font-weight:800; margin-bottom:10px;
+  display:flex; align-items:center; gap:8px;
+  font-size:0.8rem; letter-spacing:0.5px;
+  color: var(--text);
+}
+.cat-block-title .title-badge {
+  display:inline-flex; align-items:center; gap:5px;
+  padding:4px 10px; border-radius:99px;
+  background: var(--cg);
+  color:#fff; font-size:0.72rem; font-weight:800;
+  box-shadow:0 2px 8px rgba(0,0,0,0.15);
+}
+
+.products-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:8px; }
+
+.prod-card {
+  background:var(--surface);
+  border:2px solid transparent;
+  border-radius:var(--radius-sm);
+  padding:12px; cursor:pointer; transition:var(--tr);
+  display:flex; align-items:center; gap:9px;
+  user-select:none; min-height:50px; position:relative; overflow:hidden;
+  box-shadow:0 2px 8px rgba(0,0,0,0.06);
+}
+/* colored left accent */
+.prod-card::before {
+  content:''; position:absolute; left:0; top:0; bottom:0; width:4px;
+  background:var(--cg); border-radius:4px 0 0 4px;
+}
+.prod-card:active { transform:scale(0.95); }
+.prod-card.selected {
+  background: color-mix(in srgb, var(--cc) 18%, var(--surface));
+  border-color: var(--cc);
+  box-shadow: 0 3px 12px color-mix(in srgb, var(--cc) 30%, transparent);
+}
+.prod-card.pressing { transform:scale(0.95); }
+.prod-name { font-size:0.87rem; font-weight:600; flex:1; line-height:1.3; color:var(--text); }
+.prod-check {
+  width:24px; height:24px; flex-shrink:0; border-radius:50%;
+  border:2px solid var(--border);
+  display:flex; align-items:center; justify-content:center;
+  font-size:0.7rem; transition:var(--tr);
+  background:var(--surface2);
+}
+.prod-card.selected .prod-check {
+  background:var(--cg); border-color:transparent; color:#fff; font-weight:800;
+  box-shadow:0 2px 8px color-mix(in srgb, var(--cc) 40%, transparent);
+}
+.press-ring { position:absolute; inset:-2px; border-radius:calc(var(--radius-sm)+2px); border:2.5px solid var(--cc); opacity:0; pointer-events:none; transition:opacity 0.1s; }
+.prod-card.pressing .press-ring { opacity:1; }
+
+.no-results { text-align:center; padding:60px 20px; color:var(--text2); }
+.no-results .emoji { font-size:2.5rem; margin-bottom:10px; }
+.search-label { font-size:0.82rem; color:var(--text2); font-weight:600; padding:14px 16px 0; }
+
+/* ── GO TO CART BAR (fixed bottom of ingredients panel) ── */
+#goToCartBar {
+  display:none;
+  flex-shrink:0;
+  padding:10px 16px 12px;
+  background:var(--surface);
+  border-top:1px solid var(--border);
+  box-shadow:0 -4px 16px rgba(102,126,234,0.15);
+}
+#goToCartBtn {
+  display:flex; align-items:center; justify-content:center; gap:10px;
+  width:100%; padding:14px;
+  border-radius:var(--radius); border:none;
+  background:linear-gradient(135deg,#667eea,#764ba2);
+  color:#fff; font-family:'Nunito',sans-serif; font-size:0.95rem; font-weight:800;
+  cursor:pointer; box-shadow:0 4px 16px rgba(102,126,234,0.4);
+  transition:var(--tr);
+}
+#goToCartBtn:active { transform:scale(0.98); opacity:0.9; }
+#goToCartBtn .go-badge { background:rgba(255,255,255,0.3); border-radius:99px; padding:2px 10px; font-size:0.8rem; font-weight:800; }
+
+/* ── CART ── */
+.cart-scroll { flex:1; padding:14px 16px 20px; overflow-y:auto; -webkit-overflow-scrolling:touch; }
+.cart-empty { display:flex; flex-direction:column; align-items:center; justify-content:center; padding:80px 30px; color:var(--text2); text-align:center; gap:12px; }
+.cart-empty .icon { font-size:3rem; opacity:0.35; }
+.cart-empty p { font-size:0.9rem; line-height:1.5; }
+.cart-group { margin-bottom:20px; }
+.cart-group-title {
+  font-size:0.72rem; font-weight:800; text-transform:uppercase; letter-spacing:0.8px;
+  margin-bottom:8px; display:flex; align-items:center; gap:6px;
+}
+.cart-group-title .group-badge {
+  display:inline-flex; align-items:center; gap:5px;
+  padding:3px 10px; border-radius:99px;
+  background:var(--cg); color:#fff;
+  font-size:0.7rem; font-weight:800;
+  box-shadow:0 2px 8px rgba(0,0,0,0.15);
+}
+
+.swipe-row { position:relative; border-radius:var(--radius-sm); margin-bottom:7px; overflow:hidden; }
+.swipe-bg {
+  position:absolute; inset:0;
+  background:linear-gradient(135deg,#ef4444,#dc2626);
+  border-radius:var(--radius-sm);
+  display:flex; align-items:center; justify-content:flex-end;
+  padding-right:20px; color:#fff; font-size:1.3rem;
+}
+
+.cart-item {
+  display:flex; align-items:center; gap:8px; padding:12px 14px;
+  background:var(--surface);
+  border:2px solid var(--border);
+  border-radius:var(--radius-sm);
+  transition:transform 0.08s ease;
+  position:relative; z-index:1;
+  animation:slideIn .18s ease;
+  touch-action:pan-y; will-change:transform;
+  box-shadow:0 2px 8px rgba(0,0,0,0.06);
+}
+@keyframes slideIn { from{opacity:0;transform:translateY(6px)} to{opacity:1;transform:translateY(0)} }
+.cart-item.done { background:var(--surface2); border-color:var(--border); }
+
+/* colored left bar */
+.cart-item-bar {
+  width:5px; min-height:24px; border-radius:3px;
+  background:var(--cg); flex-shrink:0; align-self:stretch;
+}
+
+.cart-item-name { flex:1; font-size:0.88rem; font-weight:600; line-height:1.3; min-width:0; position:relative; }
+.cart-item-name::after {
+  content:''; position:absolute; left:0; top:50%; transform:translateY(-50%);
+  height:2px; background:var(--text2); border-radius:1px;
+  width:0; transition:width 0.35s cubic-bezier(.4,0,.2,1); pointer-events:none;
+}
+.cart-item.done .cart-item-name::after { width:100%; }
+.cart-item.done .cart-item-name { color:var(--text2); transition:color 0.3s; }
+
+.qty-wrap {
+  display:flex; align-items:center; flex-shrink:0;
+  border:2px solid var(--border); border-radius:10px; overflow:hidden;
+  background:var(--surface2);
+}
+.qty-btn { width:30px; height:30px; border:none; background:transparent; color:var(--text); font-size:1rem; font-weight:800; cursor:pointer; display:flex; align-items:center; justify-content:center; transition:var(--tr); }
+.qty-btn:active { background:var(--border); }
+.qty-num { min-width:24px; text-align:center; font-size:0.85rem; font-weight:800; font-family:'Syne',sans-serif; color:var(--text); }
+
+.cart-item-actions { display:flex; gap:4px; flex-shrink:0; }
+.ci-btn { width:34px; height:34px; border-radius:9px; border:2px solid var(--border); background:var(--surface2); color:var(--text2); font-size:0.9rem; cursor:pointer; display:flex; align-items:center; justify-content:center; transition:var(--tr); }
+.ci-btn:active { transform:scale(0.88); }
+.ci-btn.strike.active { background:color-mix(in srgb,var(--cc) 22%,var(--surface)); border-color:var(--cc); color:var(--text); }
+.ci-btn.remove:active { background:#fee2e2; border-color:#fca5a5; color:#dc2626; }
+[data-theme="dark"] .ci-btn.remove:active { background:#3f1010; border-color:#7f1d1d; color:#f87171; }
+
+/* ── CART FOOTER ── */
+.cart-footer {
+  background:var(--surface);
+  border-top:1px solid var(--border);
+  padding:14px 16px; flex-shrink:0;
+  display:flex; gap:10px; align-items:center;
+  box-shadow:0 -4px 16px rgba(0,0,0,0.06);
+}
+.cart-summary { flex:1; }
+.cart-summary-nums { font-family:'Syne',sans-serif; font-size:1.1rem; font-weight:800; line-height:1; background:var(--grad-header); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+.cart-summary-label { font-size:0.75rem; color:var(--text2); margin-top:2px; }
+.cart-actions { display:flex; gap:8px; }
+.icon-btn { width:44px; height:44px; border-radius:12px; border:2px solid var(--border); background:var(--surface2); color:var(--text); font-size:1.1rem; cursor:pointer; display:flex; align-items:center; justify-content:center; transition:var(--tr); }
+.icon-btn:active { transform:scale(0.9); }
+
+.swipe-clear-hint { text-align:center; font-size:0.75rem; color:var(--text2); padding:8px 16px 0; flex-shrink:0; }
+
+/* ── MODALS ── */
+.overlay { position:fixed; inset:0; z-index:200; background:rgba(0,0,0,.6); display:flex; align-items:flex-end; backdrop-filter:blur(6px); animation:fadeIn .15s ease; }
+@keyframes fadeIn { from{opacity:0} to{opacity:1} }
+.modal {
+  background:var(--surface); border-radius:24px 24px 0 0;
+  padding:8px 20px 40px; width:100%;
+  animation:slideUp .25s cubic-bezier(.34,1.4,.64,1); max-height:90dvh; overflow-y:auto;
+  box-shadow:0 -8px 40px rgba(0,0,0,0.2);
+}
+@keyframes slideUp { from{transform:translateY(100%)} to{transform:translateY(0)} }
+.modal-handle { width:44px; height:4px; border-radius:2px; background:var(--border); margin:12px auto 20px; }
+.modal h3 { font-family:'Syne',sans-serif; font-size:1.15rem; font-weight:800; margin-bottom:18px; }
+.field-label { font-size:0.8rem; font-weight:800; color:var(--text2); text-transform:uppercase; letter-spacing:0.5px; margin-bottom:7px; }
+.field-input,.field-select {
+  width:100%; padding:14px 15px;
+  border:2px solid var(--border); border-radius:var(--radius-sm);
+  background:var(--surface2); color:var(--text);
+  font-family:'Nunito',sans-serif; font-size:1rem; outline:none; margin-bottom:14px;
+  transition:var(--tr); -webkit-appearance:none; appearance:none;
+}
+.field-input:focus,.field-select:focus { border-color:#667eea; background:var(--surface); box-shadow:0 0 0 3px rgba(102,126,234,0.15); }
+.modal-submit {
+  width:100%; padding:16px; border-radius:var(--radius); border:none;
+  background:linear-gradient(135deg,#667eea,#764ba2);
+  color:#fff; font-family:'Nunito',sans-serif; font-size:1rem; font-weight:800;
+  cursor:pointer; transition:var(--tr); margin-top:4px;
+  box-shadow:0 4px 16px rgba(102,126,234,0.4);
+}
+.modal-submit:active { transform:scale(0.97); opacity:0.9; }
+
+.new-cat-toggle { display:flex; align-items:center; gap:8px; padding:12px 14px; border-radius:var(--radius-sm); border:2px dashed var(--border); background:transparent; color:var(--text2); font-family:'Nunito',sans-serif; font-size:0.88rem; font-weight:700; cursor:pointer; width:100%; margin-bottom:14px; transition:var(--tr); }
+.new-cat-toggle:active { background:var(--surface2); }
+.new-cat-fields { display:none; padding:14px; background:var(--surface2); border-radius:var(--radius-sm); margin-bottom:14px; }
+.new-cat-fields.open { display:block; }
+.new-cat-row { display:grid; grid-template-columns:60px 1fr; gap:10px; }
+.new-cat-row .field-input { margin-bottom:0; }
+
+.ctx-product-name { font-family:'Syne',sans-serif; font-size:1.05rem; font-weight:800; margin-bottom:4px; }
+.ctx-product-cat { font-size:0.82rem; color:var(--text2); margin-bottom:20px; display:flex; align-items:center; gap:5px; }
+.ctx-actions { display:flex; flex-direction:column; gap:8px; }
+.ctx-btn { display:flex; align-items:center; gap:12px; padding:14px 16px; border-radius:var(--radius-sm); border:2px solid var(--border); background:var(--surface2); color:var(--text); font-family:'Nunito',sans-serif; font-size:0.95rem; font-weight:700; cursor:pointer; transition:var(--tr); width:100%; }
+.ctx-btn:active { transform:scale(0.98); }
+.ctx-btn.danger { color:#dc2626; border-color:#fca5a5; background:#fee2e2; }
+[data-theme="dark"] .ctx-btn.danger { color:#f87171; border-color:#7f1d1d; background:#3f1010; }
+.ctx-btn-icon { font-size:1.1rem; width:24px; text-align:center; }
+.move-section { margin-top:16px; }
+.move-section .field-label { margin-bottom:8px; }
+
+.export-info { background:var(--surface2); border-radius:var(--radius-sm); padding:14px; margin-bottom:18px; font-size:0.88rem; line-height:1.6; color:var(--text2); }
+.export-info strong { color:var(--text); }
+.btn-row { display:flex; gap:10px; }
+.btn-row button { flex:1; padding:14px; border-radius:var(--radius); border:none; font-family:'Nunito',sans-serif; font-size:0.95rem; font-weight:800; cursor:pointer; transition:var(--tr); }
+.btn-row button:active { transform:scale(0.97); }
+.btn-cancel { background:var(--surface2); color:var(--text); }
+.btn-confirm { background:linear-gradient(135deg,#667eea,#764ba2); color:#fff; box-shadow:0 4px 16px rgba(102,126,234,0.35); }
+.btn-red { background:linear-gradient(135deg,#ef4444,#dc2626); color:#fff; }
+
+/* ── TOAST ── */
+.toast {
+  position:fixed; bottom:24px; left:50%; transform:translateX(-50%);
+  background:linear-gradient(135deg,#667eea,#764ba2);
+  color:#fff; padding:12px 24px; border-radius:99px;
+  font-size:0.88rem; font-weight:700; z-index:400;
+  white-space:nowrap; box-shadow:0 6px 24px rgba(102,126,234,0.5);
+  animation:toastPop .28s cubic-bezier(.34,1.5,.64,1);
+}
+@keyframes toastPop { from{opacity:0;transform:translateX(-50%) scale(.85) translateY(12px)} to{opacity:1;transform:translateX(-50%) scale(1) translateY(0)} }
+</style>
+</head>
+<body>
+
+<!-- SPLASH -->
+<div id="splash" class="hide" style="display: none;">
+  <div class="splash-icon">🛒</div>
+  <div class="splash-title">MiCesta<span style="opacity:.6">.app</span></div>
+  <div class="splash-sub">Tu lista de la compra</div>
+  <div class="splash-bar"><div class="splash-bar-inner"></div></div>
+</div>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="header-top">
+    <div class="logo"><span class="logo-icon">🛒</span>MiCesta<span class="logo-sub">.app</span></div>
+    <div class="hdr-right">
+      <button class="icon-round" onclick="openExportModal()">💾</button>
+      <button class="icon-round" id="themeBtn" onclick="toggleTheme()">🌙</button>
+    </div>
+  </div>
+  <div class="header-bottom">
+    <div class="search-wrap">
+      <span class="search-icon">🔍</span>
+      <input type="text" id="searchInput" placeholder="Buscar producto..." autocomplete="off" inputmode="search">
+    </div>
+    <button class="add-btn" onclick="openAddModal()">＋</button>
+  </div>
+</div>
+
+<!-- TABS -->
+<div class="tab-bar">
+  <button class="tab active" id="tab-ingredients" onclick="switchTab('ingredients')">🥦 Ingredientes</button>
+  <button class="tab" id="tab-cart" onclick="switchTab('cart')">🛒 Carrito <span class="tab-badge" id="cartBadge" style="display: inline-block;">12</span></button>
+</div>
+
+<!-- PANELS -->
+<div class="panels">
+  <div class="panel active" id="panel-ingredients">
+    <div class="reorder-hint" id="reorderHint">✦ Arrastra las categorías para reordenarlas · Pulsa fuera para salir</div>
+    <div class="cat-nav" id="catNav"><button class="cat-pill cat-pill-all " onclick="setFilter('all')">Todos</button><button class="cat-pill c0  has-items" onclick="handleCatPillClick('VERDURAS')" ontouchstart="startCatPress('VERDURAS',this)" ontouchend="endCatPress()" ontouchcancel="endCatPress()" onmousedown="startCatPress('VERDURAS',this)" onmouseup="endCatPress()" onmouseleave="endCatPress()" data-cat="VERDURAS">
+      <span class="dot"></span>🥦 VERDURAS<span class="cat-count">3</span>
+    </button><button class="cat-pill c1  " onclick="handleCatPillClick('FRUTA')" ontouchstart="startCatPress('FRUTA',this)" ontouchend="endCatPress()" ontouchcancel="endCatPress()" onmousedown="startCatPress('FRUTA',this)" onmouseup="endCatPress()" onmouseleave="endCatPress()" data-cat="FRUTA">
+      <span class="dot"></span>🍊 FRUTA<span class="cat-count">0</span>
+    </button><button class="cat-pill c2 active has-items" onclick="handleCatPillClick('CARNE')" ontouchstart="startCatPress('CARNE',this)" ontouchend="endCatPress()" ontouchcancel="endCatPress()" onmousedown="startCatPress('CARNE',this)" onmouseup="endCatPress()" onmouseleave="endCatPress()" data-cat="CARNE">
+      <span class="dot"></span>🥩 CARNE<span class="cat-count">1</span>
+    </button><button class="cat-pill c3  has-items" onclick="handleCatPillClick('BOTES')" ontouchstart="startCatPress('BOTES',this)" ontouchend="endCatPress()" ontouchcancel="endCatPress()" onmousedown="startCatPress('BOTES',this)" onmouseup="endCatPress()" onmouseleave="endCatPress()" data-cat="BOTES">
+      <span class="dot"></span>🫙 BOTES<span class="cat-count">1</span>
+    </button><button class="cat-pill c4  has-items" onclick="handleCatPillClick('ESPECIAS')" ontouchstart="startCatPress('ESPECIAS',this)" ontouchend="endCatPress()" ontouchcancel="endCatPress()" onmousedown="startCatPress('ESPECIAS',this)" onmouseup="endCatPress()" onmouseleave="endCatPress()" data-cat="ESPECIAS">
+      <span class="dot"></span>🌶️ ESPECIAS<span class="cat-count">1</span>
+    </button><button class="cat-pill c5  " onclick="handleCatPillClick('CONSERVAS')" ontouchstart="startCatPress('CONSERVAS',this)" ontouchend="endCatPress()" ontouchcancel="endCatPress()" onmousedown="startCatPress('CONSERVAS',this)" onmouseup="endCatPress()" onmouseleave="endCatPress()" data-cat="CONSERVAS">
+      <span class="dot"></span>🥫 CONSERVAS<span class="cat-count">0</span>
+    </button><button class="cat-pill c6  has-items" onclick="handleCatPillClick('BEBIDAS')" ontouchstart="startCatPress('BEBIDAS',this)" ontouchend="endCatPress()" ontouchcancel="endCatPress()" onmousedown="startCatPress('BEBIDAS',this)" onmouseup="endCatPress()" onmouseleave="endCatPress()" data-cat="BEBIDAS">
+      <span class="dot"></span>🥤 BEBIDAS<span class="cat-count">1</span>
+    </button><button class="cat-pill c7  has-items" onclick="handleCatPillClick('APERITIVOS')" ontouchstart="startCatPress('APERITIVOS',this)" ontouchend="endCatPress()" ontouchcancel="endCatPress()" onmousedown="startCatPress('APERITIVOS',this)" onmouseup="endCatPress()" onmouseleave="endCatPress()" data-cat="APERITIVOS">
+      <span class="dot"></span>🍿 APERITIVOS<span class="cat-count">1</span>
+    </button><button class="cat-pill c8  " onclick="handleCatPillClick('FIAMBRE')" ontouchstart="startCatPress('FIAMBRE',this)" ontouchend="endCatPress()" ontouchcancel="endCatPress()" onmousedown="startCatPress('FIAMBRE',this)" onmouseup="endCatPress()" onmouseleave="endCatPress()" data-cat="FIAMBRE">
+      <span class="dot"></span>🧀 FIAMBRE<span class="cat-count">0</span>
+    </button><button class="cat-pill c9  " onclick="handleCatPillClick('CONGELADOS')" ontouchstart="startCatPress('CONGELADOS',this)" ontouchend="endCatPress()" ontouchcancel="endCatPress()" onmousedown="startCatPress('CONGELADOS',this)" onmouseup="endCatPress()" onmouseleave="endCatPress()" data-cat="CONGELADOS">
+      <span class="dot"></span>🧊 CONGELADOS<span class="cat-count">0</span>
+    </button><button class="cat-pill c10  " onclick="handleCatPillClick('LÁCTEOS')" ontouchstart="startCatPress('LÁCTEOS',this)" ontouchend="endCatPress()" ontouchcancel="endCatPress()" onmousedown="startCatPress('LÁCTEOS',this)" onmouseup="endCatPress()" onmouseleave="endCatPress()" data-cat="LÁCTEOS">
+      <span class="dot"></span>🥛 LÁCTEOS<span class="cat-count">0</span>
+    </button><button class="cat-pill c11  has-items" onclick="handleCatPillClick('VARIOS')" ontouchstart="startCatPress('VARIOS',this)" ontouchend="endCatPress()" ontouchcancel="endCatPress()" onmousedown="startCatPress('VARIOS',this)" onmouseup="endCatPress()" onmouseleave="endCatPress()" data-cat="VARIOS">
+      <span class="dot"></span>🛍️ VARIOS<span class="cat-count">1</span>
+    </button><button class="cat-pill c12  " onclick="handleCatPillClick('HOGAR')" ontouchstart="startCatPress('HOGAR',this)" ontouchend="endCatPress()" ontouchcancel="endCatPress()" onmousedown="startCatPress('HOGAR',this)" onmouseup="endCatPress()" onmouseleave="endCatPress()" data-cat="HOGAR">
+      <span class="dot"></span>🏠 HOGAR<span class="cat-count">0</span>
+    </button><button class="cat-pill c13  has-items" onclick="handleCatPillClick('HIGIENE')" ontouchstart="startCatPress('HIGIENE',this)" ontouchend="endCatPress()" ontouchcancel="endCatPress()" onmousedown="startCatPress('HIGIENE',this)" onmouseup="endCatPress()" onmouseleave="endCatPress()" data-cat="HIGIENE">
+      <span class="dot"></span>🪥 HIGIENE<span class="cat-count">1</span>
+    </button><button class="cat-pill c14  has-items" onclick="handleCatPillClick('PAN')" ontouchstart="startCatPress('PAN',this)" ontouchend="endCatPress()" ontouchcancel="endCatPress()" onmousedown="startCatPress('PAN',this)" onmouseup="endCatPress()" onmouseleave="endCatPress()" data-cat="PAN">
+      <span class="dot"></span>🍞 PAN<span class="cat-count">2</span>
+    </button></div>
+    <div class="products-scroll" id="productsArea"><div class="cat-block c2">
+      <div class="cat-block-title"><span class="title-badge">🥩 CARNE</span></div>
+      <div class="products-grid"><div class="prod-card c2 " onclick="toggleCart('Picada pollo','CARNE')" ontouchstart="startPress('Picada pollo','CARNE',this)" ontouchend="endPress()" ontouchcancel="endPress()" onmousedown="startPress('Picada pollo','CARNE',this)" onmouseup="endPress()" onmouseleave="endPress()">
+        <span class="prod-name">Picada pollo</span>
+        <span class="prod-check"></span>
+        <span class="press-ring"></span>
+      </div><div class="prod-card c2 " onclick="toggleCart('Picada ternera','CARNE')" ontouchstart="startPress('Picada ternera','CARNE',this)" ontouchend="endPress()" ontouchcancel="endPress()" onmousedown="startPress('Picada ternera','CARNE',this)" onmouseup="endPress()" onmouseleave="endPress()">
+        <span class="prod-name">Picada ternera</span>
+        <span class="prod-check"></span>
+        <span class="press-ring"></span>
+      </div><div class="prod-card c2 " onclick="toggleCart('Solomillo pavo','CARNE')" ontouchstart="startPress('Solomillo pavo','CARNE',this)" ontouchend="endPress()" ontouchcancel="endPress()" onmousedown="startPress('Solomillo pavo','CARNE',this)" onmouseup="endPress()" onmouseleave="endPress()">
+        <span class="prod-name">Solomillo pavo</span>
+        <span class="prod-check"></span>
+        <span class="press-ring"></span>
+      </div><div class="prod-card c2 " onclick="toggleCart('Solomillo pollo','CARNE')" ontouchstart="startPress('Solomillo pollo','CARNE',this)" ontouchend="endPress()" ontouchcancel="endPress()" onmousedown="startPress('Solomillo pollo','CARNE',this)" onmouseup="endPress()" onmouseleave="endPress()">
+        <span class="prod-name">Solomillo pollo</span>
+        <span class="prod-check"></span>
+        <span class="press-ring"></span>
+      </div><div class="prod-card c2 " onclick="toggleCart('Hamburguesas','CARNE')" ontouchstart="startPress('Hamburguesas','CARNE',this)" ontouchend="endPress()" ontouchcancel="endPress()" onmousedown="startPress('Hamburguesas','CARNE',this)" onmouseup="endPress()" onmouseleave="endPress()">
+        <span class="prod-name">Hamburguesas</span>
+        <span class="prod-check"></span>
+        <span class="press-ring"></span>
+      </div><div class="prod-card c2 " onclick="toggleCart('Filetes pavo','CARNE')" ontouchstart="startPress('Filetes pavo','CARNE',this)" ontouchend="endPress()" ontouchcancel="endPress()" onmousedown="startPress('Filetes pavo','CARNE',this)" onmouseup="endPress()" onmouseleave="endPress()">
+        <span class="prod-name">Filetes pavo</span>
+        <span class="prod-check"></span>
+        <span class="press-ring"></span>
+      </div><div class="prod-card c2 " onclick="toggleCart('Soja texturizada','CARNE')" ontouchstart="startPress('Soja texturizada','CARNE',this)" ontouchend="endPress()" ontouchcancel="endPress()" onmousedown="startPress('Soja texturizada','CARNE',this)" onmouseup="endPress()" onmouseleave="endPress()">
+        <span class="prod-name">Soja texturizada</span>
+        <span class="prod-check"></span>
+        <span class="press-ring"></span>
+      </div><div class="prod-card c2 selected" onclick="toggleCart('Solomillo cerdo','CARNE')" ontouchstart="startPress('Solomillo cerdo','CARNE',this)" ontouchend="endPress()" ontouchcancel="endPress()" onmousedown="startPress('Solomillo cerdo','CARNE',this)" onmouseup="endPress()" onmouseleave="endPress()">
+        <span class="prod-name">Solomillo cerdo</span>
+        <span class="prod-check">✓</span>
+        <span class="press-ring"></span>
+      </div></div></div></div>
+    <div id="goToCartBar" style="display:flex;">
+      <button id="goToCartBtn" onclick="switchTab('cart')">
+        🛒 Ir al carrito <span class="go-badge" id="goCartCount">0</span>
+      </button>
+    </div>
+  </div>
+  <div class="panel" id="panel-cart" style="flex-direction:column;">
+    <div class="swipe-clear-hint" id="swipeClearHint" style="display: block;">← Desliza un producto para eliminarlo</div>
+    <div class="cart-scroll" id="cartItems"><div class="cart-group c0"><div class="cart-group-title"><span class="group-badge">🥦 VERDURAS</span></div><div class="swipe-row" data-key="VERDURAS::Lechuga"><div class="swipe-bg">🗑️</div>
+        <div class="cart-item " data-key="VERDURAS::Lechuga">
+          <div class="cart-item-bar"></div>
+          <span class="cart-item-name">Lechuga</span>
+          <div class="qty-wrap">
+            <button class="qty-btn" onclick="changeQty('VERDURAS::Lechuga',-1)">−</button>
+            <span class="qty-num">1</span>
+            <button class="qty-btn" onclick="changeQty('VERDURAS::Lechuga',1)">+</button>
+          </div>
+          <div class="cart-item-actions">
+            <button class="ci-btn strike " onclick="toggleDone('VERDURAS::Lechuga')">✓</button>
+            <button class="ci-btn remove" onclick="removeFromCart('VERDURAS::Lechuga')">×</button>
+          </div>
+        </div></div><div class="swipe-row" data-key="VERDURAS::Calabacín"><div class="swipe-bg">🗑️</div>
+        <div class="cart-item " data-key="VERDURAS::Calabacín">
+          <div class="cart-item-bar"></div>
+          <span class="cart-item-name">Calabacín</span>
+          <div class="qty-wrap">
+            <button class="qty-btn" onclick="changeQty('VERDURAS::Calabacín',-1)">−</button>
+            <span class="qty-num">1</span>
+            <button class="qty-btn" onclick="changeQty('VERDURAS::Calabacín',1)">+</button>
+          </div>
+          <div class="cart-item-actions">
+            <button class="ci-btn strike " onclick="toggleDone('VERDURAS::Calabacín')">✓</button>
+            <button class="ci-btn remove" onclick="removeFromCart('VERDURAS::Calabacín')">×</button>
+          </div>
+        </div></div><div class="swipe-row" data-key="VERDURAS::Pimiento Tricolor"><div class="swipe-bg">🗑️</div>
+        <div class="cart-item " data-key="VERDURAS::Pimiento Tricolor">
+          <div class="cart-item-bar"></div>
+          <span class="cart-item-name">Pimiento Tricolor</span>
+          <div class="qty-wrap">
+            <button class="qty-btn" onclick="changeQty('VERDURAS::Pimiento Tricolor',-1)">−</button>
+            <span class="qty-num">1</span>
+            <button class="qty-btn" onclick="changeQty('VERDURAS::Pimiento Tricolor',1)">+</button>
+          </div>
+          <div class="cart-item-actions">
+            <button class="ci-btn strike " onclick="toggleDone('VERDURAS::Pimiento Tricolor')">✓</button>
+            <button class="ci-btn remove" onclick="removeFromCart('VERDURAS::Pimiento Tricolor')">×</button>
+          </div>
+        </div></div></div><div class="cart-group c2"><div class="cart-group-title"><span class="group-badge">🥩 CARNE</span></div><div class="swipe-row" data-key="CARNE::Solomillo cerdo"><div class="swipe-bg">🗑️</div>
+        <div class="cart-item " data-key="CARNE::Solomillo cerdo">
+          <div class="cart-item-bar"></div>
+          <span class="cart-item-name">Solomillo cerdo</span>
+          <div class="qty-wrap">
+            <button class="qty-btn" onclick="changeQty('CARNE::Solomillo cerdo',-1)">−</button>
+            <span class="qty-num">1</span>
+            <button class="qty-btn" onclick="changeQty('CARNE::Solomillo cerdo',1)">+</button>
+          </div>
+          <div class="cart-item-actions">
+            <button class="ci-btn strike " onclick="toggleDone('CARNE::Solomillo cerdo')">✓</button>
+            <button class="ci-btn remove" onclick="removeFromCart('CARNE::Solomillo cerdo')">×</button>
+          </div>
+        </div></div></div><div class="cart-group c3"><div class="cart-group-title"><span class="group-badge">🫙 BOTES</span></div><div class="swipe-row" data-key="BOTES::Guindillas"><div class="swipe-bg">🗑️</div>
+        <div class="cart-item " data-key="BOTES::Guindillas">
+          <div class="cart-item-bar"></div>
+          <span class="cart-item-name">Guindillas</span>
+          <div class="qty-wrap">
+            <button class="qty-btn" onclick="changeQty('BOTES::Guindillas',-1)">−</button>
+            <span class="qty-num">1</span>
+            <button class="qty-btn" onclick="changeQty('BOTES::Guindillas',1)">+</button>
+          </div>
+          <div class="cart-item-actions">
+            <button class="ci-btn strike " onclick="toggleDone('BOTES::Guindillas')">✓</button>
+            <button class="ci-btn remove" onclick="removeFromCart('BOTES::Guindillas')">×</button>
+          </div>
+        </div></div></div><div class="cart-group c4"><div class="cart-group-title"><span class="group-badge">🌶️ ESPECIAS</span></div><div class="swipe-row" data-key="ESPECIAS::Es. Cebolla"><div class="swipe-bg">🗑️</div>
+        <div class="cart-item " data-key="ESPECIAS::Es. Cebolla">
+          <div class="cart-item-bar"></div>
+          <span class="cart-item-name">Es. Cebolla</span>
+          <div class="qty-wrap">
+            <button class="qty-btn" onclick="changeQty('ESPECIAS::Es. Cebolla',-1)">−</button>
+            <span class="qty-num">1</span>
+            <button class="qty-btn" onclick="changeQty('ESPECIAS::Es. Cebolla',1)">+</button>
+          </div>
+          <div class="cart-item-actions">
+            <button class="ci-btn strike " onclick="toggleDone('ESPECIAS::Es. Cebolla')">✓</button>
+            <button class="ci-btn remove" onclick="removeFromCart('ESPECIAS::Es. Cebolla')">×</button>
+          </div>
+        </div></div></div><div class="cart-group c6"><div class="cart-group-title"><span class="group-badge">🥤 BEBIDAS</span></div><div class="swipe-row" data-key="BEBIDAS::Cervezas"><div class="swipe-bg">🗑️</div>
+        <div class="cart-item " data-key="BEBIDAS::Cervezas">
+          <div class="cart-item-bar"></div>
+          <span class="cart-item-name">Cervezas</span>
+          <div class="qty-wrap">
+            <button class="qty-btn" onclick="changeQty('BEBIDAS::Cervezas',-1)">−</button>
+            <span class="qty-num">1</span>
+            <button class="qty-btn" onclick="changeQty('BEBIDAS::Cervezas',1)">+</button>
+          </div>
+          <div class="cart-item-actions">
+            <button class="ci-btn strike " onclick="toggleDone('BEBIDAS::Cervezas')">✓</button>
+            <button class="ci-btn remove" onclick="removeFromCart('BEBIDAS::Cervezas')">×</button>
+          </div>
+        </div></div></div><div class="cart-group c7"><div class="cart-group-title"><span class="group-badge">🍿 APERITIVOS</span></div><div class="swipe-row" data-key="APERITIVOS::Bolsa Patatas Fritas"><div class="swipe-bg">🗑️</div>
+        <div class="cart-item " data-key="APERITIVOS::Bolsa Patatas Fritas">
+          <div class="cart-item-bar"></div>
+          <span class="cart-item-name">Bolsa Patatas Fritas</span>
+          <div class="qty-wrap">
+            <button class="qty-btn" onclick="changeQty('APERITIVOS::Bolsa Patatas Fritas',-1)">−</button>
+            <span class="qty-num">1</span>
+            <button class="qty-btn" onclick="changeQty('APERITIVOS::Bolsa Patatas Fritas',1)">+</button>
+          </div>
+          <div class="cart-item-actions">
+            <button class="ci-btn strike " onclick="toggleDone('APERITIVOS::Bolsa Patatas Fritas')">✓</button>
+            <button class="ci-btn remove" onclick="removeFromCart('APERITIVOS::Bolsa Patatas Fritas')">×</button>
+          </div>
+        </div></div></div><div class="cart-group c11"><div class="cart-group-title"><span class="group-badge">🛍️ VARIOS</span></div><div class="swipe-row" data-key="VARIOS::Picante"><div class="swipe-bg">🗑️</div>
+        <div class="cart-item " data-key="VARIOS::Picante">
+          <div class="cart-item-bar"></div>
+          <span class="cart-item-name">Picante</span>
+          <div class="qty-wrap">
+            <button class="qty-btn" onclick="changeQty('VARIOS::Picante',-1)">−</button>
+            <span class="qty-num">1</span>
+            <button class="qty-btn" onclick="changeQty('VARIOS::Picante',1)">+</button>
+          </div>
+          <div class="cart-item-actions">
+            <button class="ci-btn strike " onclick="toggleDone('VARIOS::Picante')">✓</button>
+            <button class="ci-btn remove" onclick="removeFromCart('VARIOS::Picante')">×</button>
+          </div>
+        </div></div></div><div class="cart-group c13"><div class="cart-group-title"><span class="group-badge">🪥 HIGIENE</span></div><div class="swipe-row" data-key="HIGIENE::Gel Afeitado"><div class="swipe-bg">🗑️</div>
+        <div class="cart-item " data-key="HIGIENE::Gel Afeitado">
+          <div class="cart-item-bar"></div>
+          <span class="cart-item-name">Gel Afeitado</span>
+          <div class="qty-wrap">
+            <button class="qty-btn" onclick="changeQty('HIGIENE::Gel Afeitado',-1)">−</button>
+            <span class="qty-num">1</span>
+            <button class="qty-btn" onclick="changeQty('HIGIENE::Gel Afeitado',1)">+</button>
+          </div>
+          <div class="cart-item-actions">
+            <button class="ci-btn strike " onclick="toggleDone('HIGIENE::Gel Afeitado')">✓</button>
+            <button class="ci-btn remove" onclick="removeFromCart('HIGIENE::Gel Afeitado')">×</button>
+          </div>
+        </div></div></div><div class="cart-group c14"><div class="cart-group-title"><span class="group-badge">🍞 PAN</span></div><div class="swipe-row" data-key="PAN::Pan 35% Avena"><div class="swipe-bg">🗑️</div>
+        <div class="cart-item " data-key="PAN::Pan 35% Avena">
+          <div class="cart-item-bar"></div>
+          <span class="cart-item-name">Pan 35% Avena</span>
+          <div class="qty-wrap">
+            <button class="qty-btn" onclick="changeQty('PAN::Pan 35% Avena',-1)">−</button>
+            <span class="qty-num">1</span>
+            <button class="qty-btn" onclick="changeQty('PAN::Pan 35% Avena',1)">+</button>
+          </div>
+          <div class="cart-item-actions">
+            <button class="ci-btn strike " onclick="toggleDone('PAN::Pan 35% Avena')">✓</button>
+            <button class="ci-btn remove" onclick="removeFromCart('PAN::Pan 35% Avena')">×</button>
+          </div>
+        </div></div><div class="swipe-row" data-key="PAN::Pieza integral"><div class="swipe-bg">🗑️</div>
+        <div class="cart-item " data-key="PAN::Pieza integral">
+          <div class="cart-item-bar"></div>
+          <span class="cart-item-name">Pieza integral</span>
+          <div class="qty-wrap">
+            <button class="qty-btn" onclick="changeQty('PAN::Pieza integral',-1)">−</button>
+            <span class="qty-num">1</span>
+            <button class="qty-btn" onclick="changeQty('PAN::Pieza integral',1)">+</button>
+          </div>
+          <div class="cart-item-actions">
+            <button class="ci-btn strike " onclick="toggleDone('PAN::Pieza integral')">✓</button>
+            <button class="ci-btn remove" onclick="removeFromCart('PAN::Pieza integral')">×</button>
+          </div>
+        </div></div></div></div>
+    <div class="cart-footer">
+      <div class="cart-summary">
+        <div class="cart-summary-nums"><span id="cartDone">0</span>/<span id="cartTotalNum">12</span></div>
+        <div class="cart-summary-label">productos recogidos</div>
+      </div>
+      <div class="cart-actions">
+        <button class="icon-btn" onclick="copyCart()">📋</button>
+        <button class="icon-btn" onclick="clearCart()">🗑️</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ADD MODAL -->
+<div class="overlay" id="addModal" style="display: none;" onclick="closeOverlay('addModal')">
+  <div class="modal" onclick="event.stopPropagation()">
+    <div class="modal-handle"></div>
+    <h3>✨ Añadir producto</h3>
+    <div class="field-label">Nombre</div>
+    <input class="field-input" id="newName" placeholder="ej. Aguacate, Kéfir..." autocomplete="off">
+    <div class="field-label">Categoría</div>
+    <select class="field-select" id="newCat"><option value="VERDURAS">🥦 VERDURAS</option><option value="FRUTA">🍊 FRUTA</option><option value="CARNE">🥩 CARNE</option><option value="BOTES">🫙 BOTES</option><option value="ESPECIAS">🌶️ ESPECIAS</option><option value="CONSERVAS">🥫 CONSERVAS</option><option value="BEBIDAS">🥤 BEBIDAS</option><option value="APERITIVOS">🍿 APERITIVOS</option><option value="FIAMBRE">🧀 FIAMBRE</option><option value="CONGELADOS">🧊 CONGELADOS</option><option value="LÁCTEOS">🥛 LÁCTEOS</option><option value="VARIOS">🛍️ VARIOS</option><option value="HOGAR">🏠 HOGAR</option><option value="HIGIENE">🪥 HIGIENE</option><option value="PAN">🍞 PAN</option></select>
+    <button class="new-cat-toggle" onclick="toggleNewCatFields()">＋ Crear nueva categoría</button>
+    <div class="new-cat-fields" id="newCatFields">
+      <div class="field-label">Emoji + nombre</div>
+      <div class="new-cat-row">
+        <input class="field-input" id="newCatEmoji" placeholder="🧃" maxlength="4">
+        <input class="field-input" id="newCatName" placeholder="Nombre categoría">
+      </div>
+      <button class="modal-submit" style="margin-top:0" onclick="createCategory()">Crear categoría</button>
+    </div>
+    <button class="modal-submit" onclick="addProduct()">Guardar producto ✓</button>
+  </div>
+</div>
+
+<!-- CONTEXT MODAL -->
+<div class="overlay" id="ctxModal" style="display: none;" onclick="closeOverlay('ctxModal')">
+  <div class="modal" onclick="event.stopPropagation()">
+    <div class="modal-handle"></div>
+    <div class="ctx-product-name" id="ctxName">Hiervas Provinzales</div>
+    <div class="ctx-product-cat" id="ctxCatLabel"><span style="margin-right:4px">🌶️</span>ESPECIAS</div>
+    <div class="ctx-actions">
+      <button class="ctx-btn" id="ctxCartBtn" onclick="ctxAddToCart()" style="display: flex;"><span class="ctx-btn-icon">🛒</span> Añadir al carrito</button>
+    </div>
+    <div class="move-section">
+      <div class="field-label">Mover a otra categoría</div>
+      <select class="field-select" id="ctxMoveCat" style="margin-bottom:10px"><option value="VERDURAS">🥦 VERDURAS</option><option value="FRUTA">🍊 FRUTA</option><option value="CARNE">🥩 CARNE</option><option value="BOTES">🫙 BOTES</option><option value="CONSERVAS">🥫 CONSERVAS</option><option value="BEBIDAS">🥤 BEBIDAS</option><option value="APERITIVOS">🍿 APERITIVOS</option><option value="FIAMBRE">🧀 FIAMBRE</option><option value="CONGELADOS">🧊 CONGELADOS</option><option value="LÁCTEOS">🥛 LÁCTEOS</option><option value="VARIOS">🛍️ VARIOS</option><option value="HOGAR">🏠 HOGAR</option><option value="HIGIENE">🪥 HIGIENE</option><option value="PAN">🍞 PAN</option></select>
+      <button class="modal-submit" onclick="ctxMove()">Mover producto</button>
+    </div>
+    <div style="margin-top:12px">
+      <button class="ctx-btn danger" onclick="ctxDelete()"><span class="ctx-btn-icon">🗑️</span> Eliminar de la lista</button>
+    </div>
+  </div>
+</div>
+
+<!-- EXPORT MODAL -->
+<div class="overlay" id="exportModal" style="display:none" onclick="closeOverlay('exportModal')">
+  <div class="modal" onclick="event.stopPropagation()">
+    <div class="modal-handle"></div>
+    <h3>💾 Exportar lista</h3>
+    <div class="export-info">Se descargará un nuevo <strong>cesta_compra.html</strong> con todos tus productos y categorías guardados dentro.<br><br>Ábrelo en cualquier dispositivo y tendrá tu lista completa.</div>
+    <div class="btn-row">
+      <button class="btn-cancel" onclick="closeOverlay('exportModal')">Cancelar</button>
+      <button class="btn-confirm" onclick="doExport()">Descargar ↓</button>
+    </div>
+  </div>
+</div>
+
+<!-- DELETE CAT MODAL -->
+<div class="overlay" id="delCatModal" style="display:none" onclick="closeOverlay('delCatModal')">
+  <div class="modal" onclick="event.stopPropagation()">
+    <div class="modal-handle"></div>
+    <h3>Eliminar categoría</h3>
+    <div class="export-info" id="delCatMsg"></div>
+    <div class="btn-row">
+      <button class="btn-cancel" onclick="closeOverlay('delCatModal')">Cancelar</button>
+      <button class="btn-red" onclick="confirmDeleteCat()">Eliminar</button>
+    </div>
+  </div>
+</div>
+
+<script>
+const BASE_PRODUCTS = {"VERDURAS":["Lechuga","Canónigos","Rúcula","Tomates","Cebollas","Pepino","Calabacín","Brócoli","Pimiento Rojo","Pimiento Verde","Pimiento Tricolor","Patatas","Guacamole","Ajo","Espinacas","Aguacate","Boniato","Pimientos de Padrón","Limones"],"FRUTA":["Plátano","Manzana","Pera","Naranjas","Mandarinas","Mango"],"CARNE":["Picada pollo","Picada ternera","Solomillo pavo","Solomillo pollo","Hamburguesas","Filetes pavo","Soja texturizada","Solomillo cerdo"],"BOTES":["Garbanzos","Alubias","Lentejas","Guindillas","Patatas cocidas"],"ESPECIAS":["Fajitas","Es. Ajo","Es. Cebolla","Pimentón Dulce","Pimentón Picante","Hiervas Provinzales","Orégano","Perejil","Pimienta tricolor","Pimienta negra"],"CONSERVAS":["Lata Tomate","Lata Atún","Maíz","Piña en lata"],"BEBIDAS":["Leche semidesnatada","Bebida Soja","Salmorejo","Gazpacho","Cervezas","Sidra","Coca Cola Zero","Coca Cola Zero S/C"],"APERITIVOS":["Bolsa Mix","Bolsa Patatas Fritas","Bolsa Nachos","Aceitunas","Tortillas para fajitas","Aceitunas vermú"],"FIAMBRE":["Havarty Light","Queso Rulo Cabra","Cuña Tostado","Cuña Tierno","Cuña holandés","Jamón Serrano","Tacos de jamón","Queso azul","Queso Cottage","Queso rayado","Queso en polvo"],"CONGELADOS":["Ajo congelado","Cebolla congelada","Pimientos congelados","Migas coliflor","Espinacas congeladas","Helados","Arándanos","Frutas tropicales"],"LÁCTEOS":["Yogur griego ligero","Yogur soja","Queso fresco batido","Yogur griego sabores"],"VARIOS":["Semillas Chía","Anacardos","Nueces","Avena","Huevos","Cacao Puro","Chocolate","Huevos cocidos","Aceite virgen extra","Aceite 0,4","Aceite cocinar","Vinagre","Harina","Sal","Edulcorante","Arroz integral","Pasta integral","Mostaza","Picante","Miel","Té frío","Laurel","Salsa BBQ"],"HOGAR":["Papel higiénico","Servilletas","Papel de cocina","Velas perfumadas","Detergente","Suavizante","Papel Albal","Papel Horno","Papel Film","Fairy","Toallitas WC","Ambientador WC","Lejía","Quitagrasas","Amoníaco perfumado","Limpiasuelos lejía","Limpiador PH","WC inodoro","Limpiador Baño","Detergente antibacterias","Bolsas basura","Estropajos","Fregona","Tissues"],"HIGIENE":["Enjuague Bucal","Cepillos de dientes","Pasta de dientes","Gel Afeitado","Crema cuerpo"],"PAN":["Pieza integral","Picos de pan","Pan 35% Avena","Pan molde integral","Pan Rayado"]};
+const BASE_ICONS    = {"VERDURAS":"🥦","FRUTA":"🍊","CARNE":"🥩","BOTES":"🫙","ESPECIAS":"🌶️","CONSERVAS":"🥫","BEBIDAS":"🥤","APERITIVOS":"🍿","FIAMBRE":"🧀","CONGELADOS":"🧊","LÁCTEOS":"🥛","VARIOS":"🛍️","HOGAR":"🏠","HIGIENE":"🪥","PAN":"🍞"};
+
+let prods    = JSON.parse(localStorage.getItem('mc_prods')||'null') || JSON.parse(JSON.stringify(BASE_PRODUCTS));
+let icons    = JSON.parse(localStorage.getItem('mc_icons')||'null') || JSON.parse(JSON.stringify(BASE_ICONS));
+let catOrder = JSON.parse(localStorage.getItem('mc_order')||'null') || Object.keys(BASE_PRODUCTS);
+let cart     = JSON.parse(localStorage.getItem('mc_cart') ||'{}');
+let done     = JSON.parse(localStorage.getItem('mc_done') ||'{}');
+let filter='all', query='', ctxProd='', ctxCat='', delCatTarget='', reorderMode=false;
+
+function syncOrder(){ const pk=Object.keys(prods); catOrder=catOrder.filter(c=>pk.includes(c)); pk.forEach(c=>{ if(!catOrder.includes(c)) catOrder.push(c); }); }
+function save(){ syncOrder(); localStorage.setItem('mc_prods',JSON.stringify(prods)); localStorage.setItem('mc_icons',JSON.stringify(icons)); localStorage.setItem('mc_order',JSON.stringify(catOrder)); localStorage.setItem('mc_cart',JSON.stringify(cart)); localStorage.setItem('mc_done',JSON.stringify(done)); }
+function cats(){ syncOrder(); return catOrder; }
+function catCls(cat){ return 'c'+(catOrder.indexOf(cat)%20); }
+function esc(s){ return s.replace(/\\/g,'\\\\').replace(/'/g,"\\'"); }
+function icon(cat){ return icons[cat]||'📦'; }
+function vibrate(p){ try{ navigator.vibrate&&navigator.vibrate(p); }catch(e){} }
+
+window.addEventListener('load',()=>{ setTimeout(()=>{ document.getElementById('splash').classList.add('hide'); setTimeout(()=>document.getElementById('splash').style.display='none',500); },1500); });
+
+function switchTab(tab){ document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active')); document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active')); document.getElementById('tab-'+tab).classList.add('active'); document.getElementById('panel-'+tab).classList.add('active'); if(tab==='cart') setupSwipeToDelete(); }
+function render(){ renderCatNav(); renderProducts(); renderCart(); }
+
+function cartCountForCat(cat){ return Object.keys(cart).filter(k=>k.startsWith(cat+'::')).length; }
+
+function renderCatNav(){
+  const nav=document.getElementById('catNav');
+  let h=`<button class="cat-pill cat-pill-all ${filter==='all'?'active':''}" onclick="setFilter('all')">Todos</button>`;
+  cats().forEach(cat=>{
+    const cls=catCls(cat); const cnt=cartCountForCat(cat); const hi=cnt>0?'has-items':'';
+    h+=`<button class="cat-pill ${cls} ${filter===cat?'active':''} ${hi}" onclick="handleCatPillClick('${esc(cat)}')" ontouchstart="startCatPress('${esc(cat)}',this)" ontouchend="endCatPress()" ontouchcancel="endCatPress()" onmousedown="startCatPress('${esc(cat)}',this)" onmouseup="endCatPress()" onmouseleave="endCatPress()" data-cat="${esc(cat)}">
+      <span class="dot"></span>${icon(cat)} ${cat}<span class="cat-count">${cnt}</span>
+    </button>`;
+  });
+  nav.innerHTML=h;
+  nav.classList.toggle('reorder-mode',reorderMode);
+  document.getElementById('reorderHint').classList.toggle('visible',reorderMode);
+  if(reorderMode) setupDragReorder();
+}
+
+function renderProducts(){
+  const area=document.getElementById('productsArea');
+  const q=query.toLowerCase(); const list=filter==='all'?cats():[filter];
+  let h='',total=0;
+  list.forEach(cat=>{
+    const items=(prods[cat]||[]).filter(p=>!q||p.toLowerCase().includes(q));
+    if(!items.length) return; total+=items.length;
+    const cls=catCls(cat);
+    h+=`<div class="cat-block ${cls}">
+      <div class="cat-block-title"><span class="title-badge">${icon(cat)} ${cat}</span></div>
+      <div class="products-grid">`;
+    items.forEach(p=>{
+      const key=cat+'::'+p; const sel=cart[key]?'selected':'';
+      h+=`<div class="prod-card ${cls} ${sel}" onclick="toggleCart('${esc(p)}','${esc(cat)}')" ontouchstart="startPress('${esc(p)}','${esc(cat)}',this)" ontouchend="endPress()" ontouchcancel="endPress()" onmousedown="startPress('${esc(p)}','${esc(cat)}',this)" onmouseup="endPress()" onmouseleave="endPress()">
+        <span class="prod-name">${p}</span>
+        <span class="prod-check">${cart[key]?'✓':''}</span>
+        <span class="press-ring"></span>
+      </div>`;
+    });
+    h+=`</div></div>`;
+  });
+  if(!total&&q){ h=`<div class="no-results"><div class="emoji">🔍</div><p>Sin resultados para "<strong>${query}</strong>"</p></div>`; }
+  if(q&&total){ h=`<p class="search-label">${total} resultado${total!==1?'s':''} para "${query}"</p>`+h; }
+  area.innerHTML=h; updateGoToCartBtn();
+}
+
+function renderCart(){
+  const container=document.getElementById('cartItems');
+  const keys=Object.keys(cart); const totalP=keys.length; const doneP=keys.filter(k=>done[k]).length;
+  const badge=document.getElementById('cartBadge');
+  badge.textContent=totalP; badge.style.display=totalP?'inline-block':'none';
+  document.getElementById('cartTotalNum').textContent=totalP;
+  document.getElementById('cartDone').textContent=doneP;
+  document.getElementById('swipeClearHint').style.display=totalP?'block':'none';
+  if(!totalP){ container.innerHTML=`<div class="cart-empty"><div class="icon">🧺</div><p>Tu carrito está vacío.<br>Añade productos desde Ingredientes.</p></div>`; return; }
+  const groups={};
+  keys.forEach(k=>{ const[c,n]=k.split('::'); if(!groups[c])groups[c]=[]; groups[c].push(n); });
+  let h='';
+  cats().forEach(cat=>{
+    if(!groups[cat]) return; const cls=catCls(cat);
+    h+=`<div class="cart-group ${cls}"><div class="cart-group-title"><span class="group-badge">${icon(cat)} ${cat}</span></div>`;
+    groups[cat].forEach(name=>{
+      const key=cat+'::'+name; const qty=cart[key]||1; const isDone=done[key]?'done':''; const sa=done[key]?'active':'';
+      h+=`<div class="swipe-row" data-key="${key}"><div class="swipe-bg">🗑️</div>
+        <div class="cart-item ${isDone}" data-key="${key}">
+          <div class="cart-item-bar"></div>
+          <span class="cart-item-name">${name}</span>
+          <div class="qty-wrap">
+            <button class="qty-btn" onclick="changeQty('${esc(key)}',-1)">−</button>
+            <span class="qty-num">${qty}</span>
+            <button class="qty-btn" onclick="changeQty('${esc(key)}',1)">+</button>
+          </div>
+          <div class="cart-item-actions">
+            <button class="ci-btn strike ${sa}" onclick="toggleDone('${esc(key)}')">✓</button>
+            <button class="ci-btn remove" onclick="removeFromCart('${esc(key)}')">×</button>
+          </div>
+        </div></div>`;
+    });
+    h+=`</div>`;
+  });
+  container.innerHTML=h; setupSwipeToDelete();
+}
+
+function updateGoToCartBtn(){
+  const bar=document.getElementById('goToCartBar'); const count=Object.keys(cart).length;
+  document.getElementById('goCartCount').textContent=count;
+  bar.style.display=count>0?'flex':'none';
+}
+
+function setupSwipeToDelete(){
+  setTimeout(()=>{
+    document.querySelectorAll('.swipe-row').forEach(row=>{
+      const item=row.querySelector('.cart-item');
+      if(!item||item._swipe) return; item._swipe=true;
+      let startX=0,currentX=0,dragging=false;
+      item.addEventListener('touchstart',e=>{ if(e.touches.length>1)return; startX=e.touches[0].clientX; dragging=true; item.style.transition='none'; },{passive:true});
+      item.addEventListener('touchmove',e=>{ if(!dragging)return; currentX=e.touches[0].clientX-startX; if(currentX>0)currentX=0; item.style.transform=`translateX(${currentX}px)`; },{passive:true});
+      item.addEventListener('touchend',()=>{
+        if(!dragging)return; dragging=false; item.style.transition='transform 0.25s ease';
+        if(currentX<-80){ item.style.transform='translateX(-110%)'; vibrate([10,50,20]); setTimeout(()=>removeFromCart(row.dataset.key),250); }
+        else{ item.style.transform='translateX(0)'; } currentX=0;
+      });
+    });
+  },100);
+}
+
+let pressTimer=null,pressTarget=null,pressTriggered=false;
+function startPress(name,cat,el){ pressTriggered=false; pressTarget=el; el.classList.add('pressing'); pressTimer=setTimeout(()=>{ pressTriggered=true; el.classList.remove('pressing'); vibrate(30); openCtxModal(name,cat); },500); }
+function endPress(){ clearTimeout(pressTimer); if(pressTarget){pressTarget.classList.remove('pressing');pressTarget=null;} }
+
+let catPressTimer=null,catPressTriggered=false;
+function startCatPress(cat,el){ catPressTriggered=false; catPressTimer=setTimeout(()=>{ catPressTriggered=true; vibrate([20,30,20]); reorderMode=true; renderCatNav(); },600); }
+function endCatPress(){ clearTimeout(catPressTimer); }
+function handleCatPillClick(cat){ if(catPressTriggered){catPressTriggered=false;return;} if(reorderMode){reorderMode=false;renderCatNav();return;} setFilter(cat); }
+document.addEventListener('click',e=>{ if(reorderMode&&!e.target.closest('.cat-nav')){reorderMode=false;renderCatNav();} });
+
+function setupDragReorder(){
+  const nav=document.getElementById('catNav');
+  const pills=Array.from(nav.querySelectorAll('.cat-pill:not(.cat-pill-all)'));
+  let dragEl=null,dragIdx=-1;
+  pills.forEach((pill,i)=>{
+    pill.setAttribute('draggable','true');
+    pill.addEventListener('dragstart',e=>{ dragEl=pill; dragIdx=i; pill.classList.add('dragging'); e.dataTransfer.effectAllowed='move'; });
+    pill.addEventListener('dragend',()=>{ pill.classList.remove('dragging'); dragEl=null; });
+    pill.addEventListener('dragover',e=>{ e.preventDefault(); if(!dragEl||pill===dragEl)return; const oi=pills.indexOf(pill); if(oi<0)return; const moved=catOrder.splice(dragIdx,1)[0]; catOrder.splice(oi,0,moved); dragIdx=oi; save(); renderCatNav(); });
+    pill.addEventListener('touchmove',e=>{ const t=e.touches[0]; const el=document.elementFromPoint(t.clientX,t.clientY); if(!el)return; const target=el.closest('.cat-pill:not(.cat-pill-all)'); if(!target||target===pill)return; const oi=pills.indexOf(target); const fi=pills.indexOf(pill); if(oi<0||fi<0)return; const moved=catOrder.splice(fi,1)[0]; catOrder.splice(oi,0,moved); save(); renderCatNav(); },{passive:true});
+  });
+}
+
+function toggleCart(name,cat){ if(pressTriggered)return; const key=cat+'::'+name; if(cart[key]){delete cart[key];delete done[key];vibrate(15);}else{cart[key]=1;vibrate(20);} save();render(); }
+function changeQty(key,d){ const n=(cart[key]||1)+d; if(n<=0){removeFromCart(key);return;} cart[key]=n; save();renderCart(); }
+function removeFromCart(key){ delete cart[key];delete done[key];save();render(); }
+function toggleDone(key){ done[key]=!done[key]; vibrate(done[key]?[10,30,10]:[15]); save();renderCart(); }
+function clearCart(){ if(!Object.keys(cart).length)return; if(!confirm('¿Vaciar el carrito?'))return; cart={};done={};save();render();showToast('🗑️ Carrito vaciado'); }
+function setFilter(cat){ filter=cat;query='';document.getElementById('searchInput').value='';render(); }
+function copyCart(){
+  const keys=Object.keys(cart); if(!keys.length){showToast('⚠️ El carrito está vacío');return;}
+  const g={}; keys.forEach(k=>{ const[c,n]=k.split('::'); if(!g[c])g[c]=[]; g[c].push(n); });
+  let txt='🛒 MI CESTA\n'+'─'.repeat(24)+'\n';
+  cats().forEach(c=>{ if(!g[c])return; txt+=`\n${icon(c)} ${c}:\n`; g[c].forEach(n=>{ const k=c+'::'+n; const q=cart[k]||1; txt+=`  ${done[k]?'✓':'•'} ${n}${q>1?' x'+q:''}\n`; }); });
+  txt+='\n'+'─'.repeat(24)+`\n${keys.length} producto${keys.length!==1?'s':''}`;
+  navigator.clipboard.writeText(txt).then(()=>showToast('📋 Lista copiada')).catch(()=>showToast('⚠️ No se pudo copiar'));
+}
+
+function openAddModal(){ populateCatSelect('newCat'); document.getElementById('newName').value=''; document.getElementById('newCatFields').classList.remove('open'); document.getElementById('addModal').style.display='flex'; setTimeout(()=>document.getElementById('newName').focus(),200); }
+function addProduct(){
+  const name=document.getElementById('newName').value.trim(); const cat=document.getElementById('newCat').value;
+  if(!name){showToast('⚠️ Escribe un nombre');return;}
+  if(!prods[cat])prods[cat]=[];
+  if(prods[cat].includes(name)){showToast('⚠️ Ya existe en esa categoría');return;}
+  prods[cat].push(name); save(); closeOverlay('addModal'); filter=cat;query='';document.getElementById('searchInput').value=''; render(); showToast(`✅ "${name}" añadido`);
+}
+document.getElementById('newName').addEventListener('keydown',e=>{ if(e.key==='Enter')addProduct(); });
+function toggleNewCatFields(){ document.getElementById('newCatFields').classList.toggle('open'); }
+function createCategory(){
+  const emoji=document.getElementById('newCatEmoji').value.trim()||'📦';
+  const name=document.getElementById('newCatName').value.trim().toUpperCase();
+  if(!name){showToast('⚠️ Escribe un nombre');return;}
+  if(prods[name]!==undefined){showToast('⚠️ Ya existe');return;}
+  prods[name]=[]; icons[name]=emoji; catOrder.push(name); save(); populateCatSelect('newCat');
+  document.getElementById('newCat').value=name;
+  document.getElementById('newCatFields').classList.remove('open');
+  document.getElementById('newCatEmoji').value=''; document.getElementById('newCatName').value='';
+  render(); showToast(`✅ Categoría "${name}" creada`);
+}
+
+function openCtxModal(name,cat){
+  ctxProd=name; ctxCat=cat;
+  document.getElementById('ctxName').textContent=name;
+  document.getElementById('ctxCatLabel').innerHTML=`<span style="margin-right:4px">${icon(cat)}</span>${cat}`;
+  const key=cat+'::'+name;
+  document.getElementById('ctxCartBtn').style.display=cart[key]?'none':'flex';
+  const sel=document.getElementById('ctxMoveCat');
+  sel.innerHTML=cats().filter(c=>c!==cat).map(c=>`<option value="${c}">${icon(c)} ${c}</option>`).join('');
+  document.getElementById('ctxModal').style.display='flex';
+}
+function ctxAddToCart(){ const key=ctxCat+'::'+ctxProd; cart[key]=1; save();render(); closeOverlay('ctxModal'); switchTab('cart'); showToast(`🛒 "${ctxProd}" añadido`); }
+function ctxMove(){
+  const newCat=document.getElementById('ctxMoveCat').value; if(!newCat){showToast('⚠️ Elige una categoría');return;}
+  if(!prods[newCat])prods[newCat]=[];
+  prods[ctxCat]=prods[ctxCat].filter(p=>p!==ctxProd);
+  if(!prods[newCat].includes(ctxProd))prods[newCat].push(ctxProd);
+  const ok=ctxCat+'::'+ctxProd, nk=newCat+'::'+ctxProd;
+  if(cart[ok]){cart[nk]=cart[ok];delete cart[ok];} if(done[ok]){done[nk]=done[ok];delete done[ok];}
+  maybeCleanCat(ctxCat); save();render(); closeOverlay('ctxModal'); showToast(`✅ Movido a ${newCat}`);
+}
+function ctxDelete(){
+  const key=ctxCat+'::'+ctxProd; prods[ctxCat]=prods[ctxCat].filter(p=>p!==ctxProd);
+  delete cart[key];delete done[key]; maybeCleanCat(ctxCat); save();render(); closeOverlay('ctxModal'); showToast(`🗑️ "${ctxProd}" eliminado`);
+}
+function maybeCleanCat(cat){
+  if(prods[cat]&&prods[cat].length===0){ delCatTarget=cat; document.getElementById('delCatMsg').innerHTML=`La categoría <strong>${icon(cat)} ${cat}</strong> ha quedado vacía. ¿Quieres eliminarla?`; document.getElementById('delCatModal').style.display='flex'; }
+}
+function confirmDeleteCat(){
+  if(delCatTarget){ delete prods[delCatTarget];delete icons[delCatTarget]; catOrder=catOrder.filter(c=>c!==delCatTarget); if(filter===delCatTarget)filter='all'; save();render(); showToast(`🗑️ Categoría eliminada`); }
+  closeOverlay('delCatModal'); delCatTarget='';
+}
+
+function openExportModal(){ document.getElementById('exportModal').style.display='flex'; }
+function doExport(){
+  let html=document.documentElement.outerHTML;
+  html=html.replace(/const BASE_PRODUCTS = \{[\s\S]*?\};/,`const BASE_PRODUCTS = ${JSON.stringify(prods)};`);
+  html=html.replace(/const BASE_ICONS\s*=\s*\{[\s\S]*?\};/,`const BASE_ICONS    = ${JSON.stringify(icons)};`);
+  const blob=new Blob([html],{type:'text/html;charset=utf-8'}); const url=URL.createObjectURL(blob);
+  const a=document.createElement('a'); a.href=url; a.download='cesta_compra.html'; a.click(); URL.revokeObjectURL(url);
+  closeOverlay('exportModal'); showToast('✅ Archivo descargado');
+}
+
+function populateCatSelect(id){ document.getElementById(id).innerHTML=cats().map(c=>`<option value="${c}">${icon(c)} ${c}</option>`).join(''); }
+function closeOverlay(id){ document.getElementById(id).style.display='none'; }
+function toggleTheme(){
+  const isDark=document.documentElement.getAttribute('data-theme')==='dark';
+  const nt=isDark?'light':'dark';
+  document.documentElement.setAttribute('data-theme',nt);
+  document.getElementById('themeBtn').textContent=isDark?'🌙':'☀️';
+  document.getElementById('themeColor').content=isDark?'#667eea':'#1a1830';
+  localStorage.setItem('mc_theme',nt);
+}
+(function(){ const t=localStorage.getItem('mc_theme'); if(t==='dark'){ document.documentElement.setAttribute('data-theme','dark'); document.getElementById('themeBtn').textContent='☀️'; document.getElementById('themeColor').content='#1a1830'; } })();
+document.getElementById('searchInput').addEventListener('input',function(){ query=this.value.trim();filter='all';render(); });
+function showToast(msg){ document.querySelectorAll('.toast').forEach(t=>t.remove()); const t=document.createElement('div'); t.className='toast'; t.textContent=msg; document.body.appendChild(t); setTimeout(()=>{ t.style.transition='opacity .3s'; t.style.opacity='0'; setTimeout(()=>t.remove(),300); },2200); }
+
+render();
+
+// ── SERVICE WORKER ────────────────────────────────────────────────────────────
+if('serviceWorker' in navigator){
+  window.addEventListener('load',()=>{
+    navigator.serviceWorker.register('sw.js')
+      .then(()=>console.log('SW registrado'))
+      .catch(e=>console.log('SW error:',e));
+  });
+}
+</script>
+
+</body></html>
