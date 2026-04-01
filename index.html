@@ -465,7 +465,7 @@ body {
 <!-- TABS -->
 <div class="tab-bar">
   <button class="tab active" id="tab-ingredients" onclick="switchTab('ingredients')">🥦 Ingredientes</button>
-  <button class="tab" id="tab-cart" onclick="switchTab('cart')">🛒 Carrito <span class="tab-badge" id="cartBadge" style="display: inline-block;">12</span></button>
+  <button class="tab" id="tab-cart" onclick="switchTab('cart')">🛒 Carrito <span class="tab-badge" id="cartBadge" style="display: inline-block;">18</span></button>
 </div>
 
 <!-- PANELS -->
@@ -473,49 +473,49 @@ body {
   <div class="panel active" id="panel-ingredients">
     <div class="reorder-hint" id="reorderHint">✦ Arrastra las categorías para reordenarlas · Pulsa fuera para salir</div>
     <div class="cat-nav" id="catNav"><button class="cat-pill cat-pill-all " onclick="setFilter('all')">Todos</button><button class="cat-pill c0  has-items" onclick="handleCatPillClick('VERDURAS')" ontouchstart="startCatPress('VERDURAS',this)" ontouchend="endCatPress()" ontouchcancel="endCatPress()" onmousedown="startCatPress('VERDURAS',this)" onmouseup="endCatPress()" onmouseleave="endCatPress()" data-cat="VERDURAS">
-      <span class="dot"></span>🥦 VERDURAS<span class="cat-count">3</span>
-    </button><button class="cat-pill c1  " onclick="handleCatPillClick('FRUTA')" ontouchstart="startCatPress('FRUTA',this)" ontouchend="endCatPress()" ontouchcancel="endCatPress()" onmousedown="startCatPress('FRUTA',this)" onmouseup="endCatPress()" onmouseleave="endCatPress()" data-cat="FRUTA">
-      <span class="dot"></span>🍊 FRUTA<span class="cat-count">0</span>
+      <span class="dot"></span>🥦 VERDURAS<span class="cat-count">1</span>
+    </button><button class="cat-pill c1  has-items" onclick="handleCatPillClick('FRUTA')" ontouchstart="startCatPress('FRUTA',this)" ontouchend="endCatPress()" ontouchcancel="endCatPress()" onmousedown="startCatPress('FRUTA',this)" onmouseup="endCatPress()" onmouseleave="endCatPress()" data-cat="FRUTA">
+      <span class="dot"></span>🍊 FRUTA<span class="cat-count">1</span>
     </button><button class="cat-pill c2 active has-items" onclick="handleCatPillClick('CARNE')" ontouchstart="startCatPress('CARNE',this)" ontouchend="endCatPress()" ontouchcancel="endCatPress()" onmousedown="startCatPress('CARNE',this)" onmouseup="endCatPress()" onmouseleave="endCatPress()" data-cat="CARNE">
-      <span class="dot"></span>🥩 CARNE<span class="cat-count">1</span>
-    </button><button class="cat-pill c3  has-items" onclick="handleCatPillClick('BOTES')" ontouchstart="startCatPress('BOTES',this)" ontouchend="endCatPress()" ontouchcancel="endCatPress()" onmousedown="startCatPress('BOTES',this)" onmouseup="endCatPress()" onmouseleave="endCatPress()" data-cat="BOTES">
-      <span class="dot"></span>🫙 BOTES<span class="cat-count">1</span>
-    </button><button class="cat-pill c4  has-items" onclick="handleCatPillClick('ESPECIAS')" ontouchstart="startCatPress('ESPECIAS',this)" ontouchend="endCatPress()" ontouchcancel="endCatPress()" onmousedown="startCatPress('ESPECIAS',this)" onmouseup="endCatPress()" onmouseleave="endCatPress()" data-cat="ESPECIAS">
-      <span class="dot"></span>🌶️ ESPECIAS<span class="cat-count">1</span>
-    </button><button class="cat-pill c5  " onclick="handleCatPillClick('CONSERVAS')" ontouchstart="startCatPress('CONSERVAS',this)" ontouchend="endCatPress()" ontouchcancel="endCatPress()" onmousedown="startCatPress('CONSERVAS',this)" onmouseup="endCatPress()" onmouseleave="endCatPress()" data-cat="CONSERVAS">
-      <span class="dot"></span>🥫 CONSERVAS<span class="cat-count">0</span>
-    </button><button class="cat-pill c6  has-items" onclick="handleCatPillClick('BEBIDAS')" ontouchstart="startCatPress('BEBIDAS',this)" ontouchend="endCatPress()" ontouchcancel="endCatPress()" onmousedown="startCatPress('BEBIDAS',this)" onmouseup="endCatPress()" onmouseleave="endCatPress()" data-cat="BEBIDAS">
-      <span class="dot"></span>🥤 BEBIDAS<span class="cat-count">1</span>
-    </button><button class="cat-pill c7  has-items" onclick="handleCatPillClick('APERITIVOS')" ontouchstart="startCatPress('APERITIVOS',this)" ontouchend="endCatPress()" ontouchcancel="endCatPress()" onmousedown="startCatPress('APERITIVOS',this)" onmouseup="endCatPress()" onmouseleave="endCatPress()" data-cat="APERITIVOS">
-      <span class="dot"></span>🍿 APERITIVOS<span class="cat-count">1</span>
-    </button><button class="cat-pill c8  " onclick="handleCatPillClick('FIAMBRE')" ontouchstart="startCatPress('FIAMBRE',this)" ontouchend="endCatPress()" ontouchcancel="endCatPress()" onmousedown="startCatPress('FIAMBRE',this)" onmouseup="endCatPress()" onmouseleave="endCatPress()" data-cat="FIAMBRE">
-      <span class="dot"></span>🧀 FIAMBRE<span class="cat-count">0</span>
-    </button><button class="cat-pill c9  " onclick="handleCatPillClick('CONGELADOS')" ontouchstart="startCatPress('CONGELADOS',this)" ontouchend="endCatPress()" ontouchcancel="endCatPress()" onmousedown="startCatPress('CONGELADOS',this)" onmouseup="endCatPress()" onmouseleave="endCatPress()" data-cat="CONGELADOS">
+      <span class="dot"></span>🥩 CARNE<span class="cat-count">5</span>
+    </button><button class="cat-pill c3  " onclick="handleCatPillClick('ESPECIAS')" ontouchstart="startCatPress('ESPECIAS',this)" ontouchend="endCatPress()" ontouchcancel="endCatPress()" onmousedown="startCatPress('ESPECIAS',this)" onmouseup="endCatPress()" onmouseleave="endCatPress()" data-cat="ESPECIAS">
+      <span class="dot"></span>🌶️ ESPECIAS<span class="cat-count">0</span>
+    </button><button class="cat-pill c4  " onclick="handleCatPillClick('BOTES')" ontouchstart="startCatPress('BOTES',this)" ontouchend="endCatPress()" ontouchcancel="endCatPress()" onmousedown="startCatPress('BOTES',this)" onmouseup="endCatPress()" onmouseleave="endCatPress()" data-cat="BOTES">
+      <span class="dot"></span>🫙 BOTES<span class="cat-count">0</span>
+    </button><button class="cat-pill c5  has-items" onclick="handleCatPillClick('CONSERVAS')" ontouchstart="startCatPress('CONSERVAS',this)" ontouchend="endCatPress()" ontouchcancel="endCatPress()" onmousedown="startCatPress('CONSERVAS',this)" onmouseup="endCatPress()" onmouseleave="endCatPress()" data-cat="CONSERVAS">
+      <span class="dot"></span>🥫 CONSERVAS<span class="cat-count">2</span>
+    </button><button class="cat-pill c6  " onclick="handleCatPillClick('BEBIDAS')" ontouchstart="startCatPress('BEBIDAS',this)" ontouchend="endCatPress()" ontouchcancel="endCatPress()" onmousedown="startCatPress('BEBIDAS',this)" onmouseup="endCatPress()" onmouseleave="endCatPress()" data-cat="BEBIDAS">
+      <span class="dot"></span>🥤 BEBIDAS<span class="cat-count">0</span>
+    </button><button class="cat-pill c7  " onclick="handleCatPillClick('APERITIVOS')" ontouchstart="startCatPress('APERITIVOS',this)" ontouchend="endCatPress()" ontouchcancel="endCatPress()" onmousedown="startCatPress('APERITIVOS',this)" onmouseup="endCatPress()" onmouseleave="endCatPress()" data-cat="APERITIVOS">
+      <span class="dot"></span>🍿 APERITIVOS<span class="cat-count">0</span>
+    </button><button class="cat-pill c8  has-items" onclick="handleCatPillClick('FIAMBRE')" ontouchstart="startCatPress('FIAMBRE',this)" ontouchend="endCatPress()" ontouchcancel="endCatPress()" onmousedown="startCatPress('FIAMBRE',this)" onmouseup="endCatPress()" onmouseleave="endCatPress()" data-cat="FIAMBRE">
+      <span class="dot"></span>🧀 FIAMBRE<span class="cat-count">4</span>
+    </button><button class="cat-pill c9  has-items" onclick="handleCatPillClick('LÁCTEOS')" ontouchstart="startCatPress('LÁCTEOS',this)" ontouchend="endCatPress()" ontouchcancel="endCatPress()" onmousedown="startCatPress('LÁCTEOS',this)" onmouseup="endCatPress()" onmouseleave="endCatPress()" data-cat="LÁCTEOS">
+      <span class="dot"></span>🥛 LÁCTEOS<span class="cat-count">2</span>
+    </button><button class="cat-pill c10  " onclick="handleCatPillClick('CONGELADOS')" ontouchstart="startCatPress('CONGELADOS',this)" ontouchend="endCatPress()" ontouchcancel="endCatPress()" onmousedown="startCatPress('CONGELADOS',this)" onmouseup="endCatPress()" onmouseleave="endCatPress()" data-cat="CONGELADOS">
       <span class="dot"></span>🧊 CONGELADOS<span class="cat-count">0</span>
-    </button><button class="cat-pill c10  " onclick="handleCatPillClick('LÁCTEOS')" ontouchstart="startCatPress('LÁCTEOS',this)" ontouchend="endCatPress()" ontouchcancel="endCatPress()" onmousedown="startCatPress('LÁCTEOS',this)" onmouseup="endCatPress()" onmouseleave="endCatPress()" data-cat="LÁCTEOS">
-      <span class="dot"></span>🥛 LÁCTEOS<span class="cat-count">0</span>
     </button><button class="cat-pill c11  has-items" onclick="handleCatPillClick('VARIOS')" ontouchstart="startCatPress('VARIOS',this)" ontouchend="endCatPress()" ontouchcancel="endCatPress()" onmousedown="startCatPress('VARIOS',this)" onmouseup="endCatPress()" onmouseleave="endCatPress()" data-cat="VARIOS">
-      <span class="dot"></span>🛍️ VARIOS<span class="cat-count">1</span>
+      <span class="dot"></span>🛍️ VARIOS<span class="cat-count">2</span>
     </button><button class="cat-pill c12  " onclick="handleCatPillClick('HOGAR')" ontouchstart="startCatPress('HOGAR',this)" ontouchend="endCatPress()" ontouchcancel="endCatPress()" onmousedown="startCatPress('HOGAR',this)" onmouseup="endCatPress()" onmouseleave="endCatPress()" data-cat="HOGAR">
       <span class="dot"></span>🏠 HOGAR<span class="cat-count">0</span>
-    </button><button class="cat-pill c13  has-items" onclick="handleCatPillClick('HIGIENE')" ontouchstart="startCatPress('HIGIENE',this)" ontouchend="endCatPress()" ontouchcancel="endCatPress()" onmousedown="startCatPress('HIGIENE',this)" onmouseup="endCatPress()" onmouseleave="endCatPress()" data-cat="HIGIENE">
-      <span class="dot"></span>🪥 HIGIENE<span class="cat-count">1</span>
+    </button><button class="cat-pill c13  " onclick="handleCatPillClick('HIGIENE')" ontouchstart="startCatPress('HIGIENE',this)" ontouchend="endCatPress()" ontouchcancel="endCatPress()" onmousedown="startCatPress('HIGIENE',this)" onmouseup="endCatPress()" onmouseleave="endCatPress()" data-cat="HIGIENE">
+      <span class="dot"></span>🪥 HIGIENE<span class="cat-count">0</span>
     </button><button class="cat-pill c14  has-items" onclick="handleCatPillClick('PAN')" ontouchstart="startCatPress('PAN',this)" ontouchend="endCatPress()" ontouchcancel="endCatPress()" onmousedown="startCatPress('PAN',this)" onmouseup="endCatPress()" onmouseleave="endCatPress()" data-cat="PAN">
-      <span class="dot"></span>🍞 PAN<span class="cat-count">2</span>
+      <span class="dot"></span>🍞 PAN<span class="cat-count">1</span>
     </button></div>
     <div class="products-scroll" id="productsArea"><div class="cat-block c2">
       <div class="cat-block-title"><span class="title-badge">🥩 CARNE</span></div>
-      <div class="products-grid"><div class="prod-card c2 " onclick="toggleCart('Picada pollo','CARNE')" ontouchstart="startPress('Picada pollo','CARNE',this)" ontouchend="endPress()" ontouchcancel="endPress()" onmousedown="startPress('Picada pollo','CARNE',this)" onmouseup="endPress()" onmouseleave="endPress()">
+      <div class="products-grid"><div class="prod-card c2 selected" onclick="toggleCart('Picada pollo','CARNE')" ontouchstart="startPress('Picada pollo','CARNE',this)" ontouchend="endPress()" ontouchcancel="endPress()" onmousedown="startPress('Picada pollo','CARNE',this)" onmouseup="endPress()" onmouseleave="endPress()">
         <span class="prod-name">Picada pollo</span>
-        <span class="prod-check"></span>
+        <span class="prod-check">✓</span>
         <span class="press-ring"></span>
-      </div><div class="prod-card c2 " onclick="toggleCart('Picada ternera','CARNE')" ontouchstart="startPress('Picada ternera','CARNE',this)" ontouchend="endPress()" ontouchcancel="endPress()" onmousedown="startPress('Picada ternera','CARNE',this)" onmouseup="endPress()" onmouseleave="endPress()">
+      </div><div class="prod-card c2 selected" onclick="toggleCart('Picada ternera','CARNE')" ontouchstart="startPress('Picada ternera','CARNE',this)" ontouchend="endPress()" ontouchcancel="endPress()" onmousedown="startPress('Picada ternera','CARNE',this)" onmouseup="endPress()" onmouseleave="endPress()">
         <span class="prod-name">Picada ternera</span>
-        <span class="prod-check"></span>
+        <span class="prod-check">✓</span>
         <span class="press-ring"></span>
-      </div><div class="prod-card c2 " onclick="toggleCart('Solomillo pavo','CARNE')" ontouchstart="startPress('Solomillo pavo','CARNE',this)" ontouchend="endPress()" ontouchcancel="endPress()" onmousedown="startPress('Solomillo pavo','CARNE',this)" onmouseup="endPress()" onmouseleave="endPress()">
+      </div><div class="prod-card c2 selected" onclick="toggleCart('Solomillo pavo','CARNE')" ontouchstart="startPress('Solomillo pavo','CARNE',this)" ontouchend="endPress()" ontouchcancel="endPress()" onmousedown="startPress('Solomillo pavo','CARNE',this)" onmouseup="endPress()" onmouseleave="endPress()">
         <span class="prod-name">Solomillo pavo</span>
-        <span class="prod-check"></span>
+        <span class="prod-check">✓</span>
         <span class="press-ring"></span>
       </div><div class="prod-card c2 " onclick="toggleCart('Solomillo pollo','CARNE')" ontouchstart="startPress('Solomillo pollo','CARNE',this)" ontouchend="endPress()" ontouchcancel="endPress()" onmousedown="startPress('Solomillo pollo','CARNE',this)" onmouseup="endPress()" onmouseleave="endPress()">
         <span class="prod-name">Solomillo pollo</span>
@@ -537,55 +537,85 @@ body {
         <span class="prod-name">Solomillo cerdo</span>
         <span class="prod-check">✓</span>
         <span class="press-ring"></span>
+      </div><div class="prod-card c2 selected" onclick="toggleCart('Pechuga pollo','CARNE')" ontouchstart="startPress('Pechuga pollo','CARNE',this)" ontouchend="endPress()" ontouchcancel="endPress()" onmousedown="startPress('Pechuga pollo','CARNE',this)" onmouseup="endPress()" onmouseleave="endPress()">
+        <span class="prod-name">Pechuga pollo</span>
+        <span class="prod-check">✓</span>
+        <span class="press-ring"></span>
       </div></div></div></div>
     <div id="goToCartBar" style="display:flex;">
       <button id="goToCartBtn" onclick="switchTab('cart')">
-        🛒 Ir al carrito <span class="go-badge" id="goCartCount">0</span>
+        🛒 Ir al carrito <span class="go-badge" id="goCartCount">18</span>
       </button>
     </div>
   </div>
   <div class="panel" id="panel-cart" style="flex-direction:column;">
     <div class="swipe-clear-hint" id="swipeClearHint" style="display: block;">← Desliza un producto para eliminarlo</div>
-    <div class="cart-scroll" id="cartItems"><div class="cart-group c0"><div class="cart-group-title"><span class="group-badge">🥦 VERDURAS</span></div><div class="swipe-row" data-key="VERDURAS::Lechuga"><div class="swipe-bg">🗑️</div>
-        <div class="cart-item " data-key="VERDURAS::Lechuga">
+    <div class="cart-scroll" id="cartItems"><div class="cart-group c0"><div class="cart-group-title"><span class="group-badge">🥦 VERDURAS</span></div><div class="swipe-row" data-key="VERDURAS::Patatas"><div class="swipe-bg">🗑️</div>
+        <div class="cart-item " data-key="VERDURAS::Patatas">
           <div class="cart-item-bar"></div>
-          <span class="cart-item-name">Lechuga</span>
+          <span class="cart-item-name">Patatas</span>
           <div class="qty-wrap">
-            <button class="qty-btn" onclick="changeQty('VERDURAS::Lechuga',-1)">−</button>
+            <button class="qty-btn" onclick="changeQty('VERDURAS::Patatas',-1)">−</button>
             <span class="qty-num">1</span>
-            <button class="qty-btn" onclick="changeQty('VERDURAS::Lechuga',1)">+</button>
+            <button class="qty-btn" onclick="changeQty('VERDURAS::Patatas',1)">+</button>
           </div>
           <div class="cart-item-actions">
-            <button class="ci-btn strike " onclick="toggleDone('VERDURAS::Lechuga')">✓</button>
-            <button class="ci-btn remove" onclick="removeFromCart('VERDURAS::Lechuga')">×</button>
+            <button class="ci-btn strike " onclick="toggleDone('VERDURAS::Patatas')">✓</button>
+            <button class="ci-btn remove" onclick="removeFromCart('VERDURAS::Patatas')">×</button>
           </div>
-        </div></div><div class="swipe-row" data-key="VERDURAS::Calabacín"><div class="swipe-bg">🗑️</div>
-        <div class="cart-item " data-key="VERDURAS::Calabacín">
+        </div></div></div><div class="cart-group c1"><div class="cart-group-title"><span class="group-badge">🍊 FRUTA</span></div><div class="swipe-row" data-key="FRUTA::Plátano"><div class="swipe-bg">🗑️</div>
+        <div class="cart-item " data-key="FRUTA::Plátano">
           <div class="cart-item-bar"></div>
-          <span class="cart-item-name">Calabacín</span>
+          <span class="cart-item-name">Plátano</span>
           <div class="qty-wrap">
-            <button class="qty-btn" onclick="changeQty('VERDURAS::Calabacín',-1)">−</button>
+            <button class="qty-btn" onclick="changeQty('FRUTA::Plátano',-1)">−</button>
             <span class="qty-num">1</span>
-            <button class="qty-btn" onclick="changeQty('VERDURAS::Calabacín',1)">+</button>
+            <button class="qty-btn" onclick="changeQty('FRUTA::Plátano',1)">+</button>
           </div>
           <div class="cart-item-actions">
-            <button class="ci-btn strike " onclick="toggleDone('VERDURAS::Calabacín')">✓</button>
-            <button class="ci-btn remove" onclick="removeFromCart('VERDURAS::Calabacín')">×</button>
+            <button class="ci-btn strike " onclick="toggleDone('FRUTA::Plátano')">✓</button>
+            <button class="ci-btn remove" onclick="removeFromCart('FRUTA::Plátano')">×</button>
           </div>
-        </div></div><div class="swipe-row" data-key="VERDURAS::Pimiento Tricolor"><div class="swipe-bg">🗑️</div>
-        <div class="cart-item " data-key="VERDURAS::Pimiento Tricolor">
+        </div></div></div><div class="cart-group c2"><div class="cart-group-title"><span class="group-badge">🥩 CARNE</span></div><div class="swipe-row" data-key="CARNE::Picada pollo"><div class="swipe-bg">🗑️</div>
+        <div class="cart-item " data-key="CARNE::Picada pollo">
           <div class="cart-item-bar"></div>
-          <span class="cart-item-name">Pimiento Tricolor</span>
+          <span class="cart-item-name">Picada pollo</span>
           <div class="qty-wrap">
-            <button class="qty-btn" onclick="changeQty('VERDURAS::Pimiento Tricolor',-1)">−</button>
+            <button class="qty-btn" onclick="changeQty('CARNE::Picada pollo',-1)">−</button>
             <span class="qty-num">1</span>
-            <button class="qty-btn" onclick="changeQty('VERDURAS::Pimiento Tricolor',1)">+</button>
+            <button class="qty-btn" onclick="changeQty('CARNE::Picada pollo',1)">+</button>
           </div>
           <div class="cart-item-actions">
-            <button class="ci-btn strike " onclick="toggleDone('VERDURAS::Pimiento Tricolor')">✓</button>
-            <button class="ci-btn remove" onclick="removeFromCart('VERDURAS::Pimiento Tricolor')">×</button>
+            <button class="ci-btn strike " onclick="toggleDone('CARNE::Picada pollo')">✓</button>
+            <button class="ci-btn remove" onclick="removeFromCart('CARNE::Picada pollo')">×</button>
           </div>
-        </div></div></div><div class="cart-group c2"><div class="cart-group-title"><span class="group-badge">🥩 CARNE</span></div><div class="swipe-row" data-key="CARNE::Solomillo cerdo"><div class="swipe-bg">🗑️</div>
+        </div></div><div class="swipe-row" data-key="CARNE::Picada ternera"><div class="swipe-bg">🗑️</div>
+        <div class="cart-item " data-key="CARNE::Picada ternera">
+          <div class="cart-item-bar"></div>
+          <span class="cart-item-name">Picada ternera</span>
+          <div class="qty-wrap">
+            <button class="qty-btn" onclick="changeQty('CARNE::Picada ternera',-1)">−</button>
+            <span class="qty-num">1</span>
+            <button class="qty-btn" onclick="changeQty('CARNE::Picada ternera',1)">+</button>
+          </div>
+          <div class="cart-item-actions">
+            <button class="ci-btn strike " onclick="toggleDone('CARNE::Picada ternera')">✓</button>
+            <button class="ci-btn remove" onclick="removeFromCart('CARNE::Picada ternera')">×</button>
+          </div>
+        </div></div><div class="swipe-row" data-key="CARNE::Solomillo pavo"><div class="swipe-bg">🗑️</div>
+        <div class="cart-item " data-key="CARNE::Solomillo pavo">
+          <div class="cart-item-bar"></div>
+          <span class="cart-item-name">Solomillo pavo</span>
+          <div class="qty-wrap">
+            <button class="qty-btn" onclick="changeQty('CARNE::Solomillo pavo',-1)">−</button>
+            <span class="qty-num">1</span>
+            <button class="qty-btn" onclick="changeQty('CARNE::Solomillo pavo',1)">+</button>
+          </div>
+          <div class="cart-item-actions">
+            <button class="ci-btn strike " onclick="toggleDone('CARNE::Solomillo pavo')">✓</button>
+            <button class="ci-btn remove" onclick="removeFromCart('CARNE::Solomillo pavo')">×</button>
+          </div>
+        </div></div><div class="swipe-row" data-key="CARNE::Solomillo cerdo"><div class="swipe-bg">🗑️</div>
         <div class="cart-item " data-key="CARNE::Solomillo cerdo">
           <div class="cart-item-bar"></div>
           <span class="cart-item-name">Solomillo cerdo</span>
@@ -598,98 +628,150 @@ body {
             <button class="ci-btn strike " onclick="toggleDone('CARNE::Solomillo cerdo')">✓</button>
             <button class="ci-btn remove" onclick="removeFromCart('CARNE::Solomillo cerdo')">×</button>
           </div>
-        </div></div></div><div class="cart-group c3"><div class="cart-group-title"><span class="group-badge">🫙 BOTES</span></div><div class="swipe-row" data-key="BOTES::Guindillas"><div class="swipe-bg">🗑️</div>
-        <div class="cart-item " data-key="BOTES::Guindillas">
+        </div></div><div class="swipe-row" data-key="CARNE::Pechuga pollo"><div class="swipe-bg">🗑️</div>
+        <div class="cart-item " data-key="CARNE::Pechuga pollo">
           <div class="cart-item-bar"></div>
-          <span class="cart-item-name">Guindillas</span>
+          <span class="cart-item-name">Pechuga pollo</span>
           <div class="qty-wrap">
-            <button class="qty-btn" onclick="changeQty('BOTES::Guindillas',-1)">−</button>
+            <button class="qty-btn" onclick="changeQty('CARNE::Pechuga pollo',-1)">−</button>
             <span class="qty-num">1</span>
-            <button class="qty-btn" onclick="changeQty('BOTES::Guindillas',1)">+</button>
+            <button class="qty-btn" onclick="changeQty('CARNE::Pechuga pollo',1)">+</button>
           </div>
           <div class="cart-item-actions">
-            <button class="ci-btn strike " onclick="toggleDone('BOTES::Guindillas')">✓</button>
-            <button class="ci-btn remove" onclick="removeFromCart('BOTES::Guindillas')">×</button>
+            <button class="ci-btn strike " onclick="toggleDone('CARNE::Pechuga pollo')">✓</button>
+            <button class="ci-btn remove" onclick="removeFromCart('CARNE::Pechuga pollo')">×</button>
           </div>
-        </div></div></div><div class="cart-group c4"><div class="cart-group-title"><span class="group-badge">🌶️ ESPECIAS</span></div><div class="swipe-row" data-key="ESPECIAS::Es. Cebolla"><div class="swipe-bg">🗑️</div>
-        <div class="cart-item " data-key="ESPECIAS::Es. Cebolla">
+        </div></div></div><div class="cart-group c5"><div class="cart-group-title"><span class="group-badge">🥫 CONSERVAS</span></div><div class="swipe-row" data-key="CONSERVAS::Lata Atún"><div class="swipe-bg">🗑️</div>
+        <div class="cart-item " data-key="CONSERVAS::Lata Atún">
           <div class="cart-item-bar"></div>
-          <span class="cart-item-name">Es. Cebolla</span>
+          <span class="cart-item-name">Lata Atún</span>
           <div class="qty-wrap">
-            <button class="qty-btn" onclick="changeQty('ESPECIAS::Es. Cebolla',-1)">−</button>
+            <button class="qty-btn" onclick="changeQty('CONSERVAS::Lata Atún',-1)">−</button>
             <span class="qty-num">1</span>
-            <button class="qty-btn" onclick="changeQty('ESPECIAS::Es. Cebolla',1)">+</button>
+            <button class="qty-btn" onclick="changeQty('CONSERVAS::Lata Atún',1)">+</button>
           </div>
           <div class="cart-item-actions">
-            <button class="ci-btn strike " onclick="toggleDone('ESPECIAS::Es. Cebolla')">✓</button>
-            <button class="ci-btn remove" onclick="removeFromCart('ESPECIAS::Es. Cebolla')">×</button>
+            <button class="ci-btn strike " onclick="toggleDone('CONSERVAS::Lata Atún')">✓</button>
+            <button class="ci-btn remove" onclick="removeFromCart('CONSERVAS::Lata Atún')">×</button>
           </div>
-        </div></div></div><div class="cart-group c6"><div class="cart-group-title"><span class="group-badge">🥤 BEBIDAS</span></div><div class="swipe-row" data-key="BEBIDAS::Cervezas"><div class="swipe-bg">🗑️</div>
-        <div class="cart-item " data-key="BEBIDAS::Cervezas">
+        </div></div><div class="swipe-row" data-key="CONSERVAS::Lata Tomate"><div class="swipe-bg">🗑️</div>
+        <div class="cart-item " data-key="CONSERVAS::Lata Tomate">
           <div class="cart-item-bar"></div>
-          <span class="cart-item-name">Cervezas</span>
+          <span class="cart-item-name">Lata Tomate</span>
           <div class="qty-wrap">
-            <button class="qty-btn" onclick="changeQty('BEBIDAS::Cervezas',-1)">−</button>
+            <button class="qty-btn" onclick="changeQty('CONSERVAS::Lata Tomate',-1)">−</button>
             <span class="qty-num">1</span>
-            <button class="qty-btn" onclick="changeQty('BEBIDAS::Cervezas',1)">+</button>
+            <button class="qty-btn" onclick="changeQty('CONSERVAS::Lata Tomate',1)">+</button>
           </div>
           <div class="cart-item-actions">
-            <button class="ci-btn strike " onclick="toggleDone('BEBIDAS::Cervezas')">✓</button>
-            <button class="ci-btn remove" onclick="removeFromCart('BEBIDAS::Cervezas')">×</button>
+            <button class="ci-btn strike " onclick="toggleDone('CONSERVAS::Lata Tomate')">✓</button>
+            <button class="ci-btn remove" onclick="removeFromCart('CONSERVAS::Lata Tomate')">×</button>
           </div>
-        </div></div></div><div class="cart-group c7"><div class="cart-group-title"><span class="group-badge">🍿 APERITIVOS</span></div><div class="swipe-row" data-key="APERITIVOS::Bolsa Patatas Fritas"><div class="swipe-bg">🗑️</div>
-        <div class="cart-item " data-key="APERITIVOS::Bolsa Patatas Fritas">
+        </div></div></div><div class="cart-group c8"><div class="cart-group-title"><span class="group-badge">🧀 FIAMBRE</span></div><div class="swipe-row" data-key="FIAMBRE::Queso Rulo Cabra"><div class="swipe-bg">🗑️</div>
+        <div class="cart-item " data-key="FIAMBRE::Queso Rulo Cabra">
           <div class="cart-item-bar"></div>
-          <span class="cart-item-name">Bolsa Patatas Fritas</span>
+          <span class="cart-item-name">Queso Rulo Cabra</span>
           <div class="qty-wrap">
-            <button class="qty-btn" onclick="changeQty('APERITIVOS::Bolsa Patatas Fritas',-1)">−</button>
+            <button class="qty-btn" onclick="changeQty('FIAMBRE::Queso Rulo Cabra',-1)">−</button>
             <span class="qty-num">1</span>
-            <button class="qty-btn" onclick="changeQty('APERITIVOS::Bolsa Patatas Fritas',1)">+</button>
+            <button class="qty-btn" onclick="changeQty('FIAMBRE::Queso Rulo Cabra',1)">+</button>
           </div>
           <div class="cart-item-actions">
-            <button class="ci-btn strike " onclick="toggleDone('APERITIVOS::Bolsa Patatas Fritas')">✓</button>
-            <button class="ci-btn remove" onclick="removeFromCart('APERITIVOS::Bolsa Patatas Fritas')">×</button>
+            <button class="ci-btn strike " onclick="toggleDone('FIAMBRE::Queso Rulo Cabra')">✓</button>
+            <button class="ci-btn remove" onclick="removeFromCart('FIAMBRE::Queso Rulo Cabra')">×</button>
           </div>
-        </div></div></div><div class="cart-group c11"><div class="cart-group-title"><span class="group-badge">🛍️ VARIOS</span></div><div class="swipe-row" data-key="VARIOS::Picante"><div class="swipe-bg">🗑️</div>
-        <div class="cart-item " data-key="VARIOS::Picante">
+        </div></div><div class="swipe-row" data-key="FIAMBRE::Cuña holandés"><div class="swipe-bg">🗑️</div>
+        <div class="cart-item " data-key="FIAMBRE::Cuña holandés">
           <div class="cart-item-bar"></div>
-          <span class="cart-item-name">Picante</span>
+          <span class="cart-item-name">Cuña holandés</span>
           <div class="qty-wrap">
-            <button class="qty-btn" onclick="changeQty('VARIOS::Picante',-1)">−</button>
+            <button class="qty-btn" onclick="changeQty('FIAMBRE::Cuña holandés',-1)">−</button>
             <span class="qty-num">1</span>
-            <button class="qty-btn" onclick="changeQty('VARIOS::Picante',1)">+</button>
+            <button class="qty-btn" onclick="changeQty('FIAMBRE::Cuña holandés',1)">+</button>
           </div>
           <div class="cart-item-actions">
-            <button class="ci-btn strike " onclick="toggleDone('VARIOS::Picante')">✓</button>
-            <button class="ci-btn remove" onclick="removeFromCart('VARIOS::Picante')">×</button>
+            <button class="ci-btn strike " onclick="toggleDone('FIAMBRE::Cuña holandés')">✓</button>
+            <button class="ci-btn remove" onclick="removeFromCart('FIAMBRE::Cuña holandés')">×</button>
           </div>
-        </div></div></div><div class="cart-group c13"><div class="cart-group-title"><span class="group-badge">🪥 HIGIENE</span></div><div class="swipe-row" data-key="HIGIENE::Gel Afeitado"><div class="swipe-bg">🗑️</div>
-        <div class="cart-item " data-key="HIGIENE::Gel Afeitado">
+        </div></div><div class="swipe-row" data-key="FIAMBRE::Queso azul"><div class="swipe-bg">🗑️</div>
+        <div class="cart-item " data-key="FIAMBRE::Queso azul">
           <div class="cart-item-bar"></div>
-          <span class="cart-item-name">Gel Afeitado</span>
+          <span class="cart-item-name">Queso azul</span>
           <div class="qty-wrap">
-            <button class="qty-btn" onclick="changeQty('HIGIENE::Gel Afeitado',-1)">−</button>
+            <button class="qty-btn" onclick="changeQty('FIAMBRE::Queso azul',-1)">−</button>
             <span class="qty-num">1</span>
-            <button class="qty-btn" onclick="changeQty('HIGIENE::Gel Afeitado',1)">+</button>
+            <button class="qty-btn" onclick="changeQty('FIAMBRE::Queso azul',1)">+</button>
           </div>
           <div class="cart-item-actions">
-            <button class="ci-btn strike " onclick="toggleDone('HIGIENE::Gel Afeitado')">✓</button>
-            <button class="ci-btn remove" onclick="removeFromCart('HIGIENE::Gel Afeitado')">×</button>
+            <button class="ci-btn strike " onclick="toggleDone('FIAMBRE::Queso azul')">✓</button>
+            <button class="ci-btn remove" onclick="removeFromCart('FIAMBRE::Queso azul')">×</button>
           </div>
-        </div></div></div><div class="cart-group c14"><div class="cart-group-title"><span class="group-badge">🍞 PAN</span></div><div class="swipe-row" data-key="PAN::Pan 35% Avena"><div class="swipe-bg">🗑️</div>
-        <div class="cart-item " data-key="PAN::Pan 35% Avena">
+        </div></div><div class="swipe-row" data-key="FIAMBRE::Queso Cottage"><div class="swipe-bg">🗑️</div>
+        <div class="cart-item " data-key="FIAMBRE::Queso Cottage">
           <div class="cart-item-bar"></div>
-          <span class="cart-item-name">Pan 35% Avena</span>
+          <span class="cart-item-name">Queso Cottage</span>
           <div class="qty-wrap">
-            <button class="qty-btn" onclick="changeQty('PAN::Pan 35% Avena',-1)">−</button>
+            <button class="qty-btn" onclick="changeQty('FIAMBRE::Queso Cottage',-1)">−</button>
             <span class="qty-num">1</span>
-            <button class="qty-btn" onclick="changeQty('PAN::Pan 35% Avena',1)">+</button>
+            <button class="qty-btn" onclick="changeQty('FIAMBRE::Queso Cottage',1)">+</button>
           </div>
           <div class="cart-item-actions">
-            <button class="ci-btn strike " onclick="toggleDone('PAN::Pan 35% Avena')">✓</button>
-            <button class="ci-btn remove" onclick="removeFromCart('PAN::Pan 35% Avena')">×</button>
+            <button class="ci-btn strike " onclick="toggleDone('FIAMBRE::Queso Cottage')">✓</button>
+            <button class="ci-btn remove" onclick="removeFromCart('FIAMBRE::Queso Cottage')">×</button>
           </div>
-        </div></div><div class="swipe-row" data-key="PAN::Pieza integral"><div class="swipe-bg">🗑️</div>
+        </div></div></div><div class="cart-group c9"><div class="cart-group-title"><span class="group-badge">🥛 LÁCTEOS</span></div><div class="swipe-row" data-key="LÁCTEOS::Yogur griego ligero"><div class="swipe-bg">🗑️</div>
+        <div class="cart-item " data-key="LÁCTEOS::Yogur griego ligero">
+          <div class="cart-item-bar"></div>
+          <span class="cart-item-name">Yogur griego ligero</span>
+          <div class="qty-wrap">
+            <button class="qty-btn" onclick="changeQty('LÁCTEOS::Yogur griego ligero',-1)">−</button>
+            <span class="qty-num">1</span>
+            <button class="qty-btn" onclick="changeQty('LÁCTEOS::Yogur griego ligero',1)">+</button>
+          </div>
+          <div class="cart-item-actions">
+            <button class="ci-btn strike " onclick="toggleDone('LÁCTEOS::Yogur griego ligero')">✓</button>
+            <button class="ci-btn remove" onclick="removeFromCart('LÁCTEOS::Yogur griego ligero')">×</button>
+          </div>
+        </div></div><div class="swipe-row" data-key="LÁCTEOS::Queso fresco batido"><div class="swipe-bg">🗑️</div>
+        <div class="cart-item " data-key="LÁCTEOS::Queso fresco batido">
+          <div class="cart-item-bar"></div>
+          <span class="cart-item-name">Queso fresco batido</span>
+          <div class="qty-wrap">
+            <button class="qty-btn" onclick="changeQty('LÁCTEOS::Queso fresco batido',-1)">−</button>
+            <span class="qty-num">1</span>
+            <button class="qty-btn" onclick="changeQty('LÁCTEOS::Queso fresco batido',1)">+</button>
+          </div>
+          <div class="cart-item-actions">
+            <button class="ci-btn strike " onclick="toggleDone('LÁCTEOS::Queso fresco batido')">✓</button>
+            <button class="ci-btn remove" onclick="removeFromCart('LÁCTEOS::Queso fresco batido')">×</button>
+          </div>
+        </div></div></div><div class="cart-group c11"><div class="cart-group-title"><span class="group-badge">🛍️ VARIOS</span></div><div class="swipe-row" data-key="VARIOS::Huevos"><div class="swipe-bg">🗑️</div>
+        <div class="cart-item " data-key="VARIOS::Huevos">
+          <div class="cart-item-bar"></div>
+          <span class="cart-item-name">Huevos</span>
+          <div class="qty-wrap">
+            <button class="qty-btn" onclick="changeQty('VARIOS::Huevos',-1)">−</button>
+            <span class="qty-num">1</span>
+            <button class="qty-btn" onclick="changeQty('VARIOS::Huevos',1)">+</button>
+          </div>
+          <div class="cart-item-actions">
+            <button class="ci-btn strike " onclick="toggleDone('VARIOS::Huevos')">✓</button>
+            <button class="ci-btn remove" onclick="removeFromCart('VARIOS::Huevos')">×</button>
+          </div>
+        </div></div><div class="swipe-row" data-key="VARIOS::Huevos cocidos"><div class="swipe-bg">🗑️</div>
+        <div class="cart-item " data-key="VARIOS::Huevos cocidos">
+          <div class="cart-item-bar"></div>
+          <span class="cart-item-name">Huevos cocidos</span>
+          <div class="qty-wrap">
+            <button class="qty-btn" onclick="changeQty('VARIOS::Huevos cocidos',-1)">−</button>
+            <span class="qty-num">1</span>
+            <button class="qty-btn" onclick="changeQty('VARIOS::Huevos cocidos',1)">+</button>
+          </div>
+          <div class="cart-item-actions">
+            <button class="ci-btn strike " onclick="toggleDone('VARIOS::Huevos cocidos')">✓</button>
+            <button class="ci-btn remove" onclick="removeFromCart('VARIOS::Huevos cocidos')">×</button>
+          </div>
+        </div></div></div><div class="cart-group c14"><div class="cart-group-title"><span class="group-badge">🍞 PAN</span></div><div class="swipe-row" data-key="PAN::Pieza integral"><div class="swipe-bg">🗑️</div>
         <div class="cart-item " data-key="PAN::Pieza integral">
           <div class="cart-item-bar"></div>
           <span class="cart-item-name">Pieza integral</span>
@@ -705,7 +787,7 @@ body {
         </div></div></div></div>
     <div class="cart-footer">
       <div class="cart-summary">
-        <div class="cart-summary-nums"><span id="cartDone">0</span>/<span id="cartTotalNum">12</span></div>
+        <div class="cart-summary-nums"><span id="cartDone">0</span>/<span id="cartTotalNum">18</span></div>
         <div class="cart-summary-label">productos recogidos</div>
       </div>
       <div class="cart-actions">
@@ -759,7 +841,7 @@ body {
 </div>
 
 <!-- EXPORT MODAL -->
-<div class="overlay" id="exportModal" style="display:none" onclick="closeOverlay('exportModal')">
+<div class="overlay" id="exportModal" style="display: flex;" onclick="closeOverlay('exportModal')">
   <div class="modal" onclick="event.stopPropagation()">
     <div class="modal-handle"></div>
     <h3>💾 Exportar lista</h3>
@@ -785,7 +867,7 @@ body {
 </div>
 
 <script>
-const BASE_PRODUCTS = {"VERDURAS":["Lechuga","Canónigos","Rúcula","Tomates","Cebollas","Pepino","Calabacín","Brócoli","Pimiento Rojo","Pimiento Verde","Pimiento Tricolor","Patatas","Guacamole","Ajo","Espinacas","Aguacate","Boniato","Pimientos de Padrón","Limones"],"FRUTA":["Plátano","Manzana","Pera","Naranjas","Mandarinas","Mango"],"CARNE":["Picada pollo","Picada ternera","Solomillo pavo","Solomillo pollo","Hamburguesas","Filetes pavo","Soja texturizada","Solomillo cerdo"],"BOTES":["Garbanzos","Alubias","Lentejas","Guindillas","Patatas cocidas"],"ESPECIAS":["Fajitas","Es. Ajo","Es. Cebolla","Pimentón Dulce","Pimentón Picante","Hiervas Provinzales","Orégano","Perejil","Pimienta tricolor","Pimienta negra"],"CONSERVAS":["Lata Tomate","Lata Atún","Maíz","Piña en lata"],"BEBIDAS":["Leche semidesnatada","Bebida Soja","Salmorejo","Gazpacho","Cervezas","Sidra","Coca Cola Zero","Coca Cola Zero S/C"],"APERITIVOS":["Bolsa Mix","Bolsa Patatas Fritas","Bolsa Nachos","Aceitunas","Tortillas para fajitas","Aceitunas vermú"],"FIAMBRE":["Havarty Light","Queso Rulo Cabra","Cuña Tostado","Cuña Tierno","Cuña holandés","Jamón Serrano","Tacos de jamón","Queso azul","Queso Cottage","Queso rayado","Queso en polvo"],"CONGELADOS":["Ajo congelado","Cebolla congelada","Pimientos congelados","Migas coliflor","Espinacas congeladas","Helados","Arándanos","Frutas tropicales"],"LÁCTEOS":["Yogur griego ligero","Yogur soja","Queso fresco batido","Yogur griego sabores"],"VARIOS":["Semillas Chía","Anacardos","Nueces","Avena","Huevos","Cacao Puro","Chocolate","Huevos cocidos","Aceite virgen extra","Aceite 0,4","Aceite cocinar","Vinagre","Harina","Sal","Edulcorante","Arroz integral","Pasta integral","Mostaza","Picante","Miel","Té frío","Laurel","Salsa BBQ"],"HOGAR":["Papel higiénico","Servilletas","Papel de cocina","Velas perfumadas","Detergente","Suavizante","Papel Albal","Papel Horno","Papel Film","Fairy","Toallitas WC","Ambientador WC","Lejía","Quitagrasas","Amoníaco perfumado","Limpiasuelos lejía","Limpiador PH","WC inodoro","Limpiador Baño","Detergente antibacterias","Bolsas basura","Estropajos","Fregona","Tissues"],"HIGIENE":["Enjuague Bucal","Cepillos de dientes","Pasta de dientes","Gel Afeitado","Crema cuerpo"],"PAN":["Pieza integral","Picos de pan","Pan 35% Avena","Pan molde integral","Pan Rayado"]};
+const BASE_PRODUCTS = {"VERDURAS":["Lechuga","Canónigos","Rúcula","Tomates","Cebollas","Pepino","Calabacín","Brócoli","Pimiento Rojo","Pimiento Verde","Pimiento Tricolor","Patatas","Guacamole","Ajo","Espinacas","Aguacate","Boniato","Pimientos de Padrón","Limones","Zanahorias"],"FRUTA":["Plátano","Manzana","Pera","Naranjas","Mandarinas","Mango"],"CARNE":["Picada pollo","Picada ternera","Solomillo pavo","Solomillo pollo","Hamburguesas","Filetes pavo","Soja texturizada","Solomillo cerdo","Pechuga pollo"],"BOTES":["Garbanzos","Alubias","Lentejas","Guindillas","Patatas cocidas"],"ESPECIAS":["Fajitas","Es. Ajo","Es. Cebolla","Pimentón Dulce","Pimentón Picante","Hiervas Provinzales","Orégano","Perejil","Pimienta tricolor","Pimienta negra"],"CONSERVAS":["Lata Tomate","Lata Atún","Maíz","Piña en lata"],"BEBIDAS":["Leche semidesnatada","Bebida Soja","Salmorejo","Gazpacho","Cervezas","Sidra","Coca Cola Zero","Coca Cola Zero S/C"],"APERITIVOS":["Bolsa Mix","Bolsa Patatas Fritas","Bolsa Nachos","Aceitunas","Tortillas para fajitas","Aceitunas vermú"],"FIAMBRE":["Havarty Light","Queso Rulo Cabra","Cuña Tostado","Cuña Tierno","Cuña holandés","Jamón Serrano","Tacos de jamón","Queso azul","Queso Cottage","Queso rayado","Queso en polvo"],"CONGELADOS":["Ajo congelado","Cebolla congelada","Pimientos congelados","Migas coliflor","Espinacas congeladas","Helados","Arándanos","Frutas tropicales"],"LÁCTEOS":["Yogur griego ligero","Yogur soja","Queso fresco batido","Yogur griego sabores"],"VARIOS":["Semillas Chía","Anacardos","Nueces","Avena","Huevos","Cacao Puro","Chocolate","Huevos cocidos","Aceite virgen extra","Aceite 0,4","Aceite cocinar","Vinagre","Harina","Sal","Edulcorante","Arroz integral","Pasta integral","Mostaza","Picante","Miel","Té frío","Laurel","Salsa BBQ"],"HOGAR":["Papel higiénico","Servilletas","Papel de cocina","Velas perfumadas","Detergente","Suavizante","Papel Albal","Papel Horno","Papel Film","Fairy","Toallitas WC","Ambientador WC","Lejía","Quitagrasas","Amoníaco perfumado","Limpiasuelos lejía","Limpiador PH","WC inodoro","Limpiador Baño","Detergente antibacterias","Bolsas basura","Estropajos","Fregona","Tissues"],"HIGIENE":["Enjuague Bucal","Cepillos de dientes","Pasta de dientes","Gel Afeitado","Crema cuerpo"],"PAN":["Pieza integral","Picos de pan","Pan 35% Avena","Pan molde integral","Pan Rayado"]};
 const BASE_ICONS    = {"VERDURAS":"🥦","FRUTA":"🍊","CARNE":"🥩","BOTES":"🫙","ESPECIAS":"🌶️","CONSERVAS":"🥫","BEBIDAS":"🥤","APERITIVOS":"🍿","FIAMBRE":"🧀","CONGELADOS":"🧊","LÁCTEOS":"🥛","VARIOS":"🛍️","HOGAR":"🏠","HIGIENE":"🪥","PAN":"🍞"};
 
 let prods    = JSON.parse(localStorage.getItem('mc_prods')||'null') || JSON.parse(JSON.stringify(BASE_PRODUCTS));
