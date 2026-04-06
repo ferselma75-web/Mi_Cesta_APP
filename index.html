@@ -1111,6 +1111,12 @@ function showToast(msg){ document.querySelectorAll('.toast').forEach(t=>t.remove
 
 render();
 
+// ── CERRAR MODALES AL ARRANCAR (por si quedaron abiertos al exportar) ─────────
+['addModal','ctxModal','exportModal','delCatModal'].forEach(id=>{
+  const el=document.getElementById(id);
+  if(el) el.style.display='none';
+});
+
 // ── SERVICE WORKER ────────────────────────────────────────────────────────────
 if('serviceWorker' in navigator){
   window.addEventListener('load',()=>{
