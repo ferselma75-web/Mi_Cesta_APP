@@ -465,43 +465,43 @@ body {
 <!-- TABS -->
 <div class="tab-bar">
   <button class="tab active" id="tab-ingredients" onclick="switchTab('ingredients')">🥦 Ingredientes</button>
-  <button class="tab" id="tab-cart" onclick="switchTab('cart')">🛒 Carrito <span class="tab-badge" id="cartBadge" style="display: inline-block;">13</span></button>
+  <button class="tab" id="tab-cart" onclick="switchTab('cart')">🛒 Carrito <span class="tab-badge" id="cartBadge" style="display: none;">0</span></button>
 </div>
 
 <!-- PANELS -->
 <div class="panels">
   <div class="panel active" id="panel-ingredients">
     <div class="reorder-hint" id="reorderHint">✦ Arrastra las categorías para reordenarlas · Pulsa fuera para salir</div>
-    <div class="cat-nav" id="catNav"><button class="cat-pill cat-pill-all active" onclick="setFilter('all')">Todos</button><button class="cat-pill c0  has-items" onclick="handleCatPillClick('VERDURAS')" ontouchstart="startCatPress('VERDURAS',this)" ontouchend="endCatPress()" ontouchcancel="endCatPress()" onmousedown="startCatPress('VERDURAS',this)" onmouseup="endCatPress()" onmouseleave="endCatPress()" data-cat="VERDURAS">
-      <span class="dot"></span>🥦 VERDURAS<span class="cat-count">2</span>
+    <div class="cat-nav" id="catNav"><button class="cat-pill cat-pill-all active" onclick="setFilter('all')">Todos</button><button class="cat-pill c0  " onclick="handleCatPillClick('VERDURAS')" ontouchstart="startCatPress('VERDURAS',this)" ontouchend="endCatPress()" ontouchcancel="endCatPress()" onmousedown="startCatPress('VERDURAS',this)" onmouseup="endCatPress()" onmouseleave="endCatPress()" data-cat="VERDURAS">
+      <span class="dot"></span>🥦 VERDURAS<span class="cat-count">0</span>
     </button><button class="cat-pill c1  " onclick="handleCatPillClick('FRUTA')" ontouchstart="startCatPress('FRUTA',this)" ontouchend="endCatPress()" ontouchcancel="endCatPress()" onmousedown="startCatPress('FRUTA',this)" onmouseup="endCatPress()" onmouseleave="endCatPress()" data-cat="FRUTA">
       <span class="dot"></span>🍊 FRUTA<span class="cat-count">0</span>
-    </button><button class="cat-pill c2  has-items" onclick="handleCatPillClick('CARNE')" ontouchstart="startCatPress('CARNE',this)" ontouchend="endCatPress()" ontouchcancel="endCatPress()" onmousedown="startCatPress('CARNE',this)" onmouseup="endCatPress()" onmouseleave="endCatPress()" data-cat="CARNE">
-      <span class="dot"></span>🥩 CARNE<span class="cat-count">1</span>
-    </button><button class="cat-pill c3  has-items" onclick="handleCatPillClick('ESPECIAS')" ontouchstart="startCatPress('ESPECIAS',this)" ontouchend="endCatPress()" ontouchcancel="endCatPress()" onmousedown="startCatPress('ESPECIAS',this)" onmouseup="endCatPress()" onmouseleave="endCatPress()" data-cat="ESPECIAS">
-      <span class="dot"></span>🌶️ ESPECIAS<span class="cat-count">1</span>
-    </button><button class="cat-pill c4  " onclick="handleCatPillClick('BOTES')" ontouchstart="startCatPress('BOTES',this)" ontouchend="endCatPress()" ontouchcancel="endCatPress()" onmousedown="startCatPress('BOTES',this)" onmouseup="endCatPress()" onmouseleave="endCatPress()" data-cat="BOTES">
+    </button><button class="cat-pill c2  " onclick="handleCatPillClick('CARNE')" ontouchstart="startCatPress('CARNE',this)" ontouchend="endCatPress()" ontouchcancel="endCatPress()" onmousedown="startCatPress('CARNE',this)" onmouseup="endCatPress()" onmouseleave="endCatPress()" data-cat="CARNE">
+      <span class="dot"></span>🥩 CARNE<span class="cat-count">0</span>
+    </button><button class="cat-pill c3  " onclick="handleCatPillClick('BOTES')" ontouchstart="startCatPress('BOTES',this)" ontouchend="endCatPress()" ontouchcancel="endCatPress()" onmousedown="startCatPress('BOTES',this)" onmouseup="endCatPress()" onmouseleave="endCatPress()" data-cat="BOTES">
       <span class="dot"></span>🫙 BOTES<span class="cat-count">0</span>
+    </button><button class="cat-pill c4  " onclick="handleCatPillClick('ESPECIAS')" ontouchstart="startCatPress('ESPECIAS',this)" ontouchend="endCatPress()" ontouchcancel="endCatPress()" onmousedown="startCatPress('ESPECIAS',this)" onmouseup="endCatPress()" onmouseleave="endCatPress()" data-cat="ESPECIAS">
+      <span class="dot"></span>🌶️ ESPECIAS<span class="cat-count">0</span>
     </button><button class="cat-pill c5  " onclick="handleCatPillClick('BEBIDAS')" ontouchstart="startCatPress('BEBIDAS',this)" ontouchend="endCatPress()" ontouchcancel="endCatPress()" onmousedown="startCatPress('BEBIDAS',this)" onmouseup="endCatPress()" onmouseleave="endCatPress()" data-cat="BEBIDAS">
       <span class="dot"></span>🥤 BEBIDAS<span class="cat-count">0</span>
     </button><button class="cat-pill c6  " onclick="handleCatPillClick('CONSERVAS')" ontouchstart="startCatPress('CONSERVAS',this)" ontouchend="endCatPress()" ontouchcancel="endCatPress()" onmousedown="startCatPress('CONSERVAS',this)" onmouseup="endCatPress()" onmouseleave="endCatPress()" data-cat="CONSERVAS">
       <span class="dot"></span>🥫 CONSERVAS<span class="cat-count">0</span>
-    </button><button class="cat-pill c7  " onclick="handleCatPillClick('FIAMBRE')" ontouchstart="startCatPress('FIAMBRE',this)" ontouchend="endCatPress()" ontouchcancel="endCatPress()" onmousedown="startCatPress('FIAMBRE',this)" onmouseup="endCatPress()" onmouseleave="endCatPress()" data-cat="FIAMBRE">
+    </button><button class="cat-pill c7  " onclick="handleCatPillClick('APERITIVOS')" ontouchstart="startCatPress('APERITIVOS',this)" ontouchend="endCatPress()" ontouchcancel="endCatPress()" onmousedown="startCatPress('APERITIVOS',this)" onmouseup="endCatPress()" onmouseleave="endCatPress()" data-cat="APERITIVOS">
+      <span class="dot"></span>🍿 APERITIVOS<span class="cat-count">0</span>
+    </button><button class="cat-pill c8  " onclick="handleCatPillClick('FIAMBRE')" ontouchstart="startCatPress('FIAMBRE',this)" ontouchend="endCatPress()" ontouchcancel="endCatPress()" onmousedown="startCatPress('FIAMBRE',this)" onmouseup="endCatPress()" onmouseleave="endCatPress()" data-cat="FIAMBRE">
       <span class="dot"></span>🧀 FIAMBRE<span class="cat-count">0</span>
-    </button><button class="cat-pill c8  has-items" onclick="handleCatPillClick('APERITIVOS')" ontouchstart="startCatPress('APERITIVOS',this)" ontouchend="endCatPress()" ontouchcancel="endCatPress()" onmousedown="startCatPress('APERITIVOS',this)" onmouseup="endCatPress()" onmouseleave="endCatPress()" data-cat="APERITIVOS">
-      <span class="dot"></span>🍿 APERITIVOS<span class="cat-count">2</span>
     </button><button class="cat-pill c9  " onclick="handleCatPillClick('CONGELADOS')" ontouchstart="startCatPress('CONGELADOS',this)" ontouchend="endCatPress()" ontouchcancel="endCatPress()" onmousedown="startCatPress('CONGELADOS',this)" onmouseup="endCatPress()" onmouseleave="endCatPress()" data-cat="CONGELADOS">
       <span class="dot"></span>🧊 CONGELADOS<span class="cat-count">0</span>
-    </button><button class="cat-pill c10  has-items" onclick="handleCatPillClick('LÁCTEOS')" ontouchstart="startCatPress('LÁCTEOS',this)" ontouchend="endCatPress()" ontouchcancel="endCatPress()" onmousedown="startCatPress('LÁCTEOS',this)" onmouseup="endCatPress()" onmouseleave="endCatPress()" data-cat="LÁCTEOS">
-      <span class="dot"></span>🥛 LÁCTEOS<span class="cat-count">1</span>
+    </button><button class="cat-pill c10  " onclick="handleCatPillClick('LÁCTEOS')" ontouchstart="startCatPress('LÁCTEOS',this)" ontouchend="endCatPress()" ontouchcancel="endCatPress()" onmousedown="startCatPress('LÁCTEOS',this)" onmouseup="endCatPress()" onmouseleave="endCatPress()" data-cat="LÁCTEOS">
+      <span class="dot"></span>🥛 LÁCTEOS<span class="cat-count">0</span>
     </button><button class="cat-pill c11  " onclick="handleCatPillClick('VARIOS')" ontouchstart="startCatPress('VARIOS',this)" ontouchend="endCatPress()" ontouchcancel="endCatPress()" onmousedown="startCatPress('VARIOS',this)" onmouseup="endCatPress()" onmouseleave="endCatPress()" data-cat="VARIOS">
       <span class="dot"></span>🛍️ VARIOS<span class="cat-count">0</span>
-    </button><button class="cat-pill c12  has-items" onclick="handleCatPillClick('HOGAR')" ontouchstart="startCatPress('HOGAR',this)" ontouchend="endCatPress()" ontouchcancel="endCatPress()" onmousedown="startCatPress('HOGAR',this)" onmouseup="endCatPress()" onmouseleave="endCatPress()" data-cat="HOGAR">
-      <span class="dot"></span>🏠 HOGAR<span class="cat-count">3</span>
-    </button><button class="cat-pill c13  has-items" onclick="handleCatPillClick('HIGIENE')" ontouchstart="startCatPress('HIGIENE',this)" ontouchend="endCatPress()" ontouchcancel="endCatPress()" onmousedown="startCatPress('HIGIENE',this)" onmouseup="endCatPress()" onmouseleave="endCatPress()" data-cat="HIGIENE">
-      <span class="dot"></span>🪥 HIGIENE<span class="cat-count">1</span>
-    </button><button class="cat-pill c14  has-items" onclick="handleCatPillClick('PAN')" ontouchstart="startCatPress('PAN',this)" ontouchend="endCatPress()" ontouchcancel="endCatPress()" onmousedown="startCatPress('PAN',this)" onmouseup="endCatPress()" onmouseleave="endCatPress()" data-cat="PAN">
-      <span class="dot"></span>🍞 PAN<span class="cat-count">2</span>
+    </button><button class="cat-pill c12  " onclick="handleCatPillClick('HOGAR')" ontouchstart="startCatPress('HOGAR',this)" ontouchend="endCatPress()" ontouchcancel="endCatPress()" onmousedown="startCatPress('HOGAR',this)" onmouseup="endCatPress()" onmouseleave="endCatPress()" data-cat="HOGAR">
+      <span class="dot"></span>🏠 HOGAR<span class="cat-count">0</span>
+    </button><button class="cat-pill c13  " onclick="handleCatPillClick('HIGIENE')" ontouchstart="startCatPress('HIGIENE',this)" ontouchend="endCatPress()" ontouchcancel="endCatPress()" onmousedown="startCatPress('HIGIENE',this)" onmouseup="endCatPress()" onmouseleave="endCatPress()" data-cat="HIGIENE">
+      <span class="dot"></span>🪥 HIGIENE<span class="cat-count">0</span>
+    </button><button class="cat-pill c14  " onclick="handleCatPillClick('PAN')" ontouchstart="startCatPress('PAN',this)" ontouchend="endCatPress()" ontouchcancel="endCatPress()" onmousedown="startCatPress('PAN',this)" onmouseup="endCatPress()" onmouseleave="endCatPress()" data-cat="PAN">
+      <span class="dot"></span>🍞 PAN<span class="cat-count">0</span>
     </button></div>
     <div class="products-scroll" id="productsArea"><div class="cat-block c0">
       <div class="cat-block-title"><span class="title-badge">🥦 VERDURAS</span></div>
@@ -545,17 +545,17 @@ body {
         <span class="prod-name">Pimiento Verde</span>
         <span class="prod-check"></span>
         <span class="press-ring"></span>
-      </div><div class="prod-card c0 selected" onclick="toggleCart('Pimiento Tricolor','VERDURAS')" ontouchstart="startPress('Pimiento Tricolor','VERDURAS',this)" ontouchend="endPress()" ontouchcancel="endPress()" onmousedown="startPress('Pimiento Tricolor','VERDURAS',this)" onmouseup="endPress()" onmouseleave="endPress()">
+      </div><div class="prod-card c0 " onclick="toggleCart('Pimiento Tricolor','VERDURAS')" ontouchstart="startPress('Pimiento Tricolor','VERDURAS',this)" ontouchend="endPress()" ontouchcancel="endPress()" onmousedown="startPress('Pimiento Tricolor','VERDURAS',this)" onmouseup="endPress()" onmouseleave="endPress()">
         <span class="prod-name">Pimiento Tricolor</span>
-        <span class="prod-check">✓</span>
+        <span class="prod-check"></span>
         <span class="press-ring"></span>
       </div><div class="prod-card c0 " onclick="toggleCart('Patatas','VERDURAS')" ontouchstart="startPress('Patatas','VERDURAS',this)" ontouchend="endPress()" ontouchcancel="endPress()" onmousedown="startPress('Patatas','VERDURAS',this)" onmouseup="endPress()" onmouseleave="endPress()">
         <span class="prod-name">Patatas</span>
         <span class="prod-check"></span>
         <span class="press-ring"></span>
-      </div><div class="prod-card c0 selected" onclick="toggleCart('Guacamole','VERDURAS')" ontouchstart="startPress('Guacamole','VERDURAS',this)" ontouchend="endPress()" ontouchcancel="endPress()" onmousedown="startPress('Guacamole','VERDURAS',this)" onmouseup="endPress()" onmouseleave="endPress()">
+      </div><div class="prod-card c0 " onclick="toggleCart('Guacamole','VERDURAS')" ontouchstart="startPress('Guacamole','VERDURAS',this)" ontouchend="endPress()" ontouchcancel="endPress()" onmousedown="startPress('Guacamole','VERDURAS',this)" onmouseup="endPress()" onmouseleave="endPress()">
         <span class="prod-name">Guacamole</span>
-        <span class="prod-check">✓</span>
+        <span class="prod-check"></span>
         <span class="press-ring"></span>
       </div><div class="prod-card c0 " onclick="toggleCart('Ajo','VERDURAS')" ontouchstart="startPress('Ajo','VERDURAS',this)" ontouchend="endPress()" ontouchcancel="endPress()" onmousedown="startPress('Ajo','VERDURAS',this)" onmouseup="endPress()" onmouseleave="endPress()">
         <span class="prod-name">Ajo</span>
@@ -621,9 +621,9 @@ body {
         <span class="prod-name">Picada ternera</span>
         <span class="prod-check"></span>
         <span class="press-ring"></span>
-      </div><div class="prod-card c2 selected" onclick="toggleCart('Solomillo pavo','CARNE')" ontouchstart="startPress('Solomillo pavo','CARNE',this)" ontouchend="endPress()" ontouchcancel="endPress()" onmousedown="startPress('Solomillo pavo','CARNE',this)" onmouseup="endPress()" onmouseleave="endPress()">
+      </div><div class="prod-card c2 " onclick="toggleCart('Solomillo pavo','CARNE')" ontouchstart="startPress('Solomillo pavo','CARNE',this)" ontouchend="endPress()" ontouchcancel="endPress()" onmousedown="startPress('Solomillo pavo','CARNE',this)" onmouseup="endPress()" onmouseleave="endPress()">
         <span class="prod-name">Solomillo pavo</span>
-        <span class="prod-check">✓</span>
+        <span class="prod-check"></span>
         <span class="press-ring"></span>
       </div><div class="prod-card c2 " onclick="toggleCart('Solomillo pollo','CARNE')" ontouchstart="startPress('Solomillo pollo','CARNE',this)" ontouchend="endPress()" ontouchcancel="endPress()" onmousedown="startPress('Solomillo pollo','CARNE',this)" onmouseup="endPress()" onmouseleave="endPress()">
         <span class="prod-name">Solomillo pollo</span>
@@ -650,67 +650,67 @@ body {
         <span class="prod-check"></span>
         <span class="press-ring"></span>
       </div></div></div><div class="cat-block c3">
-      <div class="cat-block-title"><span class="title-badge">🌶️ ESPECIAS</span></div>
-      <div class="products-grid"><div class="prod-card c3 " onclick="toggleCart('Fajitas','ESPECIAS')" ontouchstart="startPress('Fajitas','ESPECIAS',this)" ontouchend="endPress()" ontouchcancel="endPress()" onmousedown="startPress('Fajitas','ESPECIAS',this)" onmouseup="endPress()" onmouseleave="endPress()">
-        <span class="prod-name">Fajitas</span>
-        <span class="prod-check"></span>
-        <span class="press-ring"></span>
-      </div><div class="prod-card c3 selected" onclick="toggleCart('Es. Ajo','ESPECIAS')" ontouchstart="startPress('Es. Ajo','ESPECIAS',this)" ontouchend="endPress()" ontouchcancel="endPress()" onmousedown="startPress('Es. Ajo','ESPECIAS',this)" onmouseup="endPress()" onmouseleave="endPress()">
-        <span class="prod-name">Es. Ajo</span>
-        <span class="prod-check">✓</span>
-        <span class="press-ring"></span>
-      </div><div class="prod-card c3 " onclick="toggleCart('Es. Cebolla','ESPECIAS')" ontouchstart="startPress('Es. Cebolla','ESPECIAS',this)" ontouchend="endPress()" ontouchcancel="endPress()" onmousedown="startPress('Es. Cebolla','ESPECIAS',this)" onmouseup="endPress()" onmouseleave="endPress()">
-        <span class="prod-name">Es. Cebolla</span>
-        <span class="prod-check"></span>
-        <span class="press-ring"></span>
-      </div><div class="prod-card c3 " onclick="toggleCart('Pimentón Dulce','ESPECIAS')" ontouchstart="startPress('Pimentón Dulce','ESPECIAS',this)" ontouchend="endPress()" ontouchcancel="endPress()" onmousedown="startPress('Pimentón Dulce','ESPECIAS',this)" onmouseup="endPress()" onmouseleave="endPress()">
-        <span class="prod-name">Pimentón Dulce</span>
-        <span class="prod-check"></span>
-        <span class="press-ring"></span>
-      </div><div class="prod-card c3 " onclick="toggleCart('Pimentón Picante','ESPECIAS')" ontouchstart="startPress('Pimentón Picante','ESPECIAS',this)" ontouchend="endPress()" ontouchcancel="endPress()" onmousedown="startPress('Pimentón Picante','ESPECIAS',this)" onmouseup="endPress()" onmouseleave="endPress()">
-        <span class="prod-name">Pimentón Picante</span>
-        <span class="prod-check"></span>
-        <span class="press-ring"></span>
-      </div><div class="prod-card c3 " onclick="toggleCart('Hiervas Provinzales','ESPECIAS')" ontouchstart="startPress('Hiervas Provinzales','ESPECIAS',this)" ontouchend="endPress()" ontouchcancel="endPress()" onmousedown="startPress('Hiervas Provinzales','ESPECIAS',this)" onmouseup="endPress()" onmouseleave="endPress()">
-        <span class="prod-name">Hiervas Provinzales</span>
-        <span class="prod-check"></span>
-        <span class="press-ring"></span>
-      </div><div class="prod-card c3 " onclick="toggleCart('Orégano','ESPECIAS')" ontouchstart="startPress('Orégano','ESPECIAS',this)" ontouchend="endPress()" ontouchcancel="endPress()" onmousedown="startPress('Orégano','ESPECIAS',this)" onmouseup="endPress()" onmouseleave="endPress()">
-        <span class="prod-name">Orégano</span>
-        <span class="prod-check"></span>
-        <span class="press-ring"></span>
-      </div><div class="prod-card c3 " onclick="toggleCart('Perejil','ESPECIAS')" ontouchstart="startPress('Perejil','ESPECIAS',this)" ontouchend="endPress()" ontouchcancel="endPress()" onmousedown="startPress('Perejil','ESPECIAS',this)" onmouseup="endPress()" onmouseleave="endPress()">
-        <span class="prod-name">Perejil</span>
-        <span class="prod-check"></span>
-        <span class="press-ring"></span>
-      </div><div class="prod-card c3 " onclick="toggleCart('Pimienta tricolor','ESPECIAS')" ontouchstart="startPress('Pimienta tricolor','ESPECIAS',this)" ontouchend="endPress()" ontouchcancel="endPress()" onmousedown="startPress('Pimienta tricolor','ESPECIAS',this)" onmouseup="endPress()" onmouseleave="endPress()">
-        <span class="prod-name">Pimienta tricolor</span>
-        <span class="prod-check"></span>
-        <span class="press-ring"></span>
-      </div><div class="prod-card c3 " onclick="toggleCart('Pimienta negra','ESPECIAS')" ontouchstart="startPress('Pimienta negra','ESPECIAS',this)" ontouchend="endPress()" ontouchcancel="endPress()" onmousedown="startPress('Pimienta negra','ESPECIAS',this)" onmouseup="endPress()" onmouseleave="endPress()">
-        <span class="prod-name">Pimienta negra</span>
-        <span class="prod-check"></span>
-        <span class="press-ring"></span>
-      </div></div></div><div class="cat-block c4">
       <div class="cat-block-title"><span class="title-badge">🫙 BOTES</span></div>
-      <div class="products-grid"><div class="prod-card c4 " onclick="toggleCart('Garbanzos','BOTES')" ontouchstart="startPress('Garbanzos','BOTES',this)" ontouchend="endPress()" ontouchcancel="endPress()" onmousedown="startPress('Garbanzos','BOTES',this)" onmouseup="endPress()" onmouseleave="endPress()">
+      <div class="products-grid"><div class="prod-card c3 " onclick="toggleCart('Garbanzos','BOTES')" ontouchstart="startPress('Garbanzos','BOTES',this)" ontouchend="endPress()" ontouchcancel="endPress()" onmousedown="startPress('Garbanzos','BOTES',this)" onmouseup="endPress()" onmouseleave="endPress()">
         <span class="prod-name">Garbanzos</span>
         <span class="prod-check"></span>
         <span class="press-ring"></span>
-      </div><div class="prod-card c4 " onclick="toggleCart('Alubias','BOTES')" ontouchstart="startPress('Alubias','BOTES',this)" ontouchend="endPress()" ontouchcancel="endPress()" onmousedown="startPress('Alubias','BOTES',this)" onmouseup="endPress()" onmouseleave="endPress()">
+      </div><div class="prod-card c3 " onclick="toggleCart('Alubias','BOTES')" ontouchstart="startPress('Alubias','BOTES',this)" ontouchend="endPress()" ontouchcancel="endPress()" onmousedown="startPress('Alubias','BOTES',this)" onmouseup="endPress()" onmouseleave="endPress()">
         <span class="prod-name">Alubias</span>
         <span class="prod-check"></span>
         <span class="press-ring"></span>
-      </div><div class="prod-card c4 " onclick="toggleCart('Lentejas','BOTES')" ontouchstart="startPress('Lentejas','BOTES',this)" ontouchend="endPress()" ontouchcancel="endPress()" onmousedown="startPress('Lentejas','BOTES',this)" onmouseup="endPress()" onmouseleave="endPress()">
+      </div><div class="prod-card c3 " onclick="toggleCart('Lentejas','BOTES')" ontouchstart="startPress('Lentejas','BOTES',this)" ontouchend="endPress()" ontouchcancel="endPress()" onmousedown="startPress('Lentejas','BOTES',this)" onmouseup="endPress()" onmouseleave="endPress()">
         <span class="prod-name">Lentejas</span>
         <span class="prod-check"></span>
         <span class="press-ring"></span>
-      </div><div class="prod-card c4 " onclick="toggleCart('Guindillas','BOTES')" ontouchstart="startPress('Guindillas','BOTES',this)" ontouchend="endPress()" ontouchcancel="endPress()" onmousedown="startPress('Guindillas','BOTES',this)" onmouseup="endPress()" onmouseleave="endPress()">
+      </div><div class="prod-card c3 " onclick="toggleCart('Guindillas','BOTES')" ontouchstart="startPress('Guindillas','BOTES',this)" ontouchend="endPress()" ontouchcancel="endPress()" onmousedown="startPress('Guindillas','BOTES',this)" onmouseup="endPress()" onmouseleave="endPress()">
         <span class="prod-name">Guindillas</span>
         <span class="prod-check"></span>
         <span class="press-ring"></span>
-      </div><div class="prod-card c4 " onclick="toggleCart('Patatas cocidas','BOTES')" ontouchstart="startPress('Patatas cocidas','BOTES',this)" ontouchend="endPress()" ontouchcancel="endPress()" onmousedown="startPress('Patatas cocidas','BOTES',this)" onmouseup="endPress()" onmouseleave="endPress()">
+      </div><div class="prod-card c3 " onclick="toggleCart('Patatas cocidas','BOTES')" ontouchstart="startPress('Patatas cocidas','BOTES',this)" ontouchend="endPress()" ontouchcancel="endPress()" onmousedown="startPress('Patatas cocidas','BOTES',this)" onmouseup="endPress()" onmouseleave="endPress()">
         <span class="prod-name">Patatas cocidas</span>
+        <span class="prod-check"></span>
+        <span class="press-ring"></span>
+      </div></div></div><div class="cat-block c4">
+      <div class="cat-block-title"><span class="title-badge">🌶️ ESPECIAS</span></div>
+      <div class="products-grid"><div class="prod-card c4 " onclick="toggleCart('Fajitas','ESPECIAS')" ontouchstart="startPress('Fajitas','ESPECIAS',this)" ontouchend="endPress()" ontouchcancel="endPress()" onmousedown="startPress('Fajitas','ESPECIAS',this)" onmouseup="endPress()" onmouseleave="endPress()">
+        <span class="prod-name">Fajitas</span>
+        <span class="prod-check"></span>
+        <span class="press-ring"></span>
+      </div><div class="prod-card c4 " onclick="toggleCart('Es. Ajo','ESPECIAS')" ontouchstart="startPress('Es. Ajo','ESPECIAS',this)" ontouchend="endPress()" ontouchcancel="endPress()" onmousedown="startPress('Es. Ajo','ESPECIAS',this)" onmouseup="endPress()" onmouseleave="endPress()">
+        <span class="prod-name">Es. Ajo</span>
+        <span class="prod-check"></span>
+        <span class="press-ring"></span>
+      </div><div class="prod-card c4 " onclick="toggleCart('Es. Cebolla','ESPECIAS')" ontouchstart="startPress('Es. Cebolla','ESPECIAS',this)" ontouchend="endPress()" ontouchcancel="endPress()" onmousedown="startPress('Es. Cebolla','ESPECIAS',this)" onmouseup="endPress()" onmouseleave="endPress()">
+        <span class="prod-name">Es. Cebolla</span>
+        <span class="prod-check"></span>
+        <span class="press-ring"></span>
+      </div><div class="prod-card c4 " onclick="toggleCart('Pimentón Dulce','ESPECIAS')" ontouchstart="startPress('Pimentón Dulce','ESPECIAS',this)" ontouchend="endPress()" ontouchcancel="endPress()" onmousedown="startPress('Pimentón Dulce','ESPECIAS',this)" onmouseup="endPress()" onmouseleave="endPress()">
+        <span class="prod-name">Pimentón Dulce</span>
+        <span class="prod-check"></span>
+        <span class="press-ring"></span>
+      </div><div class="prod-card c4 " onclick="toggleCart('Pimentón Picante','ESPECIAS')" ontouchstart="startPress('Pimentón Picante','ESPECIAS',this)" ontouchend="endPress()" ontouchcancel="endPress()" onmousedown="startPress('Pimentón Picante','ESPECIAS',this)" onmouseup="endPress()" onmouseleave="endPress()">
+        <span class="prod-name">Pimentón Picante</span>
+        <span class="prod-check"></span>
+        <span class="press-ring"></span>
+      </div><div class="prod-card c4 " onclick="toggleCart('Hiervas Provinzales','ESPECIAS')" ontouchstart="startPress('Hiervas Provinzales','ESPECIAS',this)" ontouchend="endPress()" ontouchcancel="endPress()" onmousedown="startPress('Hiervas Provinzales','ESPECIAS',this)" onmouseup="endPress()" onmouseleave="endPress()">
+        <span class="prod-name">Hiervas Provinzales</span>
+        <span class="prod-check"></span>
+        <span class="press-ring"></span>
+      </div><div class="prod-card c4 " onclick="toggleCart('Orégano','ESPECIAS')" ontouchstart="startPress('Orégano','ESPECIAS',this)" ontouchend="endPress()" ontouchcancel="endPress()" onmousedown="startPress('Orégano','ESPECIAS',this)" onmouseup="endPress()" onmouseleave="endPress()">
+        <span class="prod-name">Orégano</span>
+        <span class="prod-check"></span>
+        <span class="press-ring"></span>
+      </div><div class="prod-card c4 " onclick="toggleCart('Perejil','ESPECIAS')" ontouchstart="startPress('Perejil','ESPECIAS',this)" ontouchend="endPress()" ontouchcancel="endPress()" onmousedown="startPress('Perejil','ESPECIAS',this)" onmouseup="endPress()" onmouseleave="endPress()">
+        <span class="prod-name">Perejil</span>
+        <span class="prod-check"></span>
+        <span class="press-ring"></span>
+      </div><div class="prod-card c4 " onclick="toggleCart('Pimienta tricolor','ESPECIAS')" ontouchstart="startPress('Pimienta tricolor','ESPECIAS',this)" ontouchend="endPress()" ontouchcancel="endPress()" onmousedown="startPress('Pimienta tricolor','ESPECIAS',this)" onmouseup="endPress()" onmouseleave="endPress()">
+        <span class="prod-name">Pimienta tricolor</span>
+        <span class="prod-check"></span>
+        <span class="press-ring"></span>
+      </div><div class="prod-card c4 " onclick="toggleCart('Pimienta negra','ESPECIAS')" ontouchstart="startPress('Pimienta negra','ESPECIAS',this)" ontouchend="endPress()" ontouchcancel="endPress()" onmousedown="startPress('Pimienta negra','ESPECIAS',this)" onmouseup="endPress()" onmouseleave="endPress()">
+        <span class="prod-name">Pimienta negra</span>
         <span class="prod-check"></span>
         <span class="press-ring"></span>
       </div></div></div><div class="cat-block c5">
@@ -751,6 +751,10 @@ body {
         <span class="prod-name">Cerveza solomillo</span>
         <span class="prod-check"></span>
         <span class="press-ring"></span>
+      </div><div class="prod-card c5 " onclick="toggleCart('Bebida almendras','BEBIDAS')" ontouchstart="startPress('Bebida almendras','BEBIDAS',this)" ontouchend="endPress()" ontouchcancel="endPress()" onmousedown="startPress('Bebida almendras','BEBIDAS',this)" onmouseup="endPress()" onmouseleave="endPress()">
+        <span class="prod-name">Bebida almendras</span>
+        <span class="prod-check"></span>
+        <span class="press-ring"></span>
       </div></div></div><div class="cat-block c6">
       <div class="cat-block-title"><span class="title-badge">🥫 CONSERVAS</span></div>
       <div class="products-grid"><div class="prod-card c6 " onclick="toggleCart('Lata Tomate','CONSERVAS')" ontouchstart="startPress('Lata Tomate','CONSERVAS',this)" ontouchend="endPress()" ontouchcancel="endPress()" onmousedown="startPress('Lata Tomate','CONSERVAS',this)" onmouseup="endPress()" onmouseleave="endPress()">
@@ -770,75 +774,75 @@ body {
         <span class="prod-check"></span>
         <span class="press-ring"></span>
       </div></div></div><div class="cat-block c7">
-      <div class="cat-block-title"><span class="title-badge">🧀 FIAMBRE</span></div>
-      <div class="products-grid"><div class="prod-card c7 " onclick="toggleCart('Havarty Light','FIAMBRE')" ontouchstart="startPress('Havarty Light','FIAMBRE',this)" ontouchend="endPress()" ontouchcancel="endPress()" onmousedown="startPress('Havarty Light','FIAMBRE',this)" onmouseup="endPress()" onmouseleave="endPress()">
-        <span class="prod-name">Havarty Light</span>
-        <span class="prod-check"></span>
-        <span class="press-ring"></span>
-      </div><div class="prod-card c7 " onclick="toggleCart('Queso Rulo Cabra','FIAMBRE')" ontouchstart="startPress('Queso Rulo Cabra','FIAMBRE',this)" ontouchend="endPress()" ontouchcancel="endPress()" onmousedown="startPress('Queso Rulo Cabra','FIAMBRE',this)" onmouseup="endPress()" onmouseleave="endPress()">
-        <span class="prod-name">Queso Rulo Cabra</span>
-        <span class="prod-check"></span>
-        <span class="press-ring"></span>
-      </div><div class="prod-card c7 " onclick="toggleCart('Cuña Tostado','FIAMBRE')" ontouchstart="startPress('Cuña Tostado','FIAMBRE',this)" ontouchend="endPress()" ontouchcancel="endPress()" onmousedown="startPress('Cuña Tostado','FIAMBRE',this)" onmouseup="endPress()" onmouseleave="endPress()">
-        <span class="prod-name">Cuña Tostado</span>
-        <span class="prod-check"></span>
-        <span class="press-ring"></span>
-      </div><div class="prod-card c7 " onclick="toggleCart('Cuña Tierno','FIAMBRE')" ontouchstart="startPress('Cuña Tierno','FIAMBRE',this)" ontouchend="endPress()" ontouchcancel="endPress()" onmousedown="startPress('Cuña Tierno','FIAMBRE',this)" onmouseup="endPress()" onmouseleave="endPress()">
-        <span class="prod-name">Cuña Tierno</span>
-        <span class="prod-check"></span>
-        <span class="press-ring"></span>
-      </div><div class="prod-card c7 " onclick="toggleCart('Cuña holandés','FIAMBRE')" ontouchstart="startPress('Cuña holandés','FIAMBRE',this)" ontouchend="endPress()" ontouchcancel="endPress()" onmousedown="startPress('Cuña holandés','FIAMBRE',this)" onmouseup="endPress()" onmouseleave="endPress()">
-        <span class="prod-name">Cuña holandés</span>
-        <span class="prod-check"></span>
-        <span class="press-ring"></span>
-      </div><div class="prod-card c7 " onclick="toggleCart('Jamón Serrano','FIAMBRE')" ontouchstart="startPress('Jamón Serrano','FIAMBRE',this)" ontouchend="endPress()" ontouchcancel="endPress()" onmousedown="startPress('Jamón Serrano','FIAMBRE',this)" onmouseup="endPress()" onmouseleave="endPress()">
-        <span class="prod-name">Jamón Serrano</span>
-        <span class="prod-check"></span>
-        <span class="press-ring"></span>
-      </div><div class="prod-card c7 " onclick="toggleCart('Tacos de jamón','FIAMBRE')" ontouchstart="startPress('Tacos de jamón','FIAMBRE',this)" ontouchend="endPress()" ontouchcancel="endPress()" onmousedown="startPress('Tacos de jamón','FIAMBRE',this)" onmouseup="endPress()" onmouseleave="endPress()">
-        <span class="prod-name">Tacos de jamón</span>
-        <span class="prod-check"></span>
-        <span class="press-ring"></span>
-      </div><div class="prod-card c7 " onclick="toggleCart('Queso azul','FIAMBRE')" ontouchstart="startPress('Queso azul','FIAMBRE',this)" ontouchend="endPress()" ontouchcancel="endPress()" onmousedown="startPress('Queso azul','FIAMBRE',this)" onmouseup="endPress()" onmouseleave="endPress()">
-        <span class="prod-name">Queso azul</span>
-        <span class="prod-check"></span>
-        <span class="press-ring"></span>
-      </div><div class="prod-card c7 " onclick="toggleCart('Queso Cottage','FIAMBRE')" ontouchstart="startPress('Queso Cottage','FIAMBRE',this)" ontouchend="endPress()" ontouchcancel="endPress()" onmousedown="startPress('Queso Cottage','FIAMBRE',this)" onmouseup="endPress()" onmouseleave="endPress()">
-        <span class="prod-name">Queso Cottage</span>
-        <span class="prod-check"></span>
-        <span class="press-ring"></span>
-      </div><div class="prod-card c7 " onclick="toggleCart('Queso rayado','FIAMBRE')" ontouchstart="startPress('Queso rayado','FIAMBRE',this)" ontouchend="endPress()" ontouchcancel="endPress()" onmousedown="startPress('Queso rayado','FIAMBRE',this)" onmouseup="endPress()" onmouseleave="endPress()">
-        <span class="prod-name">Queso rayado</span>
-        <span class="prod-check"></span>
-        <span class="press-ring"></span>
-      </div><div class="prod-card c7 " onclick="toggleCart('Queso en polvo','FIAMBRE')" ontouchstart="startPress('Queso en polvo','FIAMBRE',this)" ontouchend="endPress()" ontouchcancel="endPress()" onmousedown="startPress('Queso en polvo','FIAMBRE',this)" onmouseup="endPress()" onmouseleave="endPress()">
-        <span class="prod-name">Queso en polvo</span>
-        <span class="prod-check"></span>
-        <span class="press-ring"></span>
-      </div></div></div><div class="cat-block c8">
       <div class="cat-block-title"><span class="title-badge">🍿 APERITIVOS</span></div>
-      <div class="products-grid"><div class="prod-card c8 selected" onclick="toggleCart('Bolsa Mix','APERITIVOS')" ontouchstart="startPress('Bolsa Mix','APERITIVOS',this)" ontouchend="endPress()" ontouchcancel="endPress()" onmousedown="startPress('Bolsa Mix','APERITIVOS',this)" onmouseup="endPress()" onmouseleave="endPress()">
+      <div class="products-grid"><div class="prod-card c7 " onclick="toggleCart('Bolsa Mix','APERITIVOS')" ontouchstart="startPress('Bolsa Mix','APERITIVOS',this)" ontouchend="endPress()" ontouchcancel="endPress()" onmousedown="startPress('Bolsa Mix','APERITIVOS',this)" onmouseup="endPress()" onmouseleave="endPress()">
         <span class="prod-name">Bolsa Mix</span>
-        <span class="prod-check">✓</span>
+        <span class="prod-check"></span>
         <span class="press-ring"></span>
-      </div><div class="prod-card c8 selected" onclick="toggleCart('Bolsa Patatas Fritas','APERITIVOS')" ontouchstart="startPress('Bolsa Patatas Fritas','APERITIVOS',this)" ontouchend="endPress()" ontouchcancel="endPress()" onmousedown="startPress('Bolsa Patatas Fritas','APERITIVOS',this)" onmouseup="endPress()" onmouseleave="endPress()">
+      </div><div class="prod-card c7 " onclick="toggleCart('Bolsa Patatas Fritas','APERITIVOS')" ontouchstart="startPress('Bolsa Patatas Fritas','APERITIVOS',this)" ontouchend="endPress()" ontouchcancel="endPress()" onmousedown="startPress('Bolsa Patatas Fritas','APERITIVOS',this)" onmouseup="endPress()" onmouseleave="endPress()">
         <span class="prod-name">Bolsa Patatas Fritas</span>
-        <span class="prod-check">✓</span>
+        <span class="prod-check"></span>
         <span class="press-ring"></span>
-      </div><div class="prod-card c8 " onclick="toggleCart('Bolsa Nachos','APERITIVOS')" ontouchstart="startPress('Bolsa Nachos','APERITIVOS',this)" ontouchend="endPress()" ontouchcancel="endPress()" onmousedown="startPress('Bolsa Nachos','APERITIVOS',this)" onmouseup="endPress()" onmouseleave="endPress()">
+      </div><div class="prod-card c7 " onclick="toggleCart('Bolsa Nachos','APERITIVOS')" ontouchstart="startPress('Bolsa Nachos','APERITIVOS',this)" ontouchend="endPress()" ontouchcancel="endPress()" onmousedown="startPress('Bolsa Nachos','APERITIVOS',this)" onmouseup="endPress()" onmouseleave="endPress()">
         <span class="prod-name">Bolsa Nachos</span>
         <span class="prod-check"></span>
         <span class="press-ring"></span>
-      </div><div class="prod-card c8 " onclick="toggleCart('Aceitunas','APERITIVOS')" ontouchstart="startPress('Aceitunas','APERITIVOS',this)" ontouchend="endPress()" ontouchcancel="endPress()" onmousedown="startPress('Aceitunas','APERITIVOS',this)" onmouseup="endPress()" onmouseleave="endPress()">
+      </div><div class="prod-card c7 " onclick="toggleCart('Aceitunas','APERITIVOS')" ontouchstart="startPress('Aceitunas','APERITIVOS',this)" ontouchend="endPress()" ontouchcancel="endPress()" onmousedown="startPress('Aceitunas','APERITIVOS',this)" onmouseup="endPress()" onmouseleave="endPress()">
         <span class="prod-name">Aceitunas</span>
         <span class="prod-check"></span>
         <span class="press-ring"></span>
-      </div><div class="prod-card c8 " onclick="toggleCart('Tortillas para fajitas','APERITIVOS')" ontouchstart="startPress('Tortillas para fajitas','APERITIVOS',this)" ontouchend="endPress()" ontouchcancel="endPress()" onmousedown="startPress('Tortillas para fajitas','APERITIVOS',this)" onmouseup="endPress()" onmouseleave="endPress()">
+      </div><div class="prod-card c7 " onclick="toggleCart('Tortillas para fajitas','APERITIVOS')" ontouchstart="startPress('Tortillas para fajitas','APERITIVOS',this)" ontouchend="endPress()" ontouchcancel="endPress()" onmousedown="startPress('Tortillas para fajitas','APERITIVOS',this)" onmouseup="endPress()" onmouseleave="endPress()">
         <span class="prod-name">Tortillas para fajitas</span>
         <span class="prod-check"></span>
         <span class="press-ring"></span>
-      </div><div class="prod-card c8 " onclick="toggleCart('Aceitunas vermú','APERITIVOS')" ontouchstart="startPress('Aceitunas vermú','APERITIVOS',this)" ontouchend="endPress()" ontouchcancel="endPress()" onmousedown="startPress('Aceitunas vermú','APERITIVOS',this)" onmouseup="endPress()" onmouseleave="endPress()">
+      </div><div class="prod-card c7 " onclick="toggleCart('Aceitunas vermú','APERITIVOS')" ontouchstart="startPress('Aceitunas vermú','APERITIVOS',this)" ontouchend="endPress()" ontouchcancel="endPress()" onmousedown="startPress('Aceitunas vermú','APERITIVOS',this)" onmouseup="endPress()" onmouseleave="endPress()">
         <span class="prod-name">Aceitunas vermú</span>
+        <span class="prod-check"></span>
+        <span class="press-ring"></span>
+      </div></div></div><div class="cat-block c8">
+      <div class="cat-block-title"><span class="title-badge">🧀 FIAMBRE</span></div>
+      <div class="products-grid"><div class="prod-card c8 " onclick="toggleCart('Havarty Light','FIAMBRE')" ontouchstart="startPress('Havarty Light','FIAMBRE',this)" ontouchend="endPress()" ontouchcancel="endPress()" onmousedown="startPress('Havarty Light','FIAMBRE',this)" onmouseup="endPress()" onmouseleave="endPress()">
+        <span class="prod-name">Havarty Light</span>
+        <span class="prod-check"></span>
+        <span class="press-ring"></span>
+      </div><div class="prod-card c8 " onclick="toggleCart('Queso Rulo Cabra','FIAMBRE')" ontouchstart="startPress('Queso Rulo Cabra','FIAMBRE',this)" ontouchend="endPress()" ontouchcancel="endPress()" onmousedown="startPress('Queso Rulo Cabra','FIAMBRE',this)" onmouseup="endPress()" onmouseleave="endPress()">
+        <span class="prod-name">Queso Rulo Cabra</span>
+        <span class="prod-check"></span>
+        <span class="press-ring"></span>
+      </div><div class="prod-card c8 " onclick="toggleCart('Cuña Tostado','FIAMBRE')" ontouchstart="startPress('Cuña Tostado','FIAMBRE',this)" ontouchend="endPress()" ontouchcancel="endPress()" onmousedown="startPress('Cuña Tostado','FIAMBRE',this)" onmouseup="endPress()" onmouseleave="endPress()">
+        <span class="prod-name">Cuña Tostado</span>
+        <span class="prod-check"></span>
+        <span class="press-ring"></span>
+      </div><div class="prod-card c8 " onclick="toggleCart('Cuña Tierno','FIAMBRE')" ontouchstart="startPress('Cuña Tierno','FIAMBRE',this)" ontouchend="endPress()" ontouchcancel="endPress()" onmousedown="startPress('Cuña Tierno','FIAMBRE',this)" onmouseup="endPress()" onmouseleave="endPress()">
+        <span class="prod-name">Cuña Tierno</span>
+        <span class="prod-check"></span>
+        <span class="press-ring"></span>
+      </div><div class="prod-card c8 " onclick="toggleCart('Cuña holandés','FIAMBRE')" ontouchstart="startPress('Cuña holandés','FIAMBRE',this)" ontouchend="endPress()" ontouchcancel="endPress()" onmousedown="startPress('Cuña holandés','FIAMBRE',this)" onmouseup="endPress()" onmouseleave="endPress()">
+        <span class="prod-name">Cuña holandés</span>
+        <span class="prod-check"></span>
+        <span class="press-ring"></span>
+      </div><div class="prod-card c8 " onclick="toggleCart('Jamón Serrano','FIAMBRE')" ontouchstart="startPress('Jamón Serrano','FIAMBRE',this)" ontouchend="endPress()" ontouchcancel="endPress()" onmousedown="startPress('Jamón Serrano','FIAMBRE',this)" onmouseup="endPress()" onmouseleave="endPress()">
+        <span class="prod-name">Jamón Serrano</span>
+        <span class="prod-check"></span>
+        <span class="press-ring"></span>
+      </div><div class="prod-card c8 " onclick="toggleCart('Tacos de jamón','FIAMBRE')" ontouchstart="startPress('Tacos de jamón','FIAMBRE',this)" ontouchend="endPress()" ontouchcancel="endPress()" onmousedown="startPress('Tacos de jamón','FIAMBRE',this)" onmouseup="endPress()" onmouseleave="endPress()">
+        <span class="prod-name">Tacos de jamón</span>
+        <span class="prod-check"></span>
+        <span class="press-ring"></span>
+      </div><div class="prod-card c8 " onclick="toggleCart('Queso azul','FIAMBRE')" ontouchstart="startPress('Queso azul','FIAMBRE',this)" ontouchend="endPress()" ontouchcancel="endPress()" onmousedown="startPress('Queso azul','FIAMBRE',this)" onmouseup="endPress()" onmouseleave="endPress()">
+        <span class="prod-name">Queso azul</span>
+        <span class="prod-check"></span>
+        <span class="press-ring"></span>
+      </div><div class="prod-card c8 " onclick="toggleCart('Queso Cottage','FIAMBRE')" ontouchstart="startPress('Queso Cottage','FIAMBRE',this)" ontouchend="endPress()" ontouchcancel="endPress()" onmousedown="startPress('Queso Cottage','FIAMBRE',this)" onmouseup="endPress()" onmouseleave="endPress()">
+        <span class="prod-name">Queso Cottage</span>
+        <span class="prod-check"></span>
+        <span class="press-ring"></span>
+      </div><div class="prod-card c8 " onclick="toggleCart('Queso rayado','FIAMBRE')" ontouchstart="startPress('Queso rayado','FIAMBRE',this)" ontouchend="endPress()" ontouchcancel="endPress()" onmousedown="startPress('Queso rayado','FIAMBRE',this)" onmouseup="endPress()" onmouseleave="endPress()">
+        <span class="prod-name">Queso rayado</span>
+        <span class="prod-check"></span>
+        <span class="press-ring"></span>
+      </div><div class="prod-card c8 " onclick="toggleCart('Queso en polvo','FIAMBRE')" ontouchstart="startPress('Queso en polvo','FIAMBRE',this)" ontouchend="endPress()" ontouchcancel="endPress()" onmousedown="startPress('Queso en polvo','FIAMBRE',this)" onmouseup="endPress()" onmouseleave="endPress()">
+        <span class="prod-name">Queso en polvo</span>
         <span class="prod-check"></span>
         <span class="press-ring"></span>
       </div></div></div><div class="cat-block c9">
@@ -893,9 +897,13 @@ body {
         <span class="prod-name">Yogur griego sabores</span>
         <span class="prod-check"></span>
         <span class="press-ring"></span>
-      </div><div class="prod-card c10 selected" onclick="toggleCart('Havarti','LÁCTEOS')" ontouchstart="startPress('Havarti','LÁCTEOS',this)" ontouchend="endPress()" ontouchcancel="endPress()" onmousedown="startPress('Havarti','LÁCTEOS',this)" onmouseup="endPress()" onmouseleave="endPress()">
+      </div><div class="prod-card c10 " onclick="toggleCart('Havarti','LÁCTEOS')" ontouchstart="startPress('Havarti','LÁCTEOS',this)" ontouchend="endPress()" ontouchcancel="endPress()" onmousedown="startPress('Havarti','LÁCTEOS',this)" onmouseup="endPress()" onmouseleave="endPress()">
         <span class="prod-name">Havarti</span>
-        <span class="prod-check">✓</span>
+        <span class="prod-check"></span>
+        <span class="press-ring"></span>
+      </div><div class="prod-card c10 " onclick="toggleCart('Claras de huevo','LÁCTEOS')" ontouchstart="startPress('Claras de huevo','LÁCTEOS',this)" ontouchend="endPress()" ontouchcancel="endPress()" onmousedown="startPress('Claras de huevo','LÁCTEOS',this)" onmouseup="endPress()" onmouseleave="endPress()">
+        <span class="prod-name">Claras de huevo</span>
+        <span class="prod-check"></span>
         <span class="press-ring"></span>
       </div></div></div><div class="cat-block c11">
       <div class="cat-block-title"><span class="title-badge">🛍️ VARIOS</span></div>
@@ -995,6 +1003,10 @@ body {
         <span class="prod-name">Infusión Cúrcuma</span>
         <span class="prod-check"></span>
         <span class="press-ring"></span>
+      </div><div class="prod-card c11 " onclick="toggleCart('Pepitas chocolate','VARIOS')" ontouchstart="startPress('Pepitas chocolate','VARIOS',this)" ontouchend="endPress()" ontouchcancel="endPress()" onmousedown="startPress('Pepitas chocolate','VARIOS',this)" onmouseup="endPress()" onmouseleave="endPress()">
+        <span class="prod-name">Pepitas chocolate</span>
+        <span class="prod-check"></span>
+        <span class="press-ring"></span>
       </div></div></div><div class="cat-block c12">
       <div class="cat-block-title"><span class="title-badge">🏠 HOGAR</span></div>
       <div class="products-grid"><div class="prod-card c12 " onclick="toggleCart('Papel higiénico','HOGAR')" ontouchstart="startPress('Papel higiénico','HOGAR',this)" ontouchend="endPress()" ontouchcancel="endPress()" onmousedown="startPress('Papel higiénico','HOGAR',this)" onmouseup="endPress()" onmouseleave="endPress()">
@@ -1009,9 +1021,9 @@ body {
         <span class="prod-name">Papel de cocina</span>
         <span class="prod-check"></span>
         <span class="press-ring"></span>
-      </div><div class="prod-card c12 selected" onclick="toggleCart('Velas perfumadas','HOGAR')" ontouchstart="startPress('Velas perfumadas','HOGAR',this)" ontouchend="endPress()" ontouchcancel="endPress()" onmousedown="startPress('Velas perfumadas','HOGAR',this)" onmouseup="endPress()" onmouseleave="endPress()">
+      </div><div class="prod-card c12 " onclick="toggleCart('Velas perfumadas','HOGAR')" ontouchstart="startPress('Velas perfumadas','HOGAR',this)" ontouchend="endPress()" ontouchcancel="endPress()" onmousedown="startPress('Velas perfumadas','HOGAR',this)" onmouseup="endPress()" onmouseleave="endPress()">
         <span class="prod-name">Velas perfumadas</span>
-        <span class="prod-check">✓</span>
+        <span class="prod-check"></span>
         <span class="press-ring"></span>
       </div><div class="prod-card c12 " onclick="toggleCart('Detergente','HOGAR')" ontouchstart="startPress('Detergente','HOGAR',this)" ontouchend="endPress()" ontouchcancel="endPress()" onmousedown="startPress('Detergente','HOGAR',this)" onmouseup="endPress()" onmouseleave="endPress()">
         <span class="prod-name">Detergente</span>
@@ -1069,13 +1081,13 @@ body {
         <span class="prod-name">WC inodoro</span>
         <span class="prod-check"></span>
         <span class="press-ring"></span>
-      </div><div class="prod-card c12 selected" onclick="toggleCart('Limpiador Baño','HOGAR')" ontouchstart="startPress('Limpiador Baño','HOGAR',this)" ontouchend="endPress()" ontouchcancel="endPress()" onmousedown="startPress('Limpiador Baño','HOGAR',this)" onmouseup="endPress()" onmouseleave="endPress()">
+      </div><div class="prod-card c12 " onclick="toggleCart('Limpiador Baño','HOGAR')" ontouchstart="startPress('Limpiador Baño','HOGAR',this)" ontouchend="endPress()" ontouchcancel="endPress()" onmousedown="startPress('Limpiador Baño','HOGAR',this)" onmouseup="endPress()" onmouseleave="endPress()">
         <span class="prod-name">Limpiador Baño</span>
-        <span class="prod-check">✓</span>
+        <span class="prod-check"></span>
         <span class="press-ring"></span>
-      </div><div class="prod-card c12 selected" onclick="toggleCart('Detergente antibacterias','HOGAR')" ontouchstart="startPress('Detergente antibacterias','HOGAR',this)" ontouchend="endPress()" ontouchcancel="endPress()" onmousedown="startPress('Detergente antibacterias','HOGAR',this)" onmouseup="endPress()" onmouseleave="endPress()">
+      </div><div class="prod-card c12 " onclick="toggleCart('Detergente antibacterias','HOGAR')" ontouchstart="startPress('Detergente antibacterias','HOGAR',this)" ontouchend="endPress()" ontouchcancel="endPress()" onmousedown="startPress('Detergente antibacterias','HOGAR',this)" onmouseup="endPress()" onmouseleave="endPress()">
         <span class="prod-name">Detergente antibacterias</span>
-        <span class="prod-check">✓</span>
+        <span class="prod-check"></span>
         <span class="press-ring"></span>
       </div><div class="prod-card c12 " onclick="toggleCart('Bolsas basura','HOGAR')" ontouchstart="startPress('Bolsas basura','HOGAR',this)" ontouchend="endPress()" ontouchcancel="endPress()" onmousedown="startPress('Bolsas basura','HOGAR',this)" onmouseup="endPress()" onmouseleave="endPress()">
         <span class="prod-name">Bolsas basura</span>
@@ -1095,9 +1107,9 @@ body {
         <span class="press-ring"></span>
       </div></div></div><div class="cat-block c13">
       <div class="cat-block-title"><span class="title-badge">🪥 HIGIENE</span></div>
-      <div class="products-grid"><div class="prod-card c13 selected" onclick="toggleCart('Enjuague Bucal','HIGIENE')" ontouchstart="startPress('Enjuague Bucal','HIGIENE',this)" ontouchend="endPress()" ontouchcancel="endPress()" onmousedown="startPress('Enjuague Bucal','HIGIENE',this)" onmouseup="endPress()" onmouseleave="endPress()">
+      <div class="products-grid"><div class="prod-card c13 " onclick="toggleCart('Enjuague Bucal','HIGIENE')" ontouchstart="startPress('Enjuague Bucal','HIGIENE',this)" ontouchend="endPress()" ontouchcancel="endPress()" onmousedown="startPress('Enjuague Bucal','HIGIENE',this)" onmouseup="endPress()" onmouseleave="endPress()">
         <span class="prod-name">Enjuague Bucal</span>
-        <span class="prod-check">✓</span>
+        <span class="prod-check"></span>
         <span class="press-ring"></span>
       </div><div class="prod-card c13 " onclick="toggleCart('Cepillos de dientes','HIGIENE')" ontouchstart="startPress('Cepillos de dientes','HIGIENE',this)" ontouchend="endPress()" ontouchcancel="endPress()" onmousedown="startPress('Cepillos de dientes','HIGIENE',this)" onmouseup="endPress()" onmouseleave="endPress()">
         <span class="prod-name">Cepillos de dientes</span>
@@ -1115,11 +1127,27 @@ body {
         <span class="prod-name">Crema cuerpo</span>
         <span class="prod-check"></span>
         <span class="press-ring"></span>
+      </div><div class="prod-card c13 " onclick="toggleCart('Jabón cara','HIGIENE')" ontouchstart="startPress('Jabón cara','HIGIENE',this)" ontouchend="endPress()" ontouchcancel="endPress()" onmousedown="startPress('Jabón cara','HIGIENE',this)" onmouseup="endPress()" onmouseleave="endPress()">
+        <span class="prod-name">Jabón cara</span>
+        <span class="prod-check"></span>
+        <span class="press-ring"></span>
+      </div><div class="prod-card c13 " onclick="toggleCart('Jabón manos','HIGIENE')" ontouchstart="startPress('Jabón manos','HIGIENE',this)" ontouchend="endPress()" ontouchcancel="endPress()" onmousedown="startPress('Jabón manos','HIGIENE',this)" onmouseup="endPress()" onmouseleave="endPress()">
+        <span class="prod-name">Jabón manos</span>
+        <span class="prod-check"></span>
+        <span class="press-ring"></span>
+      </div><div class="prod-card c13 " onclick="toggleCart('Esponja','HIGIENE')" ontouchstart="startPress('Esponja','HIGIENE',this)" ontouchend="endPress()" ontouchcancel="endPress()" onmousedown="startPress('Esponja','HIGIENE',this)" onmouseup="endPress()" onmouseleave="endPress()">
+        <span class="prod-name">Esponja</span>
+        <span class="prod-check"></span>
+        <span class="press-ring"></span>
+      </div><div class="prod-card c13 " onclick="toggleCart('Crema sol','HIGIENE')" ontouchstart="startPress('Crema sol','HIGIENE',this)" ontouchend="endPress()" ontouchcancel="endPress()" onmousedown="startPress('Crema sol','HIGIENE',this)" onmouseup="endPress()" onmouseleave="endPress()">
+        <span class="prod-name">Crema sol</span>
+        <span class="prod-check"></span>
+        <span class="press-ring"></span>
       </div></div></div><div class="cat-block c14">
       <div class="cat-block-title"><span class="title-badge">🍞 PAN</span></div>
-      <div class="products-grid"><div class="prod-card c14 selected" onclick="toggleCart('Pieza integral','PAN')" ontouchstart="startPress('Pieza integral','PAN',this)" ontouchend="endPress()" ontouchcancel="endPress()" onmousedown="startPress('Pieza integral','PAN',this)" onmouseup="endPress()" onmouseleave="endPress()">
+      <div class="products-grid"><div class="prod-card c14 " onclick="toggleCart('Pieza integral','PAN')" ontouchstart="startPress('Pieza integral','PAN',this)" ontouchend="endPress()" ontouchcancel="endPress()" onmousedown="startPress('Pieza integral','PAN',this)" onmouseup="endPress()" onmouseleave="endPress()">
         <span class="prod-name">Pieza integral</span>
-        <span class="prod-check">✓</span>
+        <span class="prod-check"></span>
         <span class="press-ring"></span>
       </div><div class="prod-card c14 " onclick="toggleCart('Picos de pan','PAN')" ontouchstart="startPress('Picos de pan','PAN',this)" ontouchend="endPress()" ontouchcancel="endPress()" onmousedown="startPress('Picos de pan','PAN',this)" onmouseup="endPress()" onmouseleave="endPress()">
         <span class="prod-name">Picos de pan</span>
@@ -1137,192 +1165,23 @@ body {
         <span class="prod-name">Pan Rayado</span>
         <span class="prod-check"></span>
         <span class="press-ring"></span>
-      </div><div class="prod-card c14 selected" onclick="toggleCart('Tortillas fajitas','PAN')" ontouchstart="startPress('Tortillas fajitas','PAN',this)" ontouchend="endPress()" ontouchcancel="endPress()" onmousedown="startPress('Tortillas fajitas','PAN',this)" onmouseup="endPress()" onmouseleave="endPress()">
+      </div><div class="prod-card c14 " onclick="toggleCart('Tortillas fajitas','PAN')" ontouchstart="startPress('Tortillas fajitas','PAN',this)" ontouchend="endPress()" ontouchcancel="endPress()" onmousedown="startPress('Tortillas fajitas','PAN',this)" onmouseup="endPress()" onmouseleave="endPress()">
         <span class="prod-name">Tortillas fajitas</span>
-        <span class="prod-check">✓</span>
+        <span class="prod-check"></span>
         <span class="press-ring"></span>
       </div></div></div></div>
-    <div id="goToCartBar" style="display:flex;">
+    <div id="goToCartBar" style="display: none;">
       <button id="goToCartBtn" onclick="switchTab('cart')">
-        🛒 Ir al carrito <span class="go-badge" id="goCartCount">13</span>
+        🛒 Ir al carrito <span class="go-badge" id="goCartCount">0</span>
       </button>
     </div>
   </div>
   <div class="panel" id="panel-cart" style="flex-direction:column;">
-    <div class="swipe-clear-hint" id="swipeClearHint" style="display: block;">← Desliza un producto para eliminarlo</div>
-    <div class="cart-scroll" id="cartItems"><div class="cart-group c0"><div class="cart-group-title"><span class="group-badge">🥦 VERDURAS</span></div><div class="swipe-row" data-key="VERDURAS::Pimiento Tricolor"><div class="swipe-bg">🗑️</div>
-        <div class="cart-item " data-key="VERDURAS::Pimiento Tricolor">
-          <div class="cart-item-bar"></div>
-          <span class="cart-item-name">Pimiento Tricolor</span>
-          <div class="qty-wrap">
-            <button class="qty-btn" onclick="changeQty('VERDURAS::Pimiento Tricolor',-1)">−</button>
-            <span class="qty-num">1</span>
-            <button class="qty-btn" onclick="changeQty('VERDURAS::Pimiento Tricolor',1)">+</button>
-          </div>
-          <div class="cart-item-actions">
-            <button class="ci-btn strike " onclick="toggleDone('VERDURAS::Pimiento Tricolor')">✓</button>
-            <button class="ci-btn remove" onclick="removeFromCart('VERDURAS::Pimiento Tricolor')">×</button>
-          </div>
-        </div></div><div class="swipe-row" data-key="VERDURAS::Guacamole"><div class="swipe-bg">🗑️</div>
-        <div class="cart-item " data-key="VERDURAS::Guacamole">
-          <div class="cart-item-bar"></div>
-          <span class="cart-item-name">Guacamole</span>
-          <div class="qty-wrap">
-            <button class="qty-btn" onclick="changeQty('VERDURAS::Guacamole',-1)">−</button>
-            <span class="qty-num">1</span>
-            <button class="qty-btn" onclick="changeQty('VERDURAS::Guacamole',1)">+</button>
-          </div>
-          <div class="cart-item-actions">
-            <button class="ci-btn strike " onclick="toggleDone('VERDURAS::Guacamole')">✓</button>
-            <button class="ci-btn remove" onclick="removeFromCart('VERDURAS::Guacamole')">×</button>
-          </div>
-        </div></div></div><div class="cart-group c2"><div class="cart-group-title"><span class="group-badge">🥩 CARNE</span></div><div class="swipe-row" data-key="CARNE::Solomillo pavo"><div class="swipe-bg">🗑️</div>
-        <div class="cart-item " data-key="CARNE::Solomillo pavo">
-          <div class="cart-item-bar"></div>
-          <span class="cart-item-name">Solomillo pavo</span>
-          <div class="qty-wrap">
-            <button class="qty-btn" onclick="changeQty('CARNE::Solomillo pavo',-1)">−</button>
-            <span class="qty-num">1</span>
-            <button class="qty-btn" onclick="changeQty('CARNE::Solomillo pavo',1)">+</button>
-          </div>
-          <div class="cart-item-actions">
-            <button class="ci-btn strike " onclick="toggleDone('CARNE::Solomillo pavo')">✓</button>
-            <button class="ci-btn remove" onclick="removeFromCart('CARNE::Solomillo pavo')">×</button>
-          </div>
-        </div></div></div><div class="cart-group c3"><div class="cart-group-title"><span class="group-badge">🌶️ ESPECIAS</span></div><div class="swipe-row" data-key="ESPECIAS::Es. Ajo"><div class="swipe-bg">🗑️</div>
-        <div class="cart-item " data-key="ESPECIAS::Es. Ajo">
-          <div class="cart-item-bar"></div>
-          <span class="cart-item-name">Es. Ajo</span>
-          <div class="qty-wrap">
-            <button class="qty-btn" onclick="changeQty('ESPECIAS::Es. Ajo',-1)">−</button>
-            <span class="qty-num">1</span>
-            <button class="qty-btn" onclick="changeQty('ESPECIAS::Es. Ajo',1)">+</button>
-          </div>
-          <div class="cart-item-actions">
-            <button class="ci-btn strike " onclick="toggleDone('ESPECIAS::Es. Ajo')">✓</button>
-            <button class="ci-btn remove" onclick="removeFromCart('ESPECIAS::Es. Ajo')">×</button>
-          </div>
-        </div></div></div><div class="cart-group c8"><div class="cart-group-title"><span class="group-badge">🍿 APERITIVOS</span></div><div class="swipe-row" data-key="APERITIVOS::Bolsa Mix"><div class="swipe-bg">🗑️</div>
-        <div class="cart-item " data-key="APERITIVOS::Bolsa Mix">
-          <div class="cart-item-bar"></div>
-          <span class="cart-item-name">Bolsa Mix</span>
-          <div class="qty-wrap">
-            <button class="qty-btn" onclick="changeQty('APERITIVOS::Bolsa Mix',-1)">−</button>
-            <span class="qty-num">1</span>
-            <button class="qty-btn" onclick="changeQty('APERITIVOS::Bolsa Mix',1)">+</button>
-          </div>
-          <div class="cart-item-actions">
-            <button class="ci-btn strike " onclick="toggleDone('APERITIVOS::Bolsa Mix')">✓</button>
-            <button class="ci-btn remove" onclick="removeFromCart('APERITIVOS::Bolsa Mix')">×</button>
-          </div>
-        </div></div><div class="swipe-row" data-key="APERITIVOS::Bolsa Patatas Fritas"><div class="swipe-bg">🗑️</div>
-        <div class="cart-item " data-key="APERITIVOS::Bolsa Patatas Fritas">
-          <div class="cart-item-bar"></div>
-          <span class="cart-item-name">Bolsa Patatas Fritas</span>
-          <div class="qty-wrap">
-            <button class="qty-btn" onclick="changeQty('APERITIVOS::Bolsa Patatas Fritas',-1)">−</button>
-            <span class="qty-num">1</span>
-            <button class="qty-btn" onclick="changeQty('APERITIVOS::Bolsa Patatas Fritas',1)">+</button>
-          </div>
-          <div class="cart-item-actions">
-            <button class="ci-btn strike " onclick="toggleDone('APERITIVOS::Bolsa Patatas Fritas')">✓</button>
-            <button class="ci-btn remove" onclick="removeFromCart('APERITIVOS::Bolsa Patatas Fritas')">×</button>
-          </div>
-        </div></div></div><div class="cart-group c10"><div class="cart-group-title"><span class="group-badge">🥛 LÁCTEOS</span></div><div class="swipe-row" data-key="LÁCTEOS::Havarti"><div class="swipe-bg">🗑️</div>
-        <div class="cart-item " data-key="LÁCTEOS::Havarti">
-          <div class="cart-item-bar"></div>
-          <span class="cart-item-name">Havarti</span>
-          <div class="qty-wrap">
-            <button class="qty-btn" onclick="changeQty('LÁCTEOS::Havarti',-1)">−</button>
-            <span class="qty-num">1</span>
-            <button class="qty-btn" onclick="changeQty('LÁCTEOS::Havarti',1)">+</button>
-          </div>
-          <div class="cart-item-actions">
-            <button class="ci-btn strike " onclick="toggleDone('LÁCTEOS::Havarti')">✓</button>
-            <button class="ci-btn remove" onclick="removeFromCart('LÁCTEOS::Havarti')">×</button>
-          </div>
-        </div></div></div><div class="cart-group c12"><div class="cart-group-title"><span class="group-badge">🏠 HOGAR</span></div><div class="swipe-row" data-key="HOGAR::Velas perfumadas"><div class="swipe-bg">🗑️</div>
-        <div class="cart-item " data-key="HOGAR::Velas perfumadas">
-          <div class="cart-item-bar"></div>
-          <span class="cart-item-name">Velas perfumadas</span>
-          <div class="qty-wrap">
-            <button class="qty-btn" onclick="changeQty('HOGAR::Velas perfumadas',-1)">−</button>
-            <span class="qty-num">1</span>
-            <button class="qty-btn" onclick="changeQty('HOGAR::Velas perfumadas',1)">+</button>
-          </div>
-          <div class="cart-item-actions">
-            <button class="ci-btn strike " onclick="toggleDone('HOGAR::Velas perfumadas')">✓</button>
-            <button class="ci-btn remove" onclick="removeFromCart('HOGAR::Velas perfumadas')">×</button>
-          </div>
-        </div></div><div class="swipe-row" data-key="HOGAR::Detergente antibacterias"><div class="swipe-bg">🗑️</div>
-        <div class="cart-item " data-key="HOGAR::Detergente antibacterias">
-          <div class="cart-item-bar"></div>
-          <span class="cart-item-name">Detergente antibacterias</span>
-          <div class="qty-wrap">
-            <button class="qty-btn" onclick="changeQty('HOGAR::Detergente antibacterias',-1)">−</button>
-            <span class="qty-num">1</span>
-            <button class="qty-btn" onclick="changeQty('HOGAR::Detergente antibacterias',1)">+</button>
-          </div>
-          <div class="cart-item-actions">
-            <button class="ci-btn strike " onclick="toggleDone('HOGAR::Detergente antibacterias')">✓</button>
-            <button class="ci-btn remove" onclick="removeFromCart('HOGAR::Detergente antibacterias')">×</button>
-          </div>
-        </div></div><div class="swipe-row" data-key="HOGAR::Limpiador Baño"><div class="swipe-bg">🗑️</div>
-        <div class="cart-item " data-key="HOGAR::Limpiador Baño">
-          <div class="cart-item-bar"></div>
-          <span class="cart-item-name">Limpiador Baño</span>
-          <div class="qty-wrap">
-            <button class="qty-btn" onclick="changeQty('HOGAR::Limpiador Baño',-1)">−</button>
-            <span class="qty-num">1</span>
-            <button class="qty-btn" onclick="changeQty('HOGAR::Limpiador Baño',1)">+</button>
-          </div>
-          <div class="cart-item-actions">
-            <button class="ci-btn strike " onclick="toggleDone('HOGAR::Limpiador Baño')">✓</button>
-            <button class="ci-btn remove" onclick="removeFromCart('HOGAR::Limpiador Baño')">×</button>
-          </div>
-        </div></div></div><div class="cart-group c13"><div class="cart-group-title"><span class="group-badge">🪥 HIGIENE</span></div><div class="swipe-row" data-key="HIGIENE::Enjuague Bucal"><div class="swipe-bg">🗑️</div>
-        <div class="cart-item " data-key="HIGIENE::Enjuague Bucal">
-          <div class="cart-item-bar"></div>
-          <span class="cart-item-name">Enjuague Bucal</span>
-          <div class="qty-wrap">
-            <button class="qty-btn" onclick="changeQty('HIGIENE::Enjuague Bucal',-1)">−</button>
-            <span class="qty-num">1</span>
-            <button class="qty-btn" onclick="changeQty('HIGIENE::Enjuague Bucal',1)">+</button>
-          </div>
-          <div class="cart-item-actions">
-            <button class="ci-btn strike " onclick="toggleDone('HIGIENE::Enjuague Bucal')">✓</button>
-            <button class="ci-btn remove" onclick="removeFromCart('HIGIENE::Enjuague Bucal')">×</button>
-          </div>
-        </div></div></div><div class="cart-group c14"><div class="cart-group-title"><span class="group-badge">🍞 PAN</span></div><div class="swipe-row" data-key="PAN::Pieza integral"><div class="swipe-bg">🗑️</div>
-        <div class="cart-item " data-key="PAN::Pieza integral">
-          <div class="cart-item-bar"></div>
-          <span class="cart-item-name">Pieza integral</span>
-          <div class="qty-wrap">
-            <button class="qty-btn" onclick="changeQty('PAN::Pieza integral',-1)">−</button>
-            <span class="qty-num">1</span>
-            <button class="qty-btn" onclick="changeQty('PAN::Pieza integral',1)">+</button>
-          </div>
-          <div class="cart-item-actions">
-            <button class="ci-btn strike " onclick="toggleDone('PAN::Pieza integral')">✓</button>
-            <button class="ci-btn remove" onclick="removeFromCart('PAN::Pieza integral')">×</button>
-          </div>
-        </div></div><div class="swipe-row" data-key="PAN::Tortillas fajitas"><div class="swipe-bg">🗑️</div>
-        <div class="cart-item " data-key="PAN::Tortillas fajitas">
-          <div class="cart-item-bar"></div>
-          <span class="cart-item-name">Tortillas fajitas</span>
-          <div class="qty-wrap">
-            <button class="qty-btn" onclick="changeQty('PAN::Tortillas fajitas',-1)">−</button>
-            <span class="qty-num">1</span>
-            <button class="qty-btn" onclick="changeQty('PAN::Tortillas fajitas',1)">+</button>
-          </div>
-          <div class="cart-item-actions">
-            <button class="ci-btn strike " onclick="toggleDone('PAN::Tortillas fajitas')">✓</button>
-            <button class="ci-btn remove" onclick="removeFromCart('PAN::Tortillas fajitas')">×</button>
-          </div>
-        </div></div></div></div>
+    <div class="swipe-clear-hint" id="swipeClearHint" style="display: none;">← Desliza un producto para eliminarlo</div>
+    <div class="cart-scroll" id="cartItems"><div class="cart-empty"><div class="icon">🧺</div><p>Tu carrito está vacío.<br>Añade productos desde Ingredientes.</p></div></div>
     <div class="cart-footer">
       <div class="cart-summary">
-        <div class="cart-summary-nums"><span id="cartDone">0</span>/<span id="cartTotalNum">13</span></div>
+        <div class="cart-summary-nums"><span id="cartDone">0</span>/<span id="cartTotalNum">0</span></div>
         <div class="cart-summary-label">productos recogidos</div>
       </div>
       <div class="cart-actions">
@@ -1402,7 +1261,7 @@ body {
 </div>
 
 <script>
-const BASE_PRODUCTS = {"VERDURAS":["Lechuga","Canónigos","Rúcula","Tomates","Cebollas","Pepino","Calabacín","Brócoli","Pimiento Rojo","Pimiento Verde","Pimiento Tricolor","Patatas","Guacamole","Ajo","Espinacas","Aguacate","Boniato","Pimientos de Padrón","Limones","Zanahorias"],"FRUTA":["Plátano","Manzana","Pera","Naranjas","Mandarinas","Mango"],"CARNE":["Picada pollo","Picada ternera","Solomillo pavo","Solomillo pollo","Hamburguesas","Filetes pavo","Soja texturizada","Solomillo cerdo","Pechuga pollo"],"BOTES":["Garbanzos","Alubias","Lentejas","Guindillas","Patatas cocidas"],"ESPECIAS":["Fajitas","Es. Ajo","Es. Cebolla","Pimentón Dulce","Pimentón Picante","Hiervas Provinzales","Orégano","Perejil","Pimienta tricolor","Pimienta negra"],"CONSERVAS":["Lata Tomate","Lata Atún","Maíz","Piña en lata"],"BEBIDAS":["Leche semidesnatada","Bebida Soja","Salmorejo","Gazpacho","Cervezas","Sidra","Coca Cola Zero","Coca Cola Zero S/C","Cerveza solomillo"],"APERITIVOS":["Bolsa Mix","Bolsa Patatas Fritas","Bolsa Nachos","Aceitunas","Tortillas para fajitas","Aceitunas vermú"],"FIAMBRE":["Havarty Light","Queso Rulo Cabra","Cuña Tostado","Cuña Tierno","Cuña holandés","Jamón Serrano","Tacos de jamón","Queso azul","Queso Cottage","Queso rayado","Queso en polvo"],"CONGELADOS":["Ajo congelado","Cebolla congelada","Pimientos congelados","Migas coliflor","Espinacas congeladas","Helados","Arándanos","Frutas tropicales"],"LÁCTEOS":["Yogur griego ligero","Yogur soja","Queso fresco batido","Yogur griego sabores","Havarti"],"VARIOS":["Semillas Chía","Anacardos","Nueces","Avena","Huevos","Cacao Puro","Chocolate","Huevos cocidos","Aceite virgen extra","Aceite 0,4","Aceite cocinar","Vinagre","Harina","Sal","Edulcorante","Arroz integral","Pasta integral","Mostaza","Picante","Miel","Té frío","Laurel","Salsa BBQ","Infusión Cúrcuma"],"HOGAR":["Papel higiénico","Servilletas","Papel de cocina","Velas perfumadas","Detergente","Suavizante","Papel Albal","Papel Horno","Papel Film","Fairy","Toallitas WC","Ambientador WC","Lejía","Quitagrasas","Amoníaco perfumado","Limpiasuelos lejía","Limpiador PH","WC inodoro","Limpiador Baño","Detergente antibacterias","Bolsas basura","Estropajos","Fregona","Tissues"],"HIGIENE":["Enjuague Bucal","Cepillos de dientes","Pasta de dientes","Gel Afeitado","Crema cuerpo"],"PAN":["Pieza integral","Picos de pan","Pan 35% Avena","Pan molde integral","Pan Rayado","Tortillas fajitas"]};
+const BASE_PRODUCTS = {"VERDURAS":["Lechuga","Canónigos","Rúcula","Tomates","Cebollas","Pepino","Calabacín","Brócoli","Pimiento Rojo","Pimiento Verde","Pimiento Tricolor","Patatas","Guacamole","Ajo","Espinacas","Aguacate","Boniato","Pimientos de Padrón","Limones","Zanahorias"],"FRUTA":["Plátano","Manzana","Pera","Naranjas","Mandarinas","Mango"],"CARNE":["Picada pollo","Picada ternera","Solomillo pavo","Solomillo pollo","Hamburguesas","Filetes pavo","Soja texturizada","Solomillo cerdo","Pechuga pollo"],"BOTES":["Garbanzos","Alubias","Lentejas","Guindillas","Patatas cocidas"],"ESPECIAS":["Fajitas","Es. Ajo","Es. Cebolla","Pimentón Dulce","Pimentón Picante","Hiervas Provinzales","Orégano","Perejil","Pimienta tricolor","Pimienta negra"],"CONSERVAS":["Lata Tomate","Lata Atún","Maíz","Piña en lata"],"BEBIDAS":["Leche semidesnatada","Bebida Soja","Salmorejo","Gazpacho","Cervezas","Sidra","Coca Cola Zero","Coca Cola Zero S/C","Cerveza solomillo","Bebida almendras"],"APERITIVOS":["Bolsa Mix","Bolsa Patatas Fritas","Bolsa Nachos","Aceitunas","Tortillas para fajitas","Aceitunas vermú"],"FIAMBRE":["Havarty Light","Queso Rulo Cabra","Cuña Tostado","Cuña Tierno","Cuña holandés","Jamón Serrano","Tacos de jamón","Queso azul","Queso Cottage","Queso rayado","Queso en polvo"],"CONGELADOS":["Ajo congelado","Cebolla congelada","Pimientos congelados","Migas coliflor","Espinacas congeladas","Helados","Arándanos","Frutas tropicales"],"LÁCTEOS":["Yogur griego ligero","Yogur soja","Queso fresco batido","Yogur griego sabores","Havarti","Claras de huevo"],"VARIOS":["Semillas Chía","Anacardos","Nueces","Avena","Huevos","Cacao Puro","Chocolate","Huevos cocidos","Aceite virgen extra","Aceite 0,4","Aceite cocinar","Vinagre","Harina","Sal","Edulcorante","Arroz integral","Pasta integral","Mostaza","Picante","Miel","Té frío","Laurel","Salsa BBQ","Infusión Cúrcuma","Pepitas chocolate"],"HOGAR":["Papel higiénico","Servilletas","Papel de cocina","Velas perfumadas","Detergente","Suavizante","Papel Albal","Papel Horno","Papel Film","Fairy","Toallitas WC","Ambientador WC","Lejía","Quitagrasas","Amoníaco perfumado","Limpiasuelos lejía","Limpiador PH","WC inodoro","Limpiador Baño","Detergente antibacterias","Bolsas basura","Estropajos","Fregona","Tissues"],"HIGIENE":["Enjuague Bucal","Cepillos de dientes","Pasta de dientes","Gel Afeitado","Crema cuerpo","Jabón cara","Jabón manos","Esponja","Crema sol"],"PAN":["Pieza integral","Picos de pan","Pan 35% Avena","Pan molde integral","Pan Rayado","Tortillas fajitas"]};
 const BASE_ICONS    = {"VERDURAS":"🥦","FRUTA":"🍊","CARNE":"🥩","BOTES":"🫙","ESPECIAS":"🌶️","CONSERVAS":"🥫","BEBIDAS":"🥤","APERITIVOS":"🍿","FIAMBRE":"🧀","CONGELADOS":"🧊","LÁCTEOS":"🥛","VARIOS":"🛍️","HOGAR":"🏠","HIGIENE":"🪥","PAN":"🍞"};
 
 let prods    = JSON.parse(localStorage.getItem('mc_prods')||'null') || JSON.parse(JSON.stringify(BASE_PRODUCTS));
@@ -1661,6 +1520,7 @@ if('serviceWorker' in navigator){
   });
 }
 </script>
+
 
 
 </body></html>
